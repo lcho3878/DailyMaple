@@ -11,6 +11,8 @@
 		5450FF952C9EEF87005F7D0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FF942C9EEF87005F7D0A /* ContentView.swift */; };
 		5450FF972C9EEF88005F7D0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5450FF962C9EEF88005F7D0A /* Assets.xcassets */; };
 		5450FF9A2C9EEF88005F7D0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5450FF992C9EEF88005F7D0A /* Preview Assets.xcassets */; };
+		5450FFA22C9EF022005F7D0A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFA12C9EF022005F7D0A /* .gitignore */; };
+		5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFA32C9EF066005F7D0A /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		5450FF942C9EEF87005F7D0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5450FF962C9EEF88005F7D0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5450FF992C9EEF88005F7D0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5450FFA12C9EF022005F7D0A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5450FFA32C9EF066005F7D0A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 		5450FF862C9EEF87005F7D0A = {
 			isa = PBXGroup;
 			children = (
+				5450FFA12C9EF022005F7D0A /* .gitignore */,
 				5450FF912C9EEF87005F7D0A /* DailyMaple */,
 				5450FF902C9EEF87005F7D0A /* Products */,
 			);
@@ -51,6 +56,7 @@
 		5450FF912C9EEF87005F7D0A /* DailyMaple */ = {
 			isa = PBXGroup;
 			children = (
+				5450FFA32C9EF066005F7D0A /* APIKey.swift */,
 				5450FF922C9EEF87005F7D0A /* DailyMapleApp.swift */,
 				5450FF942C9EEF87005F7D0A /* ContentView.swift */,
 				5450FF962C9EEF88005F7D0A /* Assets.xcassets */,
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5450FF9A2C9EEF88005F7D0A /* Preview Assets.xcassets in Resources */,
+				5450FFA22C9EF022005F7D0A /* .gitignore in Resources */,
 				5450FF972C9EEF88005F7D0A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5450FF952C9EEF87005F7D0A /* ContentView.swift in Sources */,
+				5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */,
 				5450FF932C9EEF87005F7D0A /* DailyMapleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
