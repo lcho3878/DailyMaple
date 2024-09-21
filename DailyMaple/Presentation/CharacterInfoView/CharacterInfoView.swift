@@ -23,6 +23,7 @@ struct CharacterInfoView: View {
             .pickerStyle(.segmented)
             Text(viewModel.output.picker.rawValue)
         }
+        .font(.mapleBold16)
         
     }
     

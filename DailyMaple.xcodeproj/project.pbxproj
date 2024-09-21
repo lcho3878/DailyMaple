@@ -18,6 +18,9 @@
 		5450FFAE2C9EF5B5005F7D0A /* Character.json in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFAD2C9EF5B5005F7D0A /* Character.json */; };
 		5450FFB22C9EF6FF005F7D0A /* CharacterInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFB12C9EF6FF005F7D0A /* CharacterInfoView.swift */; };
 		5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFB32C9EF706005F7D0A /* CharacterInfoViewModel.swift */; };
+		5450FFBA2C9F08E4005F7D0A /* Maplestory OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFB92C9F08E4005F7D0A /* Maplestory OTF Bold.otf */; };
+		5450FFBC2C9F08EB005F7D0A /* Maplestory OTF Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFBB2C9F08EB005F7D0A /* Maplestory OTF Light.otf */; };
+		5450FFC02C9F0B2F005F7D0A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFBF2C9F0B2F005F7D0A /* Font+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,10 @@
 		5450FFAD2C9EF5B5005F7D0A /* Character.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Character.json; sourceTree = "<group>"; };
 		5450FFB12C9EF6FF005F7D0A /* CharacterInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoView.swift; sourceTree = "<group>"; };
 		5450FFB32C9EF706005F7D0A /* CharacterInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoViewModel.swift; sourceTree = "<group>"; };
+		5450FFB92C9F08E4005F7D0A /* Maplestory OTF Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Bold.otf"; sourceTree = "<group>"; };
+		5450FFBB2C9F08EB005F7D0A /* Maplestory OTF Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Light.otf"; sourceTree = "<group>"; };
+		5450FFBD2C9F0929005F7D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5450FFBF2C9F0B2F005F7D0A /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +73,11 @@
 		5450FF912C9EEF87005F7D0A /* DailyMaple */ = {
 			isa = PBXGroup;
 			children = (
+				5450FFBE2C9F0B23005F7D0A /* Extension */,
+				5450FFBD2C9F0929005F7D0A /* Info.plist */,
 				5450FF922C9EEF87005F7D0A /* DailyMapleApp.swift */,
 				5450FF962C9EEF88005F7D0A /* Assets.xcassets */,
+				5450FFB82C9F08C6005F7D0A /* Font */,
 				5450FFA52C9EF0AB005F7D0A /* Network */,
 				5450FFAF2C9EF6CD005F7D0A /* Presentation */,
 				5450FF982C9EEF88005F7D0A /* Preview Content */,
@@ -136,6 +146,23 @@
 			path = CharacterInfoView;
 			sourceTree = "<group>";
 		};
+		5450FFB82C9F08C6005F7D0A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				5450FFB92C9F08E4005F7D0A /* Maplestory OTF Bold.otf */,
+				5450FFBB2C9F08EB005F7D0A /* Maplestory OTF Light.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		5450FFBE2C9F0B23005F7D0A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5450FFBF2C9F0B2F005F7D0A /* Font+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,7 +221,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5450FFBC2C9F08EB005F7D0A /* Maplestory OTF Light.otf in Resources */,
 				5450FF9A2C9EEF88005F7D0A /* Preview Assets.xcassets in Resources */,
+				5450FFBA2C9F08E4005F7D0A /* Maplestory OTF Bold.otf in Resources */,
 				5450FFA22C9EF022005F7D0A /* .gitignore in Resources */,
 				5450FF972C9EEF88005F7D0A /* Assets.xcassets in Resources */,
 				5450FFAE2C9EF5B5005F7D0A /* Character.json in Resources */,
@@ -208,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5450FFC02C9F0B2F005F7D0A /* Font+.swift in Sources */,
 				5450FF952C9EEF87005F7D0A /* ContentView.swift in Sources */,
 				5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */,
 				5450FFAB2C9EF551005F7D0A /* CharacterResponse.swift in Sources */,
@@ -351,6 +381,7 @@
 				DEVELOPMENT_TEAM = 82M3Y9RKT2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyMaple/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -380,6 +411,7 @@
 				DEVELOPMENT_TEAM = 82M3Y9RKT2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyMaple/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
