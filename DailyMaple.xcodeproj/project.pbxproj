@@ -21,6 +21,7 @@
 		5450FFBA2C9F08E4005F7D0A /* Maplestory OTF Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFB92C9F08E4005F7D0A /* Maplestory OTF Bold.otf */; };
 		5450FFBC2C9F08EB005F7D0A /* Maplestory OTF Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFBB2C9F08EB005F7D0A /* Maplestory OTF Light.otf */; };
 		5450FFC02C9F0B2F005F7D0A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFBF2C9F0B2F005F7D0A /* Font+.swift */; };
+		5450FFC42C9F0CAA005F7D0A /* Stats.json in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFC22C9F0CAA005F7D0A /* Stats.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5450FFBB2C9F08EB005F7D0A /* Maplestory OTF Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Maplestory OTF Light.otf"; sourceTree = "<group>"; };
 		5450FFBD2C9F0929005F7D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5450FFBF2C9F0B2F005F7D0A /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		5450FFC32C9F0CAA005F7D0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Stats.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				5450FFAD2C9EF5B5005F7D0A /* Character.json */,
+				5450FFC22C9F0CAA005F7D0A /* Stats.json */,
 			);
 			name = MockData;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				5450FF9A2C9EEF88005F7D0A /* Preview Assets.xcassets in Resources */,
 				5450FFBA2C9F08E4005F7D0A /* Maplestory OTF Bold.otf in Resources */,
 				5450FFA22C9EF022005F7D0A /* .gitignore in Resources */,
+				5450FFC42C9F0CAA005F7D0A /* Stats.json in Resources */,
 				5450FF972C9EEF88005F7D0A /* Assets.xcassets in Resources */,
 				5450FFAE2C9EF5B5005F7D0A /* Character.json in Resources */,
 			);
@@ -249,6 +253,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5450FFC22C9F0CAA005F7D0A /* Stats.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5450FFC32C9F0CAA005F7D0A /* en */,
+			);
+			name = Stats.json;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5450FF9B2C9EEF88005F7D0A /* Debug */ = {
