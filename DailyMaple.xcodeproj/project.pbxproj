@@ -23,6 +23,8 @@
 		5450FFC02C9F0B2F005F7D0A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFBF2C9F0B2F005F7D0A /* Font+.swift */; };
 		5450FFC42C9F0CAA005F7D0A /* Stats.json in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFC22C9F0CAA005F7D0A /* Stats.json */; };
 		5450FFC62C9F1178005F7D0A /* CharacterStatResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFC52C9F1178005F7D0A /* CharacterStatResponseModel.swift */; };
+		5450FFC92C9F1360005F7D0A /* CharacterStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFC82C9F1360005F7D0A /* CharacterStatView.swift */; };
+		5450FFCB2C9F136F005F7D0A /* CharacterStatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFCA2C9F136F005F7D0A /* CharacterStatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		5450FFBF2C9F0B2F005F7D0A /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		5450FFC32C9F0CAA005F7D0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Stats.json; sourceTree = "<group>"; };
 		5450FFC52C9F1178005F7D0A /* CharacterStatResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatResponseModel.swift; sourceTree = "<group>"; };
+		5450FFC82C9F1360005F7D0A /* CharacterStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatView.swift; sourceTree = "<group>"; };
+		5450FFCA2C9F136F005F7D0A /* CharacterStatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		5450FFB02C9EF6DE005F7D0A /* CharacterInfoView */ = {
 			isa = PBXGroup;
 			children = (
+				5450FFC72C9F1352005F7D0A /* CharacterInfoTap */,
 				5450FFB12C9EF6FF005F7D0A /* CharacterInfoView.swift */,
 				5450FFB32C9EF706005F7D0A /* CharacterInfoViewModel.swift */,
 			);
@@ -167,6 +172,15 @@
 				5450FFBF2C9F0B2F005F7D0A /* Font+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5450FFC72C9F1352005F7D0A /* CharacterInfoTap */ = {
+			isa = PBXGroup;
+			children = (
+				5450FFC82C9F1360005F7D0A /* CharacterStatView.swift */,
+				5450FFCA2C9F136F005F7D0A /* CharacterStatViewModel.swift */,
+			);
+			path = CharacterInfoTap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +264,11 @@
 				5450FFAB2C9EF551005F7D0A /* CharacterResponse.swift in Sources */,
 				5450FF932C9EEF87005F7D0A /* DailyMapleApp.swift in Sources */,
 				5450FFB22C9EF6FF005F7D0A /* CharacterInfoView.swift in Sources */,
+				5450FFC92C9F1360005F7D0A /* CharacterStatView.swift in Sources */,
 				5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */,
 				5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */,
 				5450FFC62C9F1178005F7D0A /* CharacterStatResponseModel.swift in Sources */,
+				5450FFCB2C9F136F005F7D0A /* CharacterStatViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -68,7 +68,7 @@ struct CharacterStatResponseModel: Decodable {
         case resistance = "상태이상 내성"
     }
     
-    enum OtherStat: String {
+    enum OtherStat: String, CaseIterable {
         case exp = "추가 경험치 획득"
         case summon = "소환수 지속시간 증가"
         case weapon = "무기 숙련도"

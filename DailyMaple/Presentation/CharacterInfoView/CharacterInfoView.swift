@@ -14,6 +14,7 @@ struct CharacterInfoView: View {
         VStack {
             if let character = viewModel.output.character {
                 CharacterHeaderView(character: character)
+                    .font(.mapleBold16)
             }
             Picker("Menu", selection: $viewModel.output.picker) {
                 ForEach(CharacterInfoViewModel.TapMenu.allCases, id: \.self) {
@@ -21,10 +22,10 @@ struct CharacterInfoView: View {
                 }
             }
             .pickerStyle(.segmented)
-            Text(viewModel.output.picker.rawValue)
+            ScrollView {
+                CharacterInfoTapView(picker: viewModel.output.picker)
+            }
         }
-        .font(.mapleBold16)
-        
     }
     
     struct CharacterHeaderView: View {
@@ -49,6 +50,22 @@ struct CharacterInfoView: View {
                 Spacer()
             }
             .padding()
+        }
+    }
+    
+    struct CharacterInfoTapView: View {
+        let picker: CharacterInfoViewModel.TapMenu
+        var body: some View {
+            switch picker {
+            case .character:
+                CharacterStatView()
+            case .equipment:
+                Text(picker.rawValue)
+            case .symbol:
+                Text(picker.rawValue)
+            case .hyperStat:
+                Text(picker.rawValue)
+            }
         }
     }
 }
