@@ -14,6 +14,7 @@
 		5450FFA22C9EF022005F7D0A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFA12C9EF022005F7D0A /* .gitignore */; };
 		5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFA32C9EF066005F7D0A /* APIKey.swift */; };
 		5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFA72C9EF133005F7D0A /* MockDataManager.swift */; };
+		5450FFAB2C9EF551005F7D0A /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFAA2C9EF551005F7D0A /* CharacterResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		5450FFA12C9EF022005F7D0A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5450FFA32C9EF066005F7D0A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		5450FFA72C9EF133005F7D0A /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
+		5450FFAA2C9EF551005F7D0A /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		5450FFA52C9EF0AB005F7D0A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				5450FFA92C9EF184005F7D0A /* ResponseModel */,
 				5450FFA62C9EF11F005F7D0A /* Mock */,
 			);
 			name = Network;
@@ -90,6 +93,14 @@
 				5450FFA72C9EF133005F7D0A /* MockDataManager.swift */,
 			);
 			name = Mock;
+			sourceTree = "<group>";
+		};
+		5450FFA92C9EF184005F7D0A /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				5450FFAA2C9EF551005F7D0A /* CharacterResponse.swift */,
+			);
+			name = ResponseModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 			files = (
 				5450FF952C9EEF87005F7D0A /* ContentView.swift in Sources */,
 				5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */,
+				5450FFAB2C9EF551005F7D0A /* CharacterResponse.swift in Sources */,
 				5450FF932C9EEF87005F7D0A /* DailyMapleApp.swift in Sources */,
 				5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */,
 			);
