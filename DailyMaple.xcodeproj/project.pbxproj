@@ -15,6 +15,7 @@
 		5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFA32C9EF066005F7D0A /* APIKey.swift */; };
 		5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFA72C9EF133005F7D0A /* MockDataManager.swift */; };
 		5450FFAB2C9EF551005F7D0A /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFAA2C9EF551005F7D0A /* CharacterResponse.swift */; };
+		5450FFAE2C9EF5B5005F7D0A /* Character.json in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFAD2C9EF5B5005F7D0A /* Character.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		5450FFA32C9EF066005F7D0A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		5450FFA72C9EF133005F7D0A /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
 		5450FFAA2C9EF551005F7D0A /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
+		5450FFAD2C9EF5B5005F7D0A /* Character.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Character.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		5450FFA62C9EF11F005F7D0A /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				5450FFAC2C9EF595005F7D0A /* MockData */,
 				5450FFA72C9EF133005F7D0A /* MockDataManager.swift */,
 			);
 			name = Mock;
@@ -101,6 +104,14 @@
 				5450FFAA2C9EF551005F7D0A /* CharacterResponse.swift */,
 			);
 			name = ResponseModel;
+			sourceTree = "<group>";
+		};
+		5450FFAC2C9EF595005F7D0A /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				5450FFAD2C9EF5B5005F7D0A /* Character.json */,
+			);
+			name = MockData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 				5450FF9A2C9EEF88005F7D0A /* Preview Assets.xcassets in Resources */,
 				5450FFA22C9EF022005F7D0A /* .gitignore in Resources */,
 				5450FF972C9EEF88005F7D0A /* Assets.xcassets in Resources */,
+				5450FFAE2C9EF5B5005F7D0A /* Character.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
