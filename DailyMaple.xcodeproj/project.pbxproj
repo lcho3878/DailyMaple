@@ -25,6 +25,7 @@
 		5450FFC62C9F1178005F7D0A /* CharacterStatResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFC52C9F1178005F7D0A /* CharacterStatResponseModel.swift */; };
 		5450FFC92C9F1360005F7D0A /* CharacterStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFC82C9F1360005F7D0A /* CharacterStatView.swift */; };
 		5450FFCB2C9F136F005F7D0A /* CharacterStatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFCA2C9F136F005F7D0A /* CharacterStatViewModel.swift */; };
+		5450FFCE2C9FCF8D005F7D0A /* Items.json in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFCC2C9FCF8D005F7D0A /* Items.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		5450FFC52C9F1178005F7D0A /* CharacterStatResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatResponseModel.swift; sourceTree = "<group>"; };
 		5450FFC82C9F1360005F7D0A /* CharacterStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatView.swift; sourceTree = "<group>"; };
 		5450FFCA2C9F136F005F7D0A /* CharacterStatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatViewModel.swift; sourceTree = "<group>"; };
+		5450FFCD2C9FCF8D005F7D0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Items.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				5450FFAD2C9EF5B5005F7D0A /* Character.json */,
+				5450FFCC2C9FCF8D005F7D0A /* Items.json */,
 				5450FFC22C9F0CAA005F7D0A /* Stats.json */,
 			);
 			name = MockData;
@@ -245,6 +248,7 @@
 				5450FF9A2C9EEF88005F7D0A /* Preview Assets.xcassets in Resources */,
 				5450FFBA2C9F08E4005F7D0A /* Maplestory OTF Bold.otf in Resources */,
 				5450FFA22C9EF022005F7D0A /* .gitignore in Resources */,
+				5450FFCE2C9FCF8D005F7D0A /* Items.json in Resources */,
 				5450FFC42C9F0CAA005F7D0A /* Stats.json in Resources */,
 				5450FF972C9EEF88005F7D0A /* Assets.xcassets in Resources */,
 				5450FFAE2C9EF5B5005F7D0A /* Character.json in Resources */,
@@ -281,6 +285,14 @@
 				5450FFC32C9F0CAA005F7D0A /* en */,
 			);
 			name = Stats.json;
+			sourceTree = "<group>";
+		};
+		5450FFCC2C9FCF8D005F7D0A /* Items.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5450FFCD2C9FCF8D005F7D0A /* en */,
+			);
+			name = Items.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
