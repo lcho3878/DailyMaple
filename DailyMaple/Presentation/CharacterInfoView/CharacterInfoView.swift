@@ -25,14 +25,14 @@ struct CharacterInfoView: View {
                 }
             }
             .pickerStyle(.segmented)
-            ScrollView {
+//            ScrollView {
                 CharacterInfoTapView(
                     picker: viewModel.output.picker,
                     statViewModel: statViewModel,
                     equipViewModel: equipViewModel,
                     symbolViewModel: symbolViewModel
                 )
-            }
+//            }
         }
     }
     

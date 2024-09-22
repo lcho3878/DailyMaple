@@ -12,35 +12,37 @@ struct CharacterStatView: View {
     @StateObject var viewModel: CharacterStatViewModel
     
     var body: some View {
-        if let stats = viewModel.output.stats {
-            VStack {
+        ScrollView {
+            if let stats = viewModel.output.stats {
                 VStack {
-                    Text(stats.statValue(name: "전투력"))
-                    Text("스탯 공격력 \(stats.statValue(name: "최소 스탯공격력")) ~ \(stats.statValue(name: "최대 스탯공격력"))")
-                }
-                let rows = [
-                    GridItem(.flexible(minimum: 20, maximum: 100)),
-                    GridItem(.flexible(minimum: 20, maximum: 100)),
-                ]
-                LazyHGrid(rows: rows) {
-                    ForEach(Stat.MainStat.allCases, id: \.self) { item in
-                        HStack {
-                            Text(item.rawValue)
-                            Text(stats.statValue(name: item.rawValue))
-                        }
+                    VStack {
+                        Text(stats.statValue(name: "전투력"))
+                        Text("스탯 공격력 \(stats.statValue(name: "최소 스탯공격력")) ~ \(stats.statValue(name: "최대 스탯공격력"))")
                     }
-                    .padding()
+                    let rows = [
+                        GridItem(.flexible(minimum: 20, maximum: 100)),
+                        GridItem(.flexible(minimum: 20, maximum: 100)),
+                    ]
+                    LazyHGrid(rows: rows) {
+                        ForEach(Stat.MainStat.allCases, id: \.self) { item in
+                            HStack {
+                                Text(item.rawValue)
+                                Text(stats.statValue(name: item.rawValue))
+                            }
+                        }
+                        .padding()
+                    }
+                    VStack {
+                        StatRowView(data: Stat.DamageStat.allCases, stats: stats)
+                        StatRowView(data: Stat.SubStat.allCases, stats: stats)
+                        StatRowView(data: Stat.ForceStat.allCases, stats: stats)
+                        StatRowView(data: Stat.CoolTimeStat.allCases, stats: stats)
+                        StatRowView(data: Stat.AttributeStat.allCases, stats: stats)
+                        StatRowView(data: Stat.OtherStat.allCases, stats: stats)
+                    }
                 }
-                VStack {
-                    StatRowView(data: Stat.DamageStat.allCases, stats: stats)
-                    StatRowView(data: Stat.SubStat.allCases, stats: stats)
-                    StatRowView(data: Stat.ForceStat.allCases, stats: stats)
-                    StatRowView(data: Stat.CoolTimeStat.allCases, stats: stats)
-                    StatRowView(data: Stat.AttributeStat.allCases, stats: stats)
-                    StatRowView(data: Stat.OtherStat.allCases, stats: stats)
-                }
+                .font(.mapleBold16)
             }
-            .font(.mapleBold16)
         }
     }
     

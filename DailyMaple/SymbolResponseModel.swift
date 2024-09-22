@@ -23,5 +23,13 @@ struct SymbolResponseModel: Decodable {
         let symbol_hp: String
         let symbol_growth_count: Int
         let symbol_require_growth_count: Int
+        
+        var symbolRegion: String {
+            return symbol_name.components(separatedBy: " : ")[0]
+        }
+        
+        var symbolCity: String {
+            return symbol_name.components(separatedBy: " : ")[1]
+        }
     }
 }

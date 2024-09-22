@@ -14,15 +14,17 @@ struct EquipmentView: View {
     @State private var selectedItem: Item?
     
     var body: some View {
-        VStack {
-            ForEach(viewModel.output.items, id: \.item_equipment_slot) { item in
-                ItemRowView(item: item)
-                    .onTapGesture {
-                        viewModel.input.selectedItem = item
-                    }
-            }
-            .sheet(item: $viewModel.input.selectedItem) { item in
-                EquipmentDetailView(item: item)
+        ScrollView {
+            VStack {
+                ForEach(viewModel.output.items, id: \.item_equipment_slot) { item in
+                    ItemRowView(item: item)
+                        .onTapGesture {
+                            viewModel.input.selectedItem = item
+                        }
+                }
+                .sheet(item: $viewModel.input.selectedItem) { item in
+                    EquipmentDetailView(item: item)
+                }
             }
         }
     }
