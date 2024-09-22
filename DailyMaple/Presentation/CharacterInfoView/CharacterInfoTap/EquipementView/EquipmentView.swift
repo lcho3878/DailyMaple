@@ -10,7 +10,7 @@ import SwiftUI
 struct EquipmentView: View {
     typealias Item = EquipmentsResponseModel.Item
     
-    @StateObject private var viewModel = EquipmentViewModel()
+    @StateObject var viewModel: EquipmentViewModel
     @State private var selectedItem: Item?
     
     var body: some View {
@@ -22,8 +22,7 @@ struct EquipmentView: View {
                     }
             }
             .sheet(item: $viewModel.input.selectedItem) { item in
-//                EquipDetailView(item: item)
-                Text(item.item_name)
+                EquipmentDetailView(item: item)
             }
         }
     }
@@ -60,5 +59,5 @@ struct EquipmentView: View {
 }
 
 #Preview {
-    EquipmentView()
+    EquipmentView(viewModel: EquipmentViewModel())
 }

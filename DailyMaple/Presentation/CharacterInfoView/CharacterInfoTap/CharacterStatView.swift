@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterStatView: View {
     typealias Stat = CharacterStatResponseModel
-    @StateObject private var viewModel = CharacterStatViewModel()
+    @StateObject var viewModel: CharacterStatViewModel
     
     var body: some View {
         if let stats = viewModel.output.stats {
@@ -61,5 +61,5 @@ struct CharacterStatView: View {
 }
 
 #Preview {
-    CharacterStatView()
+    CharacterStatView(viewModel: CharacterStatViewModel())
 }

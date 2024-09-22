@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CharacterInfoView: View {
     @StateObject private var viewModel = CharacterInfoViewModel()
+    @StateObject private var statViewModel = CharacterStatViewModel()
+    @StateObject private var equipViewModel = EquipmentViewModel()
     
     var body: some View {
         VStack {
@@ -23,7 +25,11 @@ struct CharacterInfoView: View {
             }
             .pickerStyle(.segmented)
             ScrollView {
-                CharacterInfoTapView(picker: viewModel.output.picker)
+                CharacterInfoTapView(
+                    picker: viewModel.output.picker,
+                    statViewModel: statViewModel,
+                    equipViewModel: equipViewModel
+                )
             }
         }
     }
@@ -55,12 +61,14 @@ struct CharacterInfoView: View {
     
     struct CharacterInfoTapView: View {
         let picker: CharacterInfoViewModel.TapMenu
+        let statViewModel: CharacterStatViewModel
+        let equipViewModel: EquipmentViewModel
         var body: some View {
             switch picker {
             case .character:
-                CharacterStatView()
+                CharacterStatView(viewModel: statViewModel)
             case .equipment:
-                EquipmentView()
+                EquipmentView(viewModel: equipViewModel)
             case .symbol:
                 Text(picker.rawValue)
             case .hyperStat:

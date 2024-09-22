@@ -26,6 +26,7 @@ final class EquipmentViewModel: ObservableObject {
         do {
             guard let data = MockDataManager.shared.loadData(fileName: "Items") else { return }
             let result = try JSONDecoder().decode(Items.self, from: data)
+            print("equipments load")
             output.items = result.item_equipment
         }
         catch {

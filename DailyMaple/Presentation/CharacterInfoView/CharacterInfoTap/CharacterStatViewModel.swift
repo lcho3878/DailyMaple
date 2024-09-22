@@ -18,6 +18,7 @@ final class CharacterStatViewModel: ObservableObject {
         do {
             guard let data = MockDataManager.shared.loadData(fileName: "Stats") else { return }
             let result = try JSONDecoder().decode(CharacterStatResponseModel.self, from: data)
+            print("stat Load")
             output.stats = result
         }
         catch {
