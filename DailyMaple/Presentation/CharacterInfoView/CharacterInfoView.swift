@@ -11,6 +11,7 @@ struct CharacterInfoView: View {
     @StateObject private var viewModel = CharacterInfoViewModel()
     @StateObject private var statViewModel = CharacterStatViewModel()
     @StateObject private var equipViewModel = EquipmentViewModel()
+    @StateObject private var symbolViewModel = SymbolViewModel()
     
     var body: some View {
         VStack {
@@ -28,7 +29,8 @@ struct CharacterInfoView: View {
                 CharacterInfoTapView(
                     picker: viewModel.output.picker,
                     statViewModel: statViewModel,
-                    equipViewModel: equipViewModel
+                    equipViewModel: equipViewModel,
+                    symbolViewModel: symbolViewModel
                 )
             }
         }
@@ -63,6 +65,7 @@ struct CharacterInfoView: View {
         let picker: CharacterInfoViewModel.TapMenu
         let statViewModel: CharacterStatViewModel
         let equipViewModel: EquipmentViewModel
+        let symbolViewModel: SymbolViewModel
         var body: some View {
             switch picker {
             case .character:
@@ -70,7 +73,7 @@ struct CharacterInfoView: View {
             case .equipment:
                 EquipmentView(viewModel: equipViewModel)
             case .symbol:
-                Text(picker.rawValue)
+                SymbolView(viewModel: symbolViewModel)
             case .hyperStat:
                 Text(picker.rawValue)
             }

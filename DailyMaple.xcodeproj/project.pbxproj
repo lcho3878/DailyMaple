@@ -35,6 +35,8 @@
 		5450FFE02C9FD5AF005F7D0A /* ClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFDF2C9FD5AF005F7D0A /* ClearBackground.swift */; };
 		5450FFE52C9FF6EF005F7D0A /* Symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFE32C9FF6EF005F7D0A /* Symbol.json */; };
 		5450FFE72C9FF7E0005F7D0A /* SymbolResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFE62C9FF7E0005F7D0A /* SymbolResponseModel.swift */; };
+		5450FFEA2C9FFC9E005F7D0A /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFE92C9FFC9E005F7D0A /* SymbolView.swift */; };
+		5450FFEC2C9FFCA5005F7D0A /* SymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		5450FFDF2C9FD5AF005F7D0A /* ClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackground.swift; sourceTree = "<group>"; };
 		5450FFE42C9FF6EF005F7D0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Symbol.json; sourceTree = "<group>"; };
 		5450FFE62C9FF7E0005F7D0A /* SymbolResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolResponseModel.swift; sourceTree = "<group>"; };
+		5450FFE92C9FFC9E005F7D0A /* SymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolView.swift; sourceTree = "<group>"; };
+		5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +207,7 @@
 		5450FFC72C9F1352005F7D0A /* CharacterInfoTap */ = {
 			isa = PBXGroup;
 			children = (
+				5450FFE82C9FFC97005F7D0A /* SymbolView */,
 				5450FFCF2C9FD009005F7D0A /* EquipementView */,
 				5450FFE12C9FF3DD005F7D0A /* CharacterStatView */,
 			);
@@ -251,6 +256,15 @@
 				5450FFCA2C9F136F005F7D0A /* CharacterStatViewModel.swift */,
 			);
 			path = CharacterStatView;
+			sourceTree = "<group>";
+		};
+		5450FFE82C9FFC97005F7D0A /* SymbolView */ = {
+			isa = PBXGroup;
+			children = (
+				5450FFE92C9FFC9E005F7D0A /* SymbolView.swift */,
+				5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */,
+			);
+			path = SymbolView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5450FFC02C9F0B2F005F7D0A /* Font+.swift in Sources */,
+				5450FFEC2C9FFCA5005F7D0A /* SymbolViewModel.swift in Sources */,
 				5450FF952C9EEF87005F7D0A /* ContentView.swift in Sources */,
 				5450FFD82C9FD153005F7D0A /* PropertyReflectable.swift in Sources */,
 				5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */,
@@ -346,6 +361,7 @@
 				5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */,
 				5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */,
 				5450FFD12C9FD019005F7D0A /* EquipmentView.swift in Sources */,
+				5450FFEA2C9FFC9E005F7D0A /* SymbolView.swift in Sources */,
 				5450FFC62C9F1178005F7D0A /* CharacterStatResponseModel.swift in Sources */,
 				5450FFCB2C9F136F005F7D0A /* CharacterStatViewModel.swift in Sources */,
 				5450FFD32C9FD021005F7D0A /* EquipmentViewModel.swift in Sources */,
