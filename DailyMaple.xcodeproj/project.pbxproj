@@ -31,6 +31,7 @@
 		5450FFD52C9FD090005F7D0A /* EquipmentsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFD42C9FD090005F7D0A /* EquipmentsResponseModel.swift */; };
 		5450FFD82C9FD153005F7D0A /* PropertyReflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFD72C9FD153005F7D0A /* PropertyReflectable.swift */; };
 		5450FFDA2C9FD499005F7D0A /* EquipmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFD92C9FD499005F7D0A /* EquipmentDetailView.swift */; };
+		5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		5450FFD42C9FD090005F7D0A /* EquipmentsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentsResponseModel.swift; sourceTree = "<group>"; };
 		5450FFD72C9FD153005F7D0A /* PropertyReflectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyReflectable.swift; sourceTree = "<group>"; };
 		5450FFD92C9FD499005F7D0A /* EquipmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentDetailView.swift; sourceTree = "<group>"; };
+		5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		5450FF912C9EEF87005F7D0A /* DailyMaple */ = {
 			isa = PBXGroup;
 			children = (
+				5450FFDB2C9FD52A005F7D0A /* Custom */,
 				5450FFD62C9FD14C005F7D0A /* Protocol */,
 				5450FFBE2C9F0B23005F7D0A /* Extension */,
 				5450FFBD2C9F0929005F7D0A /* Info.plist */,
@@ -217,6 +220,22 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		5450FFDB2C9FD52A005F7D0A /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				5450FFDC2C9FD538005F7D0A /* View */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		5450FFDC2C9FD538005F7D0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +323,7 @@
 				5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */,
 				5450FFD52C9FD090005F7D0A /* EquipmentsResponseModel.swift in Sources */,
 				5450FFDA2C9FD499005F7D0A /* EquipmentDetailView.swift in Sources */,
+				5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */,
 				5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */,
 				5450FFD12C9FD019005F7D0A /* EquipmentView.swift in Sources */,
 				5450FFC62C9F1178005F7D0A /* CharacterStatResponseModel.swift in Sources */,
