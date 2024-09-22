@@ -60,7 +60,7 @@ struct CharacterInfoView: View {
             case .character:
                 CharacterStatView()
             case .equipment:
-                Text(picker.rawValue)
+                EquipmentView()
             case .symbol:
                 Text(picker.rawValue)
             case .hyperStat:
