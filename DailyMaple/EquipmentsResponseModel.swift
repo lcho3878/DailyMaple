@@ -1,5 +1,5 @@
 //
-//  EquimentsResponseModel.swift
+//  EquipmentsResponseModel.swift
 //  DailyMaple
 //
 //  Created by 이찬호 on 9/22/24.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct EquimentsResponseModel: Decodable {
+struct EquipmentsResponseModel: Decodable {
     let item_equipment: [Item]
     
     struct Item: Decodable, Identifiable {
