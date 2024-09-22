@@ -31,5 +31,15 @@ struct SymbolResponseModel: Decodable {
         var symbolCity: String {
             return symbol_name.components(separatedBy: " : ")[1]
         }
+        
+        var forceName: String {
+            switch symbolRegion {
+            case "아케인심볼": "ARC"
+            case "어센틱심볼": "AUT"
+            default: "AUT"
+            }
+        }
+        
+        
     }
 }

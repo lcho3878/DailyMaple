@@ -34,6 +34,7 @@ struct CharacterInfoView: View {
                 )
 //            }
         }
+        .background(.background)
     }
     
     struct CharacterHeaderView: View {
