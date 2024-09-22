@@ -33,6 +33,7 @@
 		5450FFDA2C9FD499005F7D0A /* EquipmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFD92C9FD499005F7D0A /* EquipmentDetailView.swift */; };
 		5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */; };
 		5450FFE02C9FD5AF005F7D0A /* ClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFDF2C9FD5AF005F7D0A /* ClearBackground.swift */; };
+		5450FFE52C9FF6EF005F7D0A /* Symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFE32C9FF6EF005F7D0A /* Symbol.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		5450FFD92C9FD499005F7D0A /* EquipmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentDetailView.swift; sourceTree = "<group>"; };
 		5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackgroundView.swift; sourceTree = "<group>"; };
 		5450FFDF2C9FD5AF005F7D0A /* ClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackground.swift; sourceTree = "<group>"; };
+		5450FFE42C9FF6EF005F7D0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Symbol.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				5450FFAD2C9EF5B5005F7D0A /* Character.json */,
+				5450FFE32C9FF6EF005F7D0A /* Symbol.json */,
 				5450FFCC2C9FCF8D005F7D0A /* Items.json */,
 				5450FFC22C9F0CAA005F7D0A /* Stats.json */,
 			);
@@ -310,6 +313,7 @@
 				5450FFBA2C9F08E4005F7D0A /* Maplestory OTF Bold.otf in Resources */,
 				5450FFA22C9EF022005F7D0A /* .gitignore in Resources */,
 				5450FFCE2C9FCF8D005F7D0A /* Items.json in Resources */,
+				5450FFE52C9FF6EF005F7D0A /* Symbol.json in Resources */,
 				5450FFC42C9F0CAA005F7D0A /* Stats.json in Resources */,
 				5450FF972C9EEF88005F7D0A /* Assets.xcassets in Resources */,
 				5450FFAE2C9EF5B5005F7D0A /* Character.json in Resources */,
@@ -361,6 +365,14 @@
 				5450FFCD2C9FCF8D005F7D0A /* en */,
 			);
 			name = Items.json;
+			sourceTree = "<group>";
+		};
+		5450FFE32C9FF6EF005F7D0A /* Symbol.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5450FFE42C9FF6EF005F7D0A /* en */,
+			);
+			name = Symbol.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
