@@ -34,6 +34,7 @@
 		5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */; };
 		5450FFE02C9FD5AF005F7D0A /* ClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFDF2C9FD5AF005F7D0A /* ClearBackground.swift */; };
 		5450FFE52C9FF6EF005F7D0A /* Symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = 5450FFE32C9FF6EF005F7D0A /* Symbol.json */; };
+		5450FFE72C9FF7E0005F7D0A /* SymbolResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFE62C9FF7E0005F7D0A /* SymbolResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackgroundView.swift; sourceTree = "<group>"; };
 		5450FFDF2C9FD5AF005F7D0A /* ClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackground.swift; sourceTree = "<group>"; };
 		5450FFE42C9FF6EF005F7D0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Symbol.json; sourceTree = "<group>"; };
+		5450FFE62C9FF7E0005F7D0A /* SymbolResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				5450FFAA2C9EF551005F7D0A /* CharacterResponse.swift */,
+				5450FFE62C9FF7E0005F7D0A /* SymbolResponseModel.swift */,
 				5450FFC52C9F1178005F7D0A /* CharacterStatResponseModel.swift */,
 				5450FFD42C9FD090005F7D0A /* EquipmentsResponseModel.swift */,
 			);
@@ -337,6 +340,7 @@
 				5450FFB22C9EF6FF005F7D0A /* CharacterInfoView.swift in Sources */,
 				5450FFC92C9F1360005F7D0A /* CharacterStatView.swift in Sources */,
 				5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */,
+				5450FFE72C9FF7E0005F7D0A /* SymbolResponseModel.swift in Sources */,
 				5450FFD52C9FD090005F7D0A /* EquipmentsResponseModel.swift in Sources */,
 				5450FFDA2C9FD499005F7D0A /* EquipmentDetailView.swift in Sources */,
 				5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */,
