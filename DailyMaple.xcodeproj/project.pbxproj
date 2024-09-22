@@ -32,6 +32,7 @@
 		5450FFD82C9FD153005F7D0A /* PropertyReflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFD72C9FD153005F7D0A /* PropertyReflectable.swift */; };
 		5450FFDA2C9FD499005F7D0A /* EquipmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFD92C9FD499005F7D0A /* EquipmentDetailView.swift */; };
 		5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */; };
+		5450FFE02C9FD5AF005F7D0A /* ClearBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFDF2C9FD5AF005F7D0A /* ClearBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		5450FFD72C9FD153005F7D0A /* PropertyReflectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyReflectable.swift; sourceTree = "<group>"; };
 		5450FFD92C9FD499005F7D0A /* EquipmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentDetailView.swift; sourceTree = "<group>"; };
 		5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackgroundView.swift; sourceTree = "<group>"; };
+		5450FFDF2C9FD5AF005F7D0A /* ClearBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */,
+				5450FFDF2C9FD5AF005F7D0A /* ClearBackground.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				5450FFD82C9FD153005F7D0A /* PropertyReflectable.swift in Sources */,
 				5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */,
 				5450FFAB2C9EF551005F7D0A /* CharacterResponse.swift in Sources */,
+				5450FFE02C9FD5AF005F7D0A /* ClearBackground.swift in Sources */,
 				5450FF932C9EEF87005F7D0A /* DailyMapleApp.swift in Sources */,
 				5450FFB22C9EF6FF005F7D0A /* CharacterInfoView.swift in Sources */,
 				5450FFC92C9F1360005F7D0A /* CharacterStatView.swift in Sources */,
