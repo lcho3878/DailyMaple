@@ -30,6 +30,7 @@
 		5450FFD32C9FD021005F7D0A /* EquipmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFD22C9FD021005F7D0A /* EquipmentViewModel.swift */; };
 		5450FFD52C9FD090005F7D0A /* EquipmentsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFD42C9FD090005F7D0A /* EquipmentsResponseModel.swift */; };
 		5450FFD82C9FD153005F7D0A /* PropertyReflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFD72C9FD153005F7D0A /* PropertyReflectable.swift */; };
+		5450FFDA2C9FD499005F7D0A /* EquipmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFD92C9FD499005F7D0A /* EquipmentDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		5450FFD22C9FD021005F7D0A /* EquipmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewModel.swift; sourceTree = "<group>"; };
 		5450FFD42C9FD090005F7D0A /* EquipmentsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentsResponseModel.swift; sourceTree = "<group>"; };
 		5450FFD72C9FD153005F7D0A /* PropertyReflectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyReflectable.swift; sourceTree = "<group>"; };
+		5450FFD92C9FD499005F7D0A /* EquipmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			children = (
 				5450FFD02C9FD019005F7D0A /* EquipmentView.swift */,
 				5450FFD22C9FD021005F7D0A /* EquipmentViewModel.swift */,
+				5450FFD92C9FD499005F7D0A /* EquipmentDetailView.swift */,
 			);
 			path = EquipementView;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				5450FFC92C9F1360005F7D0A /* CharacterStatView.swift in Sources */,
 				5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */,
 				5450FFD52C9FD090005F7D0A /* EquipmentsResponseModel.swift in Sources */,
+				5450FFDA2C9FD499005F7D0A /* EquipmentDetailView.swift in Sources */,
 				5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */,
 				5450FFD12C9FD019005F7D0A /* EquipmentView.swift in Sources */,
 				5450FFC62C9F1178005F7D0A /* CharacterStatResponseModel.swift in Sources */,
