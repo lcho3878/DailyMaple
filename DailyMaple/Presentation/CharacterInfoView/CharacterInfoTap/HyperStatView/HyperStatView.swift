@@ -14,10 +14,12 @@ struct HyperStatView: View {
     var body: some View {
         ScrollView {
             Text("어빌리티")
+                .padding(.bottom)
                 .font(.mapleBold16)
             HyperPickerView(input: viewModel.input.abilityPickerInput, output: $viewModel.output.abilityPickerOutput)
             VStack {
                 Text(viewModel.output.ability.ability_preset_grade)
+                    .padding(.bottom, 5)
                 ForEach(viewModel.output.ability.ability_info, id: \.ability_no) { ability in
                     Text(ability.ability_value)
                         .foregroundStyle(ability.abilityColor)
@@ -25,6 +27,7 @@ struct HyperStatView: View {
                         .padding(.top, 5)
                 }
             }
+            .padding(.vertical, 10)
             .font(.mapleLight16)
             
             Text("하이퍼스탯")
