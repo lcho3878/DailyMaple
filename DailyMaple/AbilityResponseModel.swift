@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct AbilityResponseModel: Decodable {
     let ability_grade: String
@@ -24,6 +25,16 @@ struct AbilityResponseModel: Decodable {
             let ability_no: String
             let ability_grade: String
             let ability_value: String
+            
+            var abilityColor: Color {
+                switch ability_grade {
+                case "레어": .blue
+                case "에픽": .purple
+                case "유니크": .yellow
+                case "레전드리": .green
+                default: .black
+                }
+            }
         }
     }
 }

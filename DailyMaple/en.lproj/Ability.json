@@ -50,12 +50,12 @@
         },
         {
             "ability_no": "2",
-            "ability_grade": "에픽",
+            "ability_grade": "유니크",
             "ability_value": "상태 이상에 걸린 대상 공격 시 데미지 5% 증가"
         },
         {
             "ability_no": "3",
-            "ability_grade": "에픽",
+            "ability_grade": "레어",
             "ability_value": "아이템 드롭률 10% 증가"
         }
         ]
