@@ -37,6 +37,7 @@
 		5450FFE72C9FF7E0005F7D0A /* SymbolResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFE62C9FF7E0005F7D0A /* SymbolResponseModel.swift */; };
 		5450FFEA2C9FFC9E005F7D0A /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFE92C9FFC9E005F7D0A /* SymbolView.swift */; };
 		5450FFEC2C9FFCA5005F7D0A /* SymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */; };
+		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		5450FFE62C9FF7E0005F7D0A /* SymbolResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolResponseModel.swift; sourceTree = "<group>"; };
 		5450FFE92C9FFC9E005F7D0A /* SymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolView.swift; sourceTree = "<group>"; };
 		5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolViewModel.swift; sourceTree = "<group>"; };
+		54A2A3402CA135800099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/HyperStat.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				5450FFE32C9FF6EF005F7D0A /* Symbol.json */,
 				5450FFCC2C9FCF8D005F7D0A /* Items.json */,
 				5450FFC22C9F0CAA005F7D0A /* Stats.json */,
+				54A2A33F2CA135800099239B /* HyperStat.json */,
 			);
 			name = MockData;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			files = (
 				5450FFBC2C9F08EB005F7D0A /* Maplestory OTF Light.otf in Resources */,
 				5450FF9A2C9EEF88005F7D0A /* Preview Assets.xcassets in Resources */,
+				54A2A3412CA135800099239B /* HyperStat.json in Resources */,
 				5450FFBA2C9F08E4005F7D0A /* Maplestory OTF Bold.otf in Resources */,
 				5450FFA22C9EF022005F7D0A /* .gitignore in Resources */,
 				5450FFCE2C9FCF8D005F7D0A /* Items.json in Resources */,
@@ -393,6 +397,14 @@
 				5450FFE42C9FF6EF005F7D0A /* en */,
 			);
 			name = Symbol.json;
+			sourceTree = "<group>";
+		};
+		54A2A33F2CA135800099239B /* HyperStat.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54A2A3402CA135800099239B /* en */,
+			);
+			name = HyperStat.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
