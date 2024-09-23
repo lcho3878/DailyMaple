@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct EquipmentView: View {
     typealias Item = EquipmentsResponseModel.Item
@@ -15,6 +16,7 @@ struct EquipmentView: View {
     
     var body: some View {
         ScrollView {
+            PresetPickerView(input: viewModel.input.pickerInput, output: $viewModel.output.pickerOutput)
             VStack {
                 ForEach(viewModel.output.items, id: \.item_equipment_slot) { item in
                     ItemRowView(item: item)
@@ -56,6 +58,27 @@ struct EquipmentView: View {
                 Spacer()
             }
             .font(.custom("Maplestory OTF Bold", size: 16))
+        }
+    }
+    
+    struct PresetPickerView: View {
+        var input: PassthroughSubject<Int, Never>
+        @Binding var output: Int
+        
+        var body: some View {
+            HStack {
+                ForEach(1..<4) { num in
+                    Button(action: {
+                        input.send(num)
+//                        input.send(num)
+                    }, label: {
+                        Text("프리셋 \(num)")
+                            .foregroundStyle(Color(uiColor: output == num ? .systemBackground : .label))
+                            .background(Color(uiColor: output == num ? .label : .systemBackground))
+                            .font(.mapleBold16)
+                    })
+                }
+            }
         }
     }
 }
