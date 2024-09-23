@@ -10,6 +10,10 @@ import SwiftUI
 
 struct EquipmentsResponseModel: Decodable {
     let item_equipment: [Item]
+    let item_equipment_preset_1: [Item]
+    let item_equipment_preset_2: [Item]
+    let item_equipment_preset_3: [Item]
+    let preset_no: Int
     
     struct Item: Decodable, Identifiable {
         let id = UUID()
