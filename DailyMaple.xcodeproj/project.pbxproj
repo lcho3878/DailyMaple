@@ -42,6 +42,7 @@
 		54A2A3462CA135E00099239B /* HyperStatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3452CA135E00099239B /* HyperStatViewModel.swift */; };
 		54A2A3482CA1369B0099239B /* HyperStatResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3472CA1369B0099239B /* HyperStatResponseModel.swift */; };
 		54A2A34B2CA151F50099239B /* Ability.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A3492CA151F50099239B /* Ability.json */; };
+		54A2A34D2CA152C30099239B /* AbilityResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A34C2CA152C30099239B /* AbilityResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		54A2A3452CA135E00099239B /* HyperStatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatViewModel.swift; sourceTree = "<group>"; };
 		54A2A3472CA1369B0099239B /* HyperStatResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatResponseModel.swift; sourceTree = "<group>"; };
 		54A2A34A2CA151F50099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Ability.json; sourceTree = "<group>"; };
+		54A2A34C2CA152C30099239B /* AbilityResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				5450FFC52C9F1178005F7D0A /* CharacterStatResponseModel.swift */,
 				5450FFD42C9FD090005F7D0A /* EquipmentsResponseModel.swift */,
 				54A2A3472CA1369B0099239B /* HyperStatResponseModel.swift */,
+				54A2A34C2CA152C30099239B /* AbilityResponseModel.swift */,
 			);
 			name = ResponseModel;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				5450FFEC2C9FFCA5005F7D0A /* SymbolViewModel.swift in Sources */,
 				5450FF952C9EEF87005F7D0A /* ContentView.swift in Sources */,
 				54A2A3482CA1369B0099239B /* HyperStatResponseModel.swift in Sources */,
+				54A2A34D2CA152C30099239B /* AbilityResponseModel.swift in Sources */,
 				5450FFD82C9FD153005F7D0A /* PropertyReflectable.swift in Sources */,
 				5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */,
 				5450FFAB2C9EF551005F7D0A /* CharacterResponse.swift in Sources */,
