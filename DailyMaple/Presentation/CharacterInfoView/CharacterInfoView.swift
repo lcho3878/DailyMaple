@@ -31,7 +31,7 @@ struct CharacterInfoView: View {
                     statViewModel: statViewModel,
                     equipViewModel: equipViewModel,
                     symbolViewModel: symbolViewModel,
-                    hyperStatViewModel: HyperStatViewModel()
+                    hyperStatViewModel: hyperStatViewModel
                 )
         }
         .background(.background)
