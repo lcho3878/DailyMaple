@@ -20,11 +20,13 @@ struct HyperStatView: View {
             VStack {
                 Text(viewModel.output.ability.ability_preset_grade)
                     .padding(.bottom, 5)
-                ForEach(viewModel.output.ability.ability_info, id: \.ability_no) { ability in
-                    Text(ability.ability_value)
-                        .foregroundStyle(ability.abilityColor)
-                        
-                        .padding(.top, 5)
+                VStack(alignment: .leading) {
+                    ForEach(viewModel.output.ability.ability_info, id: \.ability_no) { ability in
+                        Text(ability.ability_value)
+                            .foregroundStyle(ability.abilityColor)
+                            
+                            .padding(.top, 5)
+                    }
                 }
             }
             .padding(.vertical, 10)
