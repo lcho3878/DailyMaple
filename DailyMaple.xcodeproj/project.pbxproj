@@ -43,6 +43,7 @@
 		54A2A3482CA1369B0099239B /* HyperStatResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3472CA1369B0099239B /* HyperStatResponseModel.swift */; };
 		54A2A34B2CA151F50099239B /* Ability.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A3492CA151F50099239B /* Ability.json */; };
 		54A2A34D2CA152C30099239B /* AbilityResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A34C2CA152C30099239B /* AbilityResponseModel.swift */; };
+		54A2A3522CA160750099239B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3512CA160750099239B /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		54A2A3472CA1369B0099239B /* HyperStatResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatResponseModel.swift; sourceTree = "<group>"; };
 		54A2A34A2CA151F50099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Ability.json; sourceTree = "<group>"; };
 		54A2A34C2CA152C30099239B /* AbilityResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityResponseModel.swift; sourceTree = "<group>"; };
+		54A2A3512CA160750099239B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		5450FFAF2C9EF6CD005F7D0A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				54A2A3502CA160570099239B /* MainTapView */,
 				5450FF942C9EEF87005F7D0A /* ContentView.swift */,
 				5450FFB02C9EF6DE005F7D0A /* CharacterInfoView */,
 			);
@@ -293,6 +296,14 @@
 			path = HyperStatView;
 			sourceTree = "<group>";
 		};
+		54A2A3502CA160570099239B /* MainTapView */ = {
+			isa = PBXGroup;
+			children = (
+				54A2A3512CA160750099239B /* MainTabView.swift */,
+			);
+			path = MainTapView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,6 +404,7 @@
 				5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */,
 				5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */,
 				5450FFD12C9FD019005F7D0A /* EquipmentView.swift in Sources */,
+				54A2A3522CA160750099239B /* MainTabView.swift in Sources */,
 				5450FFEA2C9FFC9E005F7D0A /* SymbolView.swift in Sources */,
 				5450FFC62C9F1178005F7D0A /* CharacterStatResponseModel.swift in Sources */,
 				5450FFCB2C9F136F005F7D0A /* CharacterStatViewModel.swift in Sources */,
