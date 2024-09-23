@@ -12,6 +12,7 @@ struct CharacterInfoView: View {
     @StateObject private var statViewModel = CharacterStatViewModel()
     @StateObject private var equipViewModel = EquipmentViewModel()
     @StateObject private var symbolViewModel = SymbolViewModel()
+    @StateObject private var hyperStatViewModel = HyperStatViewModel()
     
     var body: some View {
         VStack {
@@ -25,14 +26,13 @@ struct CharacterInfoView: View {
                 }
             }
             .pickerStyle(.segmented)
-//            ScrollView {
                 CharacterInfoTapView(
                     picker: viewModel.output.picker,
                     statViewModel: statViewModel,
                     equipViewModel: equipViewModel,
-                    symbolViewModel: symbolViewModel
+                    symbolViewModel: symbolViewModel,
+                    hyperStatViewModel: HyperStatViewModel()
                 )
-//            }
         }
         .background(.background)
     }
@@ -67,6 +67,7 @@ struct CharacterInfoView: View {
         let statViewModel: CharacterStatViewModel
         let equipViewModel: EquipmentViewModel
         let symbolViewModel: SymbolViewModel
+        let hyperStatViewModel: HyperStatViewModel
         var body: some View {
             switch picker {
             case .character:
@@ -76,7 +77,7 @@ struct CharacterInfoView: View {
             case .symbol:
                 SymbolView(viewModel: symbolViewModel)
             case .hyperStat:
-                Text(picker.rawValue)
+                HyperStatView(viewModel: hyperStatViewModel)
             }
         }
     }

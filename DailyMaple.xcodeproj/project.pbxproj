@@ -38,6 +38,8 @@
 		5450FFEA2C9FFC9E005F7D0A /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFE92C9FFC9E005F7D0A /* SymbolView.swift */; };
 		5450FFEC2C9FFCA5005F7D0A /* SymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */; };
 		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
+		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
+		54A2A3462CA135E00099239B /* HyperStatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3452CA135E00099239B /* HyperStatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		5450FFE92C9FFC9E005F7D0A /* SymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolView.swift; sourceTree = "<group>"; };
 		5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolViewModel.swift; sourceTree = "<group>"; };
 		54A2A3402CA135800099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/HyperStat.json; sourceTree = "<group>"; };
+		54A2A3432CA135D80099239B /* HyperStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatView.swift; sourceTree = "<group>"; };
+		54A2A3452CA135E00099239B /* HyperStatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,7 @@
 		5450FFC72C9F1352005F7D0A /* CharacterInfoTap */ = {
 			isa = PBXGroup;
 			children = (
+				54A2A3422CA135CC0099239B /* HyperStatView */,
 				5450FFE82C9FFC97005F7D0A /* SymbolView */,
 				5450FFCF2C9FD009005F7D0A /* EquipementView */,
 				5450FFE12C9FF3DD005F7D0A /* CharacterStatView */,
@@ -268,6 +273,15 @@
 				5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */,
 			);
 			path = SymbolView;
+			sourceTree = "<group>";
+		};
+		54A2A3422CA135CC0099239B /* HyperStatView */ = {
+			isa = PBXGroup;
+			children = (
+				54A2A3432CA135D80099239B /* HyperStatView.swift */,
+				54A2A3452CA135E00099239B /* HyperStatViewModel.swift */,
+			);
+			path = HyperStatView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,9 +368,11 @@
 				5450FFD82C9FD153005F7D0A /* PropertyReflectable.swift in Sources */,
 				5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */,
 				5450FFAB2C9EF551005F7D0A /* CharacterResponse.swift in Sources */,
+				54A2A3462CA135E00099239B /* HyperStatViewModel.swift in Sources */,
 				5450FFE02C9FD5AF005F7D0A /* ClearBackground.swift in Sources */,
 				5450FF932C9EEF87005F7D0A /* DailyMapleApp.swift in Sources */,
 				5450FFB22C9EF6FF005F7D0A /* CharacterInfoView.swift in Sources */,
+				54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */,
 				5450FFC92C9F1360005F7D0A /* CharacterStatView.swift in Sources */,
 				5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */,
 				5450FFE72C9FF7E0005F7D0A /* SymbolResponseModel.swift in Sources */,
