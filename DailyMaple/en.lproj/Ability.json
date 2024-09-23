@@ -1,0 +1,83 @@
+{
+    "date": null,
+    "ability_grade": "레전드리",
+    "ability_info": [
+    {
+        "ability_no": "1",
+        "ability_grade": "레전드리",
+        "ability_value": "버프 스킬의 지속 시간 50% 증가"
+    },
+    {
+        "ability_no": "2",
+        "ability_grade": "에픽",
+        "ability_value": "상태 이상에 걸린 대상 공격 시 데미지 5% 증가"
+    },
+    {
+        "ability_no": "3",
+        "ability_grade": "에픽",
+        "ability_value": "아이템 드롭률 10% 증가"
+    }
+    ],
+    "remain_fame": 257243,
+    "preset_no": 2,
+    "ability_preset_1": {
+        "ability_preset_grade": "레전드리",
+        "ability_info": [
+        {
+            "ability_no": "1",
+            "ability_grade": "레전드리",
+            "ability_value": "아이템 드롭률 20% 증가"
+        },
+        {
+            "ability_no": "2",
+            "ability_grade": "에픽",
+            "ability_value": "버프 스킬의 지속 시간 25% 증가"
+        },
+        {
+            "ability_no": "3",
+            "ability_grade": "에픽",
+            "ability_value": "메소 획득량 9% 증가"
+        }
+        ]
+    },
+    "ability_preset_2": {
+        "ability_preset_grade": "레전드리",
+        "ability_info": [
+        {
+            "ability_no": "1",
+            "ability_grade": "레전드리",
+            "ability_value": "버프 스킬의 지속 시간 50% 증가"
+        },
+        {
+            "ability_no": "2",
+            "ability_grade": "에픽",
+            "ability_value": "상태 이상에 걸린 대상 공격 시 데미지 5% 증가"
+        },
+        {
+            "ability_no": "3",
+            "ability_grade": "에픽",
+            "ability_value": "아이템 드롭률 10% 증가"
+        }
+        ]
+    },
+    "ability_preset_3": {
+        "ability_preset_grade": "레전드리",
+        "ability_info": [
+        {
+            "ability_no": "1",
+            "ability_grade": "레전드리",
+            "ability_value": "STR 35 증가, LUK 18 증가"
+        },
+        {
+            "ability_no": "2",
+            "ability_grade": "에픽",
+            "ability_value": "INT 16 증가, STR 8 증가"
+        },
+        {
+            "ability_no": "3",
+            "ability_grade": "에픽",
+            "ability_value": "LUK 15 증가, STR 8 증가"
+        }
+        ]
+    }
+}

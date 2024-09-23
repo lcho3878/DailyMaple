@@ -41,6 +41,7 @@
 		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
 		54A2A3462CA135E00099239B /* HyperStatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3452CA135E00099239B /* HyperStatViewModel.swift */; };
 		54A2A3482CA1369B0099239B /* HyperStatResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3472CA1369B0099239B /* HyperStatResponseModel.swift */; };
+		54A2A34B2CA151F50099239B /* Ability.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A3492CA151F50099239B /* Ability.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		54A2A3432CA135D80099239B /* HyperStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatView.swift; sourceTree = "<group>"; };
 		54A2A3452CA135E00099239B /* HyperStatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatViewModel.swift; sourceTree = "<group>"; };
 		54A2A3472CA1369B0099239B /* HyperStatResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatResponseModel.swift; sourceTree = "<group>"; };
+		54A2A34A2CA151F50099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Ability.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				5450FFCC2C9FCF8D005F7D0A /* Items.json */,
 				5450FFC22C9F0CAA005F7D0A /* Stats.json */,
 				54A2A33F2CA135800099239B /* HyperStat.json */,
+				54A2A3492CA151F50099239B /* Ability.json */,
 			);
 			name = MockData;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				54A2A3412CA135800099239B /* HyperStat.json in Resources */,
 				5450FFBA2C9F08E4005F7D0A /* Maplestory OTF Bold.otf in Resources */,
 				5450FFA22C9EF022005F7D0A /* .gitignore in Resources */,
+				54A2A34B2CA151F50099239B /* Ability.json in Resources */,
 				5450FFCE2C9FCF8D005F7D0A /* Items.json in Resources */,
 				5450FFE52C9FF6EF005F7D0A /* Symbol.json in Resources */,
 				5450FFC42C9F0CAA005F7D0A /* Stats.json in Resources */,
@@ -425,6 +429,14 @@
 				54A2A3402CA135800099239B /* en */,
 			);
 			name = HyperStat.json;
+			sourceTree = "<group>";
+		};
+		54A2A3492CA151F50099239B /* Ability.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54A2A34A2CA151F50099239B /* en */,
+			);
+			name = Ability.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
