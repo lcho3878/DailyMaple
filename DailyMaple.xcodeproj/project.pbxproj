@@ -44,6 +44,7 @@
 		54A2A34B2CA151F50099239B /* Ability.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A3492CA151F50099239B /* Ability.json */; };
 		54A2A34D2CA152C30099239B /* AbilityResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A34C2CA152C30099239B /* AbilityResponseModel.swift */; };
 		54A2A3522CA160750099239B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3512CA160750099239B /* MainTabView.swift */; };
+		54AD5FD32CA2BE1A0033D2C2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54AD5FD22CA2BE1A0033D2C2 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54AD5FD32CA2BE1A0033D2C2 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +322,9 @@
 			dependencies = (
 			);
 			name = DailyMaple;
+			packageProductDependencies = (
+				54AD5FD22CA2BE1A0033D2C2 /* RealmSwift */,
+			);
 			productName = DailyMaple;
 			productReference = 5450FF8F2C9EEF87005F7D0A /* DailyMaple.app */;
 			productType = "com.apple.product-type.application";
@@ -348,6 +353,9 @@
 				Base,
 			);
 			mainGroup = 5450FF862C9EEF87005F7D0A;
+			packageReferences = (
+				54AD5FD12CA2BE1A0033D2C2 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 5450FF902C9EEF87005F7D0A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -659,6 +667,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		54AD5FD12CA2BE1A0033D2C2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.54.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54AD5FD22CA2BE1A0033D2C2 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54AD5FD12CA2BE1A0033D2C2 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5450FF872C9EEF87005F7D0A /* Project object */;
 }
