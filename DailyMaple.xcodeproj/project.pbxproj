@@ -193,7 +193,6 @@
 			children = (
 				54A2A3502CA160570099239B /* MainTapView */,
 				5450FF942C9EEF87005F7D0A /* ContentView.swift */,
-				5450FFB02C9EF6DE005F7D0A /* CharacterInfoView */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -205,7 +204,8 @@
 				5450FFB12C9EF6FF005F7D0A /* CharacterInfoView.swift */,
 				5450FFB32C9EF706005F7D0A /* CharacterInfoViewModel.swift */,
 			);
-			path = CharacterInfoView;
+			name = CharacterInfoView;
+			path = ../CharacterInfoView;
 			sourceTree = "<group>";
 		};
 		5450FFB82C9F08C6005F7D0A /* Font */ = {
@@ -301,6 +301,7 @@
 		54A2A3502CA160570099239B /* MainTapView */ = {
 			isa = PBXGroup;
 			children = (
+				5450FFB02C9EF6DE005F7D0A /* CharacterInfoView */,
 				54A2A3512CA160750099239B /* MainTabView.swift */,
 			);
 			path = MainTapView;
