@@ -64,13 +64,12 @@ struct EquipmentView: View {
     struct PresetPickerView: View {
         var input: PassthroughSubject<Int, Never>
         @Binding var output: Int
-        
+            
         var body: some View {
             HStack {
                 ForEach(1..<4) { num in
                     Button(action: {
                         input.send(num)
-//                        input.send(num)
                     }, label: {
                         Text("프리셋 \(num)")
                             .foregroundStyle(Color(uiColor: output == num ? .systemBackground : .label))
