@@ -63,6 +63,7 @@ struct DailyQuestView: View {
             }
             .task {
                 if quest.isComplete && quest.endDate < Date() {
+                if quest.endDate < Date() {
                     let realm = try! Realm()
                     try! realm.write({
                         quest.thaw()?.endDate = Date().nextDay()
