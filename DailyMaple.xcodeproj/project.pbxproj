@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5436F7B02CA42BAB0038FA95 /* DailyQuestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436F7AF2CA42BAB0038FA95 /* DailyQuestListView.swift */; };
+		5436F7B42CA46CD90038FA95 /* StrokeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436F7B32CA46CD90038FA95 /* StrokeText.swift */; };
 		5450FF932C9EEF87005F7D0A /* DailyMapleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FF922C9EEF87005F7D0A /* DailyMapleApp.swift */; };
 		5450FF952C9EEF87005F7D0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FF942C9EEF87005F7D0A /* ContentView.swift */; };
 		5450FF972C9EEF88005F7D0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5450FF962C9EEF88005F7D0A /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		5436F7AF2CA42BAB0038FA95 /* DailyQuestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuestListView.swift; sourceTree = "<group>"; };
+		5436F7B32CA46CD90038FA95 /* StrokeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeText.swift; sourceTree = "<group>"; };
 		5450FF8F2C9EEF87005F7D0A /* DailyMaple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyMaple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5450FF922C9EEF87005F7D0A /* DailyMapleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMapleApp.swift; sourceTree = "<group>"; };
 		5450FF942C9EEF87005F7D0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			children = (
 				5450FFDD2C9FD56C005F7D0A /* ClearBackgroundView.swift */,
 				5450FFDF2C9FD5AF005F7D0A /* ClearBackground.swift */,
+				5436F7B32CA46CD90038FA95 /* StrokeText.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */,
 				5450FFD12C9FD019005F7D0A /* EquipmentView.swift in Sources */,
 				54A2A3522CA160750099239B /* MainTabView.swift in Sources */,
+				5436F7B42CA46CD90038FA95 /* StrokeText.swift in Sources */,
 				5450FFEA2C9FFC9E005F7D0A /* SymbolView.swift in Sources */,
 				5436F7B02CA42BAB0038FA95 /* DailyQuestListView.swift in Sources */,
 				5450FFC62C9F1178005F7D0A /* CharacterStatResponseModel.swift in Sources */,
