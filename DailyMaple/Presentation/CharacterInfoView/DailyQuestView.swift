@@ -12,21 +12,42 @@ struct DailyQuestView: View {
     @ObservedResults(DailyQuest.self)
     private var dailyQuest
     
-    @State private var testText = ""
+    @State private var inputText = ""
+    @State private var fixedText = ""
     
     var body: some View {
-        List {
-            TextField("일일퀘스트 입력", text: $testText)
-                .onSubmit {
-                    guard !testText.isEmpty else { return }
-                    let quest = DailyQuest(title: testText, endDate: Date().nextDay(), isComplete: false)
-                    $dailyQuest.append(quest)
-                    testText = ""
+        NavigationView {
+            VStack {
+                HStack {
+                    NavigationLink {
+                        DailyQuestListView(selectedText: $fixedText)
+                    } label: {
+                        Image(systemName: "plus")
+                            .background(.red)
+                        //                        EmptyView()
+                    }
+                    TextField("일일퀘스트 입력", text: $inputText)
+                        .onSubmit {
+                            guard !inputText.isEmpty else { return }
+                            let quest = DailyQuest(title: inputText, endDate: Date().nextDay(), isComplete: false)
+                            $dailyQuest.append(quest)
+                            inputText = ""
+                        }
                 }
-            ForEach(dailyQuest, id: \.id) { quest in
-                QuestRowView(quest: quest)
+                ForEach(dailyQuest, id: \.id) { quest in
+                    QuestRowView(quest: quest)
+                }
             }
+            .padding()
         }
+        .onChange(of: fixedText, perform: { value in
+            guard !value.isEmpty else { return }
+            let quest = DailyQuest(title: value, endDate: Date().nextDay(), isComplete: false)
+            $dailyQuest.append(quest)
+            fixedText = ""
+        })
+        
+        .font(.mapleLight16)
     }
     
     struct QuestRowView: View {
