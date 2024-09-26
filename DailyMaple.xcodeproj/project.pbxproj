@@ -219,7 +219,7 @@
 			children = (
 				5450FFAD2C9EF5B5005F7D0A /* Character.json */,
 				5450FFE32C9FF6EF005F7D0A /* Symbol.json */,
-				546499822CA559500027CA60 /* Events.json */,
+				546499922CA5C31E0027CA60 /* Notice */,
 				5450FFCC2C9FCF8D005F7D0A /* Items.json */,
 				5450FFC22C9F0CAA005F7D0A /* Stats.json */,
 				54A2A33F2CA135800099239B /* HyperStat.json */,
@@ -340,6 +340,14 @@
 				5464998A2CA55E4B0027CA60 /* EventViewModel.swift */,
 			);
 			path = EventView;
+			sourceTree = "<group>";
+		};
+		546499922CA5C31E0027CA60 /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				546499822CA559500027CA60 /* Events.json */,
+			);
+			name = Notice;
 			sourceTree = "<group>";
 		};
 		54A2A3422CA135CC0099239B /* HyperStatView */ = {
