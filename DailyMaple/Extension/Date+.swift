@@ -30,4 +30,10 @@ extension Date {
         Date.formatter.locale = Locale(identifier: "ko_KR")
         return Date.formatter.string(from: self)
     }
+    
+    public func asString(format: String) -> String {
+        Date.formatter.dateFormat = format
+        Date.formatter.locale = Locale(identifier: "ko_KR")
+        return Date.formatter.string(from: self)
+    }
 }
