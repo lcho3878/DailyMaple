@@ -10,7 +10,7 @@ import Foundation
 struct EventsResponseModel: Decodable {
     let event_notice: [Event]
     
-    struct Event: Decodable {
+    struct Event: Decodable, Eventable {
         let title: String
         let url: String
         let notice_id: Int
@@ -26,7 +26,7 @@ struct EventsResponseModel: Decodable {
             return date_event_start.toDateString(format: "y-M-d(E)")
         }
         
-        var endDate: String {
+        var endDate: String? {
             return date_event_end.toDateString(format: "y-M-d(E)")
         }
     }
