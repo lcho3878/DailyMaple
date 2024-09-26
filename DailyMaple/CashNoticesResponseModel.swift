@@ -15,8 +15,8 @@ struct CashNoticesResponseModel: Decodable {
         let url: String
         let notice_id: Int
         let date: String
-        let date_sale_start: String
-        let date_sale_end: String
-        let ongoing_flag: Bool
+        let date_sale_start: String?
+        let date_sale_end: String?
+        let ongoing_flag: String
     }
 }
