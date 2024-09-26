@@ -1,0 +1,100 @@
+{
+    "event_notice": [
+        {
+            "title": "티르노그 해시태그",
+            "url": "https://maplestory.nexon.com/News/Event/1017",
+            "notice_id": 1017,
+            "date": "2024-09-12T09:03+09:00",
+            "date_event_start": "2024-09-12T10:00+09:00",
+            "date_event_end": "2024-10-16T23:59+09:00"
+        },
+        {
+            "title": "프리미엄PC방 접속 보상 이벤트",
+            "url": "https://maplestory.nexon.com/News/Event/1016",
+            "notice_id": 1016,
+            "date": "2024-09-12T09:03+09:00",
+            "date_event_start": "2024-09-13T00:00+09:00",
+            "date_event_end": "2024-10-17T23:59+09:00"
+        },
+        {
+            "title": "(수정) 챔피언 버닝",
+            "url": "https://maplestory.nexon.com/News/Event/1007",
+            "notice_id": 1007,
+            "date": "2024-08-13T09:08+09:00",
+            "date_event_start": "2024-08-13T13:15+09:00",
+            "date_event_end": "2024-10-16T23:59+09:00"
+        },
+        {
+            "title": "티르노그 설계도",
+            "url": "https://maplestory.nexon.com/News/Event/1005",
+            "notice_id": 1005,
+            "date": "2024-08-13T09:08+09:00",
+            "date_event_start": "2024-08-13T13:15+09:00",
+            "date_event_end": "2024-10-16T23:59+09:00"
+        },
+        {
+            "title": "고브의 선물",
+            "url": "https://maplestory.nexon.com/News/Event/1004",
+            "notice_id": 1004,
+            "date": "2024-08-13T09:08+09:00",
+            "date_event_start": "2024-08-13T13:15+09:00",
+            "date_event_end": "2024-10-16T23:59+09:00"
+        },
+        {
+            "title": "견습 로봇 놀이터",
+            "url": "https://maplestory.nexon.com/News/Event/1002",
+            "notice_id": 1002,
+            "date": "2024-08-13T09:08+09:00",
+            "date_event_start": "2024-08-13T13:15+09:00",
+            "date_event_end": "2024-10-16T23:59+09:00"
+        },
+        {
+            "title": "차원 태엽 교환소",
+            "url": "https://maplestory.nexon.com/News/Event/1000",
+            "notice_id": 1000,
+            "date": "2024-08-13T09:08+09:00",
+            "date_event_start": "2024-08-13T13:15+09:00",
+            "date_event_end": "2024-10-20T23:59+09:00"
+        },
+        {
+            "title": "챌린지 & 더블 업 코인샵",
+            "url": "https://maplestory.nexon.com/News/Event/999",
+            "notice_id": 999,
+            "date": "2024-08-13T09:08+09:00",
+            "date_event_start": "2024-08-13T13:15+09:00",
+            "date_event_end": "2024-10-20T23:59+09:00"
+        },
+        {
+            "title": "하이퍼 버닝",
+            "url": "https://maplestory.nexon.com/News/Event/980",
+            "notice_id": 980,
+            "date": "2024-06-20T08:33+09:00",
+            "date_event_start": "2024-06-20T11:00+09:00",
+            "date_event_end": "2024-10-16T23:59+09:00"
+        },
+        {
+            "title": "(수정2) 아이템 버닝",
+            "url": "https://maplestory.nexon.com/News/Event/979",
+            "notice_id": 979,
+            "date": "2024-06-20T08:33+09:00",
+            "date_event_start": "2024-06-20T11:00+09:00",
+            "date_event_end": "2024-10-16T23:59+09:00"
+        },
+        {
+            "title": "(수정) 버닝 월드",
+            "url": "https://maplestory.nexon.com/News/Event/978",
+            "notice_id": 978,
+            "date": "2024-06-20T08:33+09:00",
+            "date_event_start": "2024-06-20T11:00+09:00",
+            "date_event_end": "2024-10-30T23:59+09:00"
+        },
+        {
+            "title": "테라 블링크",
+            "url": "https://maplestory.nexon.com/News/Event/973",
+            "notice_id": 973,
+            "date": "2024-06-20T08:33+09:00",
+            "date_event_start": "2024-06-20T11:00+09:00",
+            "date_event_end": "2024-10-16T23:59+09:00"
+        }
+    ]
+}
