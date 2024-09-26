@@ -17,5 +17,17 @@ struct EventsResponseModel: Decodable {
         let date: String
         let date_event_start: String
         let date_event_end: String
+        
+        var mobileURL: String {
+            return url.replacingOccurrences(of: "https://", with: "https://m.")
+        }
+        
+        var startDate: String {
+            return date_event_start.toDateString(format: "y-M-d(E)")
+        }
+        
+        var endDate: String {
+            return date_event_end.toDateString(format: "y-M-d(E)")
+        }
     }
 }
