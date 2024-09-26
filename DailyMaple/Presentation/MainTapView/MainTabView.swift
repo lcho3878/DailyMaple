@@ -16,7 +16,7 @@ struct MainTabView: View {
                     Text("캐릭터 정보")
                 }
             VStack {
-                Text("Event View")
+                EventView()
             }
             .tabItem {
                 Image(systemName: "calendar")
