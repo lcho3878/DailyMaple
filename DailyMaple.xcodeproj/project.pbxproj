@@ -40,6 +40,7 @@
 		5450FFEA2C9FFC9E005F7D0A /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFE92C9FFC9E005F7D0A /* SymbolView.swift */; };
 		5450FFEC2C9FFCA5005F7D0A /* SymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */; };
 		546499842CA559500027CA60 /* Events.json in Resources */ = {isa = PBXBuildFile; fileRef = 546499822CA559500027CA60 /* Events.json */; };
+		546499862CA55D530027CA60 /* EventsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499852CA55D530027CA60 /* EventsResponseModel.swift */; };
 		548EBECC2CA3F42700FDC295 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EBECB2CA3F42700FDC295 /* Date+.swift */; };
 		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
 		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
@@ -104,6 +105,7 @@
 		5450FFE92C9FFC9E005F7D0A /* SymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolView.swift; sourceTree = "<group>"; };
 		5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolViewModel.swift; sourceTree = "<group>"; };
 		546499832CA559500027CA60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Events.json; sourceTree = "<group>"; };
+		546499852CA55D530027CA60 /* EventsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResponseModel.swift; sourceTree = "<group>"; };
 		548EBECB2CA3F42700FDC295 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		54A2A3402CA135800099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/HyperStat.json; sourceTree = "<group>"; };
 		54A2A3432CA135D80099239B /* HyperStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatView.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				5450FFD42C9FD090005F7D0A /* EquipmentsResponseModel.swift */,
 				54A2A3472CA1369B0099239B /* HyperStatResponseModel.swift */,
 				54A2A34C2CA152C30099239B /* AbilityResponseModel.swift */,
+				546499852CA55D530027CA60 /* EventsResponseModel.swift */,
 			);
 			name = ResponseModel;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */,
 				5450FFAB2C9EF551005F7D0A /* CharacterResponse.swift in Sources */,
 				54A2A3462CA135E00099239B /* HyperStatViewModel.swift in Sources */,
+				546499862CA55D530027CA60 /* EventsResponseModel.swift in Sources */,
 				5450FFE02C9FD5AF005F7D0A /* ClearBackground.swift in Sources */,
 				5450FF932C9EEF87005F7D0A /* DailyMapleApp.swift in Sources */,
 				5450FFB22C9EF6FF005F7D0A /* CharacterInfoView.swift in Sources */,
