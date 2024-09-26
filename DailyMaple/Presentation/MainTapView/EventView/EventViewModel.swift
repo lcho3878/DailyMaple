@@ -16,11 +16,11 @@ final class EventViewModel: ObservableObject {
     }
     
     init() {
-        print("event VM init")
         guard let data = MockDataManager.shared.loadData(fileName: "Events") else { return }
         do {
             let result = try JSONDecoder().decode(EventsResponseModel.self, from: data)
             output.events = result.event_notice
+            print("Events Data Load")
         }
         catch {
             print("Evnet Error")
