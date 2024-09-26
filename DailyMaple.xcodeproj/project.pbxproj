@@ -41,6 +41,8 @@
 		5450FFEC2C9FFCA5005F7D0A /* SymbolViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */; };
 		546499842CA559500027CA60 /* Events.json in Resources */ = {isa = PBXBuildFile; fileRef = 546499822CA559500027CA60 /* Events.json */; };
 		546499862CA55D530027CA60 /* EventsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499852CA55D530027CA60 /* EventsResponseModel.swift */; };
+		546499892CA55E400027CA60 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499882CA55E400027CA60 /* EventView.swift */; };
+		5464998B2CA55E4B0027CA60 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5464998A2CA55E4B0027CA60 /* EventViewModel.swift */; };
 		548EBECC2CA3F42700FDC295 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EBECB2CA3F42700FDC295 /* Date+.swift */; };
 		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
 		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
@@ -106,6 +108,8 @@
 		5450FFEB2C9FFCA5005F7D0A /* SymbolViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolViewModel.swift; sourceTree = "<group>"; };
 		546499832CA559500027CA60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Events.json; sourceTree = "<group>"; };
 		546499852CA55D530027CA60 /* EventsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResponseModel.swift; sourceTree = "<group>"; };
+		546499882CA55E400027CA60 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		5464998A2CA55E4B0027CA60 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		548EBECB2CA3F42700FDC295 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		54A2A3402CA135800099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/HyperStat.json; sourceTree = "<group>"; };
 		54A2A3432CA135D80099239B /* HyperStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatView.swift; sourceTree = "<group>"; };
@@ -323,6 +327,15 @@
 			path = SymbolView;
 			sourceTree = "<group>";
 		};
+		546499872CA55E320027CA60 /* EventView */ = {
+			isa = PBXGroup;
+			children = (
+				546499882CA55E400027CA60 /* EventView.swift */,
+				5464998A2CA55E4B0027CA60 /* EventViewModel.swift */,
+			);
+			path = EventView;
+			sourceTree = "<group>";
+		};
 		54A2A3422CA135CC0099239B /* HyperStatView */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +348,7 @@
 		54A2A3502CA160570099239B /* MainTapView */ = {
 			isa = PBXGroup;
 			children = (
+				546499872CA55E320027CA60 /* EventView */,
 				5450FFB02C9EF6DE005F7D0A /* CharacterInfoView */,
 				54AD5FDD2CA2C3B50033D2C2 /* QuestView */,
 				54A2A3512CA160750099239B /* MainTabView.swift */,
@@ -450,6 +464,7 @@
 				5450FFC02C9F0B2F005F7D0A /* Font+.swift in Sources */,
 				5450FFEC2C9FFCA5005F7D0A /* SymbolViewModel.swift in Sources */,
 				5450FF952C9EEF87005F7D0A /* ContentView.swift in Sources */,
+				5464998B2CA55E4B0027CA60 /* EventViewModel.swift in Sources */,
 				54A2A3482CA1369B0099239B /* HyperStatResponseModel.swift in Sources */,
 				54A2A34D2CA152C30099239B /* AbilityResponseModel.swift in Sources */,
 				5450FFD82C9FD153005F7D0A /* PropertyReflectable.swift in Sources */,
@@ -471,6 +486,7 @@
 				5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */,
 				5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */,
 				5450FFD12C9FD019005F7D0A /* EquipmentView.swift in Sources */,
+				546499892CA55E400027CA60 /* EventView.swift in Sources */,
 				54A2A3522CA160750099239B /* MainTabView.swift in Sources */,
 				5436F7B42CA46CD90038FA95 /* StrokeText.swift in Sources */,
 				5450FFEA2C9FFC9E005F7D0A /* SymbolView.swift in Sources */,
