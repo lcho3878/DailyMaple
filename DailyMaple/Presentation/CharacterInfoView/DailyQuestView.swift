@@ -92,7 +92,7 @@ struct DailyQuestView: View {
             $dailyQuest.append(quest)
             fixedText = ""
         })
-        .font(.mapleLight16)
+        .font(.mapleLight(16))
     }
     
     struct QuestEmptyView: View {

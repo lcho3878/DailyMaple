@@ -18,7 +18,7 @@ struct CharacterInfoView: View {
         VStack {
             if let character = viewModel.output.character {
                 CharacterHeaderView(character: character)
-                    .font(.mapleBold16)
+                    .font(.mapleBold(16))
             }
             Picker("Menu", selection: $viewModel.output.picker) {
                 ForEach(CharacterInfoViewModel.TapMenu.allCases, id: \.self) {

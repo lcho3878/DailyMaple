@@ -15,7 +15,7 @@ struct HyperStatView: View {
         ScrollView {
             Text("어빌리티")
                 .padding(.bottom)
-                .font(.mapleBold16)
+                .font(.mapleBold(16))
             HyperPickerView(input: viewModel.input.abilityPickerInput, output: $viewModel.output.abilityPickerOutput)
             VStack {
                 Text(viewModel.output.ability.ability_preset_grade)
@@ -30,11 +30,11 @@ struct HyperStatView: View {
                 }
             }
             .padding(.vertical, 10)
-            .font(.mapleLight16)
+            .font(.mapleLight(16))
             
             Text("하이퍼스탯")
                 .padding(.vertical)
-                .font(.mapleBold16)
+                .font(.mapleBold(16))
             HyperPickerView(input: viewModel.input.hyperPickerInput, output: $viewModel.output.hyperPickerOutput)
                 .padding(.bottom, 5)
             VStack(alignment: .leading) {
@@ -44,7 +44,7 @@ struct HyperStatView: View {
                             Text("Lv.\(item.stat_level)")
                             Text(statIncrease)
                         }
-                        .font(.mapleLight14)
+                        .font(.mapleLight(14))
                         .padding(.bottom, 5)
                         
                     }
@@ -68,7 +68,7 @@ struct HyperStatView: View {
                         Text("프리셋 \(num)")
                             .foregroundStyle(Color(uiColor: output == num ? .systemBackground : .label))
                             .background(Color(uiColor: output == num ? .label : .systemBackground))
-                            .font(.mapleBold16)
+                            .font(.mapleBold(16))
                     })
                 }
             }

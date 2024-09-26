@@ -33,7 +33,7 @@ struct EquipmentDetailView: View {
                     }
                     VStack(alignment: .leading) {
                         ItemOptionView(item: item)
-                           .font(.mapleLight16)
+                           .font(.mapleBold(16))
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
@@ -180,7 +180,7 @@ struct EquipmentDetailView: View {
         let item: Item
         var body: some View {
             Text("\(item.item_name) \(item.scrollUpgrade)")
-                .font(.mapleBold16)
+                .font(.mapleBold(16))
             HStack {
                 Text("(")
                 if let grade = item.potential_option_grade {
@@ -192,7 +192,7 @@ struct EquipmentDetailView: View {
                 Text("Lv.\(item.item_base_option.base_equipment_level) / \(item.item_equipment_part)")
                 Text(")")
             }
-            .font(.mapleLight16)
+            .font(.mapleLight(16))
         }
     }
     

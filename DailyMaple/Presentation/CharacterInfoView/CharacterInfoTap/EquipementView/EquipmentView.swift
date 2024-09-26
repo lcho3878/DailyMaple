@@ -74,7 +74,7 @@ struct EquipmentView: View {
                         Text("프리셋 \(num)")
                             .foregroundStyle(Color(uiColor: output == num ? .systemBackground : .label))
                             .background(Color(uiColor: output == num ? .label : .systemBackground))
-                            .font(.mapleBold16)
+                            .font(.mapleBold(16))
                     })
                 }
             }

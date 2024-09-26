@@ -31,7 +31,7 @@ struct SymbolView: View {
                             }
                         }
                     }
-                    .font(.mapleBold16)
+                    .font(.mapleBold(16))
                 }
             }
             .padding(.horizontal)
@@ -65,7 +65,7 @@ struct SymbolView: View {
                 .padding()
                 .background(.background)
                 .clipShape(.rect(cornerRadius: 30))
-                .font(.mapleLight16)
+                .font(.mapleLight(16))
             }
         }
         .onTapGesture {

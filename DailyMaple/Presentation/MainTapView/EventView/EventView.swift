@@ -52,14 +52,14 @@ struct EventView: View {
                 } label: {
                     VStack(alignment:. leading, spacing: 10) {
                         Text(event.title)
-                            .font(.mapleBold16)
+                            .font(.mapleBold(16))
                         HStack {
                             Text(event.startDate)
                             if let endDate = event.endDate {
                                 Text(" ~ \(endDate)")
                             }
                         }
-                        .font(.mapleLight14)
+                        .font(.mapleLight(14))
                     }
                 }
             }
