@@ -52,6 +52,7 @@
 		5464999F2CA5C6CC0027CA60 /* UpdatesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5464999E2CA5C6CC0027CA60 /* UpdatesResponseModel.swift */; };
 		546499A12CA5C7330027CA60 /* CashNoticesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499A02CA5C7330027CA60 /* CashNoticesResponseModel.swift */; };
 		546499BF2CA5D54C0027CA60 /* Eventable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499BE2CA5D54C0027CA60 /* Eventable.swift */; };
+		546499C12CA5ED400027CA60 /* StatProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499C02CA5ED400027CA60 /* StatProtocol.swift */; };
 		548EBECC2CA3F42700FDC295 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EBECB2CA3F42700FDC295 /* Date+.swift */; };
 		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
 		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
@@ -128,6 +129,7 @@
 		5464999E2CA5C6CC0027CA60 /* UpdatesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesResponseModel.swift; sourceTree = "<group>"; };
 		546499A02CA5C7330027CA60 /* CashNoticesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashNoticesResponseModel.swift; sourceTree = "<group>"; };
 		546499BE2CA5D54C0027CA60 /* Eventable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eventable.swift; sourceTree = "<group>"; };
+		546499C02CA5ED400027CA60 /* StatProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProtocol.swift; sourceTree = "<group>"; };
 		548EBECB2CA3F42700FDC295 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		54A2A3402CA135800099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/HyperStat.json; sourceTree = "<group>"; };
 		54A2A3432CA135D80099239B /* HyperStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatView.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				5450FFD72C9FD153005F7D0A /* PropertyReflectable.swift */,
+				546499C02CA5ED400027CA60 /* StatProtocol.swift */,
 				546499BE2CA5D54C0027CA60 /* Eventable.swift */,
 			);
 			path = Protocol;
@@ -522,6 +525,7 @@
 				54AD5FDF2CA2C3CB0033D2C2 /* DailyQuestView.swift in Sources */,
 				5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */,
 				5450FFE72C9FF7E0005F7D0A /* SymbolResponseModel.swift in Sources */,
+				546499C12CA5ED400027CA60 /* StatProtocol.swift in Sources */,
 				5450FFD52C9FD090005F7D0A /* EquipmentsResponseModel.swift in Sources */,
 				5450FFDA2C9FD499005F7D0A /* EquipmentDetailView.swift in Sources */,
 				54AD5FE42CA2C4510033D2C2 /* DailyQuest.swift in Sources */,
