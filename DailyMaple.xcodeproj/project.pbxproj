@@ -58,6 +58,7 @@
 		546499C72CA6D15F0027CA60 /* QuestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499C62CA6D15F0027CA60 /* QuestHeader.swift */; };
 		546499CB2CA70F490027CA60 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499CA2CA70F490027CA60 /* RealmManager.swift */; };
 		546499CD2CA719660027CA60 /* QuestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499CC2CA719660027CA60 /* QuestObject.swift */; };
+		546499D42CA721F30027CA60 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 546499D32CA721F30027CA60 /* Alamofire */; };
 		548EBECC2CA3F42700FDC295 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EBECB2CA3F42700FDC295 /* Date+.swift */; };
 		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
 		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
@@ -158,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54AD5FD32CA2BE1A0033D2C2 /* RealmSwift in Frameworks */,
+				546499D42CA721F30027CA60 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +448,7 @@
 			name = DailyMaple;
 			packageProductDependencies = (
 				54AD5FD22CA2BE1A0033D2C2 /* RealmSwift */,
+				546499D32CA721F30027CA60 /* Alamofire */,
 			);
 			productName = DailyMaple;
 			productReference = 5450FF8F2C9EEF87005F7D0A /* DailyMaple.app */;
@@ -477,6 +480,7 @@
 			mainGroup = 5450FF862C9EEF87005F7D0A;
 			packageReferences = (
 				54AD5FD12CA2BE1A0033D2C2 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				546499D22CA721F20027CA60 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 5450FF902C9EEF87005F7D0A /* Products */;
 			projectDirPath = "";
@@ -863,6 +867,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		546499D22CA721F20027CA60 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		54AD5FD12CA2BE1A0033D2C2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -874,6 +886,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		546499D32CA721F30027CA60 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 546499D22CA721F20027CA60 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		54AD5FD22CA2BE1A0033D2C2 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 54AD5FD12CA2BE1A0033D2C2 /* XCRemoteSwiftPackageReference "realm-swift" */;
