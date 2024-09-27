@@ -40,8 +40,8 @@ final class CharacterInfoViewModel: ObservableObject {
 extension CharacterInfoViewModel {
     enum TapMenu: String, CaseIterable {
         case character = "캐릭터 정보"
-        case equipment = "장비 정보"
-        case symbol = "심볼 정보"
-        case hyperStat = "하이퍼스탯 정보"
+        case hyperStat = "하이퍼스탯 / 어빌리티"
+        case equipment = "장비"
+        case symbol = "심볼"
     }
 }
