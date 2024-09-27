@@ -35,6 +35,7 @@ struct CharacterStatView: View {
                     .background(Color(hex: 0x8694a0))
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     VStack {
+                        StatPowerView(name: "스탯 공격력", value: "\(stats.statValue(name: "최소 스탯공격력")) ~ \(stats.statValue(name: "최대 스탯공격력"))")
                         StatRowView(data: Stat.DamageStat.allCases, stats: stats)
                         StatRowView(data: Stat.SubStat.allCases, stats: stats)
                         
@@ -85,6 +86,22 @@ struct CharacterStatView: View {
                 Text(value)
                     .foregroundStyle(Color(hex: 0xe5eef4))
             }
+        }
+    }
+    
+    struct StatPowerView: View {
+        let name: String
+        let value: String
+        var body: some View {
+            HStack {
+                Text(name)
+                    .foregroundStyle(Color(hex: 0xcad6db))
+                    .shadow(color: .black, radius: 1, x: 1, y: 1)
+                Spacer()
+                Text(value)
+                .foregroundColor(.white)
+            }
+            .padding()
         }
     }
     
