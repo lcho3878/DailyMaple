@@ -1,6 +1,14 @@
 {
     "event_notice": [
         {
+            "title": "썬데이 메이플",
+            "url": "https://maplestory.nexon.com/News/Event/1021",
+            "notice_id": 1021,
+            "date": "2024-09-27T10:00+09:00",
+            "date_event_start": "2024-09-29T00:00+09:00",
+            "date_event_end": "2024-09-29T23:59+09:00"
+        },
+        {
             "title": "티르노그 해시태그",
             "url": "https://maplestory.nexon.com/News/Event/1017",
             "notice_id": 1017,
