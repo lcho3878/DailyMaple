@@ -9,4 +9,5 @@ import Foundation
 
 protocol QuestHeader {
     static var header: String { get }
+    var isOn: Bool { get }
 }
