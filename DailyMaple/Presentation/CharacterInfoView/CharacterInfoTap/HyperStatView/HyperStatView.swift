@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 struct HyperStatView: View {
     @StateObject var viewModel: HyperStatViewModel
@@ -18,7 +17,7 @@ struct HyperStatView: View {
                     .padding(.bottom)
                     .foregroundColor(.legendary)
                     .font(.mapleBold(16))
-                    PickerView(input: viewModel.input.abilityPickerInput, output: $viewModel.output.abilityPickerOutput)
+                    PresetPickerView(input: viewModel.input.abilityPickerInput, output: $viewModel.output.abilityPickerOutput)
                     AbilityContentView(viewModel: viewModel)
                 
             }
@@ -75,7 +74,7 @@ struct HyperStatView: View {
                     .padding(.bottom)
                     .foregroundColor(.legendary)
                     .font(.mapleBold(16))
-                PickerView(input: viewModel.input.hyperPickerInput, output: $viewModel.output.hyperPickerOutput)
+                PresetPickerView(input: viewModel.input.hyperPickerInput, output: $viewModel.output.hyperPickerOutput)
                     .padding(.bottom, 5)
                 VStack(alignment: .leading) {
                     ForEach(viewModel.output.hyperStats, id: \.stat_type) { item in
@@ -85,9 +84,7 @@ struct HyperStatView: View {
                                     .foregroundStyle(Color(hex: 0xcad6db))
                                     .shadow(color: .black, radius: 1, x: 1, y: 1)
                                 Spacer()
-    //                            HStack(spacing: 0) {
                                     Text("Lv. \(item.stat_level)")
-    //                            }
                                 .foregroundColor(.white)
                             }
                             .font(.mapleBold(16))
@@ -102,33 +99,6 @@ struct HyperStatView: View {
             .clipShape(RoundedRectangle(cornerRadius: 16))
         }
     }
-    
-    struct PickerView: View {
-        var input: PassthroughSubject<Int, Never>
-        @Binding var output: Int
-        
-        var body: some View {
-            HStack {
-                Text("PRESETS")
-                ForEach(1..<4) { num in
-                    Button(action: {
-                        input.send(num)
-                    }, label: {
-                        Text("\(num)")
-                            .frame(width: 20, height: 20)
-                            .foregroundStyle(.white)
-                            .background(output == num ? .black : Color.infoBackground)
-                            .border(output == num ? .white : .black, width: 1)
-                            .font(.mapleBold(16))
-                    })
-                }
-            }
-            .padding(5)
-            .background(Color(hex: 0x646f7c))
-            .clipShape(RoundedRectangle(cornerRadius: 8))
-        }
-    }
-    
 }
 
 #Preview {
