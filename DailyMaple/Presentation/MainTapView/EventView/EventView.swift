@@ -14,32 +14,29 @@ struct EventView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Picker("Menu", selection: $viewModel.output.pickerOutput) {
-                    ForEach(EventViewModel.TapMenu.allCases, id: \.self) {
-                        Text($0.rawValue)
+            List {
+                Section {
+                    switch viewModel.output.pickerOutput {
+                    case .notices:
+                        EventListView(data: viewModel.output.notices)
+                    case .updates:
+                        EventListView(data: viewModel.output.updates)
+                    case .events:
+                        EventListView(data: viewModel.output.events)
+                    case .cashNotices:
+                        EventListView(data: viewModel.output.cashNotices)
                     }
-                }
-                .pickerStyle(.segmented)
-                
-                List {
-                    Section {
-                        switch viewModel.output.pickerOutput {
-                        case .notices:
-                            EventListView(data: viewModel.output.notices)
-                        case .updates:
-                            EventListView(data: viewModel.output.updates)
-                        case .events:
-                            EventListView(data: viewModel.output.events)
-                        case .cashNotices:
-                            EventListView(data: viewModel.output.cashNotices)
+                } header: {
+                    Picker("Menu", selection: $viewModel.output.pickerOutput) {
+                        ForEach(EventViewModel.TapMenu.allCases, id: \.self) {
+                            Text($0.rawValue)
                         }
-                    } header: {
-                        Text(viewModel.output.pickerOutput.rawValue)
                     }
-
+                    .pickerStyle(.segmented)
+                    .padding(.vertical)
                 }
             }
+            .listStyle(.grouped)
         }
     }
     
@@ -47,9 +44,7 @@ struct EventView: View {
         let data: [Eventable]
         var body: some View {
             ForEach(data, id: \.notice_id) { event in
-                NavigationLink {
-                    WebView(urlToLoad: event.mobileURL)
-                } label: {
+                HStack {
                     VStack(alignment:. leading, spacing: 10) {
                         Text(event.title)
                             .font(.mapleBold(16))
@@ -61,7 +56,15 @@ struct EventView: View {
                         }
                         .font(.mapleLight(14))
                     }
+                    NavigationLink {
+                        WebView(urlToLoad: event.mobileURL)
+                    } label: {
+                        EmptyView()
+                    }
+                    .frame(width: 0)
+                          .opacity(0)
                 }
+                
             }
         }
     }
