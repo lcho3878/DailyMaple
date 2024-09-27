@@ -65,7 +65,7 @@ struct CharacterStatResponseModel: Decodable {
         var tailString: String? {
             switch self {
             case .power, .charm: return nil
-            case .ignoreERA, .criticalChance, .criticalDamage: return "&"
+            case .ignoreERA, .criticalChance, .criticalDamage: return "%"
             }
         }
     }
