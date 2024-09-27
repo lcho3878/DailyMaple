@@ -21,6 +21,16 @@ struct AbilityResponseModel: Decodable {
         let ability_preset_grade: String
         let ability_info: [AbilityInfo]
         
+        var abilityColor: Color {
+            switch ability_preset_grade {
+            case "레어": .rare
+            case "에픽": .epic
+            case "유니크": .unique
+            case "레전드리": .legendary
+            default: .black
+            }
+        }
+        
         struct AbilityInfo: Decodable {
             let ability_no: String
             let ability_grade: String
@@ -28,10 +38,10 @@ struct AbilityResponseModel: Decodable {
             
             var abilityColor: Color {
                 switch ability_grade {
-                case "레어": .blue
-                case "에픽": .purple
-                case "유니크": .yellow
-                case "레전드리": .green
+                case "레어": .rare
+                case "에픽": .epic
+                case "유니크": .unique
+                case "레전드리": .legendary
                 default: .black
                 }
             }
