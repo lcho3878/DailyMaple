@@ -17,4 +17,12 @@ extension Color {
             opacity: alpha
         )
     }
+    
+    static let rare = Color(hex: 0x0099c3)
+    static let epic = Color(hex: 0x7859bc)
+    static let unique = Color(hex: 0xddaf01)
+    static let legendary = Color(hex: 0x8ebb0b)
+    
+    static let infoBackground = Color(hex: 0x323842)
+    static let statBackground = Color(hex: 0x86949f)
 }
