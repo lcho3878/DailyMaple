@@ -6,50 +6,72 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct DailyQuestListView: View {
-    @Binding var selectedText: String
+    @ObservedResults(DailyQuest.self)
+    var dailyQuest
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         List {
-            ListView(selectedText: $selectedText, data: ArcaneRegion.allCases) {
-                dismiss()
+            ListView(data: MonsterPark.allCases) { item in
+                addItem(item.rawValue)
             }
-            ListView(selectedText: $selectedText, data: TenebrisRegion.allCases) {
-                dismiss()
+            ListView(data: ArcaneRegion.allCases) { item in
+                addItem(item.rawValue)
             }
-            ListView(selectedText: $selectedText, data: AuthenticRegion.allCases) {
-                dismiss()
+            ListView(data: TenebrisRegion.allCases) { item in
+                addItem(item.rawValue)
+            }
+            ListView(data: AuthenticRegion.allCases) { item in
+                addItem(item.rawValue)
             }
         }
+        .listStyle(.grouped)
     }
     
     struct ListView<T>: View where T: RawRepresentable, T: CaseIterable, T.RawValue == String, T: QuestHeader {
-        @Binding var selectedText: String
         let data : [T]
-        let handler: () -> Void
+        let handler: (T) -> Void
         var body: some View {
             Section {
                 ForEach(data, id: \.rawValue) { item in
-                    HStack {
-                        Text(item.rawValue)
-                        Spacer()
+                    Button() {
+                        handler(item)
+                    } label: {
+                        HStack {
+                            Text(item.rawValue)
+                            Text(item.isOn ? "등록완료" : "등록하기")
+                                .foregroundStyle(.white)
+                                .background(item.isOn ? .blue : .gray)
+                        }
                     }
-                    .contentShape(.rect)
-                    .onTapGesture {
-                        selectedText = item.rawValue
-                        handler()
-                    }
+                    .foregroundColor(.black)
                 }
             } header: {
                 Text(T.header)
             }
         }
     }
+    
+    private func addItem(_ title: String) {
+        RealmManager.shared.updateObject(DailyQuest.self, key: title)
+    }
 }
 
 extension DailyQuestListView {
+    
+    private enum MonsterPark: String, CaseIterable, QuestHeader {
+        case monsterPark = "몬스터 파크"
+        case extremeMonsterPark = "익스트림 몬스터 파크"
+        
+        static var header = "아케인 리버"
+        var isOn: Bool {
+            guard let object = RealmManager.shared.getObject(DailyQuest.self, key: self.rawValue) else { return false }
+            return object.isOn
+        }
+    }
     
     private enum ArcaneRegion: String, CaseIterable, QuestHeader {
         case vanishingJourney = "소멸의 여로"
@@ -60,6 +82,10 @@ extension DailyQuestListView {
         case esfera = "에스페라"
         
         static var header = "아케인 리버"
+        var isOn: Bool {
+            guard let object = RealmManager.shared.getObject(DailyQuest.self, key: self.rawValue) else { return false }
+            return object.isOn
+        }
     }
     
     private enum TenebrisRegion: String, CaseIterable, QuestHeader {
@@ -68,6 +94,10 @@ extension DailyQuestListView {
         case limen = "리멘"
         
         static var header = "테네브리스"
+        var isOn: Bool {
+            guard let object = RealmManager.shared.getObject(DailyQuest.self, key: self.rawValue) else { return false }
+            return object.isOn
+        }
     }
     
     private enum AuthenticRegion: String, CaseIterable, QuestHeader {
@@ -79,6 +109,10 @@ extension DailyQuestListView {
         case karcion = "카르시온"
         
         static var header = "그란디스 대륙"
+        var isOn: Bool {
+            guard let object = RealmManager.shared.getObject(DailyQuest.self, key: self.rawValue) else { return false }
+            return object.isOn
+        }
     }
     
 }

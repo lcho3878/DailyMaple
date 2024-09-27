@@ -13,7 +13,6 @@ struct DailyQuestView: View {
     private var dailyQuest
     
     @State private var inputText = ""
-    @State private var fixedText = ""
     @State private var isModifying = false
     
     var body: some View {
@@ -21,7 +20,7 @@ struct DailyQuestView: View {
             VStack {
                 HStack {
                     NavigationLink {
-                        DailyQuestListView(selectedText: $fixedText)
+                        DailyQuestListView()
                     } label: {
                         Image(systemName: "plus.circle.fill")
                     }
@@ -29,13 +28,13 @@ struct DailyQuestView: View {
                         .padding(.vertical)
                         .onSubmit {
                             guard !inputText.isEmpty else { return }
-                            let quest = DailyQuest(title: inputText, endDate: Date().nextDay(), isComplete: false)
+                            let quest = DailyQuest(title: inputText)
                             $dailyQuest.append(quest)
                             inputText = ""
                         }
                     Button(action: {
                         guard !inputText.isEmpty else { return }
-                        let quest = DailyQuest(title: inputText, endDate: Date().nextDay(), isComplete: false)
+                        let quest = DailyQuest(title: inputText)
                         $dailyQuest.append(quest)
                         inputText = ""
                     }, label: {
@@ -46,28 +45,41 @@ struct DailyQuestView: View {
                 ScrollView {
                     VStack(alignment: .leading) {
                         StrokeText(text: "수행 가능한 퀘스트", width: 1, color: .red)
-                        //                            .foregroundColor(.white)
                         if dailyQuest.isEmpty {
                             QuestEmptyView(content: "수행 가능한 퀘스트가 없습니다.\n퀘스트를 추가해보세요!")
                         }
-                        else if dailyQuest.filter({ !$0.isComplete }).isEmpty {
+                        else if dailyQuest.filter({ $0.isOn && !$0.isComplete }).isEmpty {
                             QuestEmptyView(content: "모든 퀘스트를 완료했습니다.")
                         }
                         else {
-                            ForEach(dailyQuest.filter { !$0.isComplete }, id: \.id) { quest in
+                            ForEach(dailyQuest.filter { $0.isOn && !$0.isComplete }, id: \.id) { quest in
                                 QuestRowView(quest: quest, isModifying: $isModifying) {
                                     print("삭제 \($0.title)")
                                     $dailyQuest.remove($0)
+                                }
+                            }
+                            .task {
+                                dailyQuest.filter {  $0.isOn && !$0.isComplete }.forEach { quest in
+                                    if quest.endDate < Date() {
+                                        RealmManager.shared.updateDailyQuest(quest)
+                                    }
                                 }
                             }
                         }
                         
                         StrokeText(text: "완료한 퀘스트", width: 1, color: .black)
                             .padding(.vertical, 5)
-                        ForEach(dailyQuest.filter { $0.isComplete }, id: \.id) { quest in
+                        ForEach(dailyQuest.filter { $0.isOn && $0.isComplete }, id: \.id) { quest in
                             QuestRowView(quest: quest, isModifying: $isModifying) {
                                 print("삭제 \($0.title)")
                                 $dailyQuest.remove($0)
+                            }
+                        }
+                        .task {
+                            dailyQuest.filter { $0.isOn && $0.isComplete }.forEach { quest in
+                                if quest.endDate < Date() {
+                                    RealmManager.shared.updateDailyQuest(quest)
+                                }
                             }
                         }
                     }
@@ -86,11 +98,8 @@ struct DailyQuestView: View {
                 }
             })
         }
-        .onChange(of: fixedText, perform: { value in
-            guard !value.isEmpty else { return }
-            let quest = DailyQuest(title: value, endDate: Date().nextDay(), isComplete: false)
-            $dailyQuest.append(quest)
-            fixedText = ""
+        .onAppear(perform: {
+            RealmManager.shared.printRealmURL()
         })
         .font(.mapleLight(16))
     }
@@ -113,7 +122,7 @@ struct DailyQuestView: View {
         let onDelete: (DailyQuest) -> Void
         var body: some View {
             HStack {
-                Image(systemName: quest.isComplete ? "checkmark.circle" : "arrowshape.right.fill" )
+                Image(systemName: quest.isComplete ? "checkmark.circle.fill" : "arrowshape.right.fill" )
                     .foregroundColor(.blue)
                 Text("[일간] \(quest.title)")
                     .foregroundStyle(quest.isComplete ? Color(red: 74/255, green: 11/255, blue: 163/255) : .blue)
@@ -132,15 +141,6 @@ struct DailyQuestView: View {
                 }
             }
             .padding(.vertical, 5)
-            .task {
-                if quest.endDate < Date() {
-                    let realm = try! Realm()
-                    try! realm.write({
-                        quest.thaw()?.endDate = Date().nextDay()
-                        quest.thaw()?.isComplete = false
-                    })
-                }
-            }
         }
         
         struct CompleteButton: View {
