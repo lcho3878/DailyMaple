@@ -58,6 +58,7 @@ struct EquipmentView: View {
                 }
                 Spacer()
             }
+            .contentShape(.rect)
             .font(.mapleBold(16))
         }
     }

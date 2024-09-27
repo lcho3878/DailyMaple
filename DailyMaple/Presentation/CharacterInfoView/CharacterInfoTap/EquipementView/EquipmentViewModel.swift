@@ -49,6 +49,7 @@ final class EquipmentViewModel: ObservableObject {
         input.pickerInput
             .sink { [weak self] num in
                 guard let self, let result = self.output.result else { return }
+                output.pickerOutput = num
                 switch num {
                 case 1: output.items = result.item_equipment_preset_1
                 case 2: output.items = result.item_equipment_preset_2
