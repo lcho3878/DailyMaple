@@ -25,18 +25,22 @@ struct DailyQuestListView: View {
         }
     }
     
-    struct ListView<T>: View where T: RawRepresentable, T: CaseIterable, T.RawValue == String, T: Headable {
+    struct ListView<T>: View where T: RawRepresentable, T: CaseIterable, T.RawValue == String, T: QuestHeader {
         @Binding var selectedText: String
         let data : [T]
         let handler: () -> Void
         var body: some View {
             Section {
                 ForEach(data, id: \.rawValue) { item in
-                    Text(item.rawValue)
-                        .onTapGesture {
-                            selectedText = item.rawValue
-                            handler()
-                        }
+                    HStack {
+                        Text(item.rawValue)
+                        Spacer()
+                    }
+                    .contentShape(.rect)
+                    .onTapGesture {
+                        selectedText = item.rawValue
+                        handler()
+                    }
                 }
             } header: {
                 Text(T.header)
@@ -47,7 +51,7 @@ struct DailyQuestListView: View {
 
 extension DailyQuestListView {
     
-    private enum ArcaneRegion: String, CaseIterable, Headable {
+    private enum ArcaneRegion: String, CaseIterable, QuestHeader {
         case vanishingJourney = "소멸의 여로"
         case chuChuIsland = "츄츄 아일랜드"
         case lachelein = "레헬른"
@@ -58,7 +62,7 @@ extension DailyQuestListView {
         static var header = "아케인 리버"
     }
     
-    private enum TenebrisRegion: String, CaseIterable, Headable {
+    private enum TenebrisRegion: String, CaseIterable, QuestHeader {
         case moonbridge = "문브릿지"
         case labyrinthOfSuffering = "고통의 미궁"
         case limen = "리멘"
@@ -66,7 +70,7 @@ extension DailyQuestListView {
         static var header = "테네브리스"
     }
     
-    private enum AuthenticRegion: String, CaseIterable, Headable {
+    private enum AuthenticRegion: String, CaseIterable, QuestHeader {
         case cernium = "세르니움"
         case arcs = "아르크스"
         case odium = "오디움"
@@ -79,11 +83,7 @@ extension DailyQuestListView {
     
 }
 
-protocol Headable {
-    static var header: String { get }
-}
-
 #Preview {
-//    DailyQuestView()
-    ContentView()
+    DailyQuestView()
+    //    ContentView()
 }
