@@ -17,7 +17,6 @@ struct CharacterStatView: View {
                 VStack {
                     VStack(spacing: 5) {
                         PowerView(power: stats.statValue(name: "전투력"))
-//                        Text("스탯 공격력 \(stats.statValue(name: "최소 스탯공격력")) ~ \(stats.statValue(name: "최대 스탯공격력"))")
                     }
                     .font(.mapleBold(20))
                     let columns = [
