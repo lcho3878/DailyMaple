@@ -8,16 +8,17 @@
 import Foundation
 import RealmSwift
 
-final class DailyQuest: Object, ObjectKeyIdentifiable {
-    @Persisted(primaryKey: true) var id: ObjectId
-    @Persisted var title: String
+final class DailyQuest: Object, ObjectKeyIdentifiable, QuestObject {
+    @Persisted(primaryKey: true) var title: String
     @Persisted var endDate: Date
     @Persisted var isComplete: Bool
+    @Persisted var isOn: Bool
     
-    convenience init(title: String, endDate: Date , isComplete: Bool) {
+    convenience init(title: String) {
         self.init()
         self.title = title
-        self.endDate = endDate
-        self.isComplete = isComplete
+        self.endDate = Date().nextDay()
+        self.isComplete = false
+        self.isOn = true
     }
 }
