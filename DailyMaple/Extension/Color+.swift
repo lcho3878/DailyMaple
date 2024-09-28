@@ -25,4 +25,5 @@ extension Color {
     
     static let infoBackground = Color(hex: 0x323842)
     static let statBackground = Color(hex: 0x86949f)
+    static let statTitle = Color(hex: 0xcad6db)
 }
