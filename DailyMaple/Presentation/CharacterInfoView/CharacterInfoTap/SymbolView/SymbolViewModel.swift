@@ -28,14 +28,32 @@ final class SymbolViewModel: ObservableObject {
     }
     
     init() {
+        // Mock Data
+        loadSymbolMockData()
+        
+        // Real API Request with TestOcid
+//        callTestRequest()
+    }
+}
+
+extension SymbolViewModel {
+    private func loadSymbolMockData() {
         do {
             guard let data = MockDataManager.shared.loadData(fileName: "Symbol") else { return }
             let result = try JSONDecoder().decode(SymbolResponseModel.self, from: data)
-            print("Symbol Info Load")
+            print("Symbol Mock Load")
             output.symbols = result.symbol
         }
-        catch{
+        catch {
             print("Error(Character Info): \(error)")
+        }
+    }
+    
+    private func loadSymbolData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .characterSymbol(ocid: APIKey.blackOcid), type: SymbolResponseModel.self)
+            print("Symbol APIData Load")
+            output.symbols = result.symbol
         }
     }
 }

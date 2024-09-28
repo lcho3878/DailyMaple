@@ -32,66 +32,90 @@ final class HyperStatViewModel: ObservableObject {
     }
     
     init() {
-        do {
-            guard let data = MockDataManager.shared.loadData(fileName: "HyperStat") else { return }
-            let hyperStatResult = try JSONDecoder().decode(HyperStatResponseModel.self, from: data)
-            output.hyperPickerOutput = Int(hyperStatResult.use_preset_no)!
-            switch output.hyperPickerOutput {
-            case 1: output.hyperStats = hyperStatResult.hyper_stat_preset_1
-            case 2: output.hyperStats = hyperStatResult.hyper_stat_preset_2
-            case 3: output.hyperStats = hyperStatResult.hyper_stat_preset_3
-            default: break
-            }
-            output.hyperStatResult = hyperStatResult
-            print("Load hyperstat")
-        }
-        catch {
-            
-        }
-        do {
-            guard let data = MockDataManager.shared.loadData(fileName: "Ability") else { return }
-            let abilityResult = try JSONDecoder().decode(AbilityResponseModel.self, from: data)
-            output.abilityPickerOutput = abilityResult.preset_no
-            switch output.abilityPickerOutput {
-            case 1: output.ability = abilityResult.ability_preset_1
-            case 2: output.ability = abilityResult.ability_preset_2
-            case 3: output.ability = abilityResult.ability_preset_3
-            default: break
-            }
-            output.abilityResult = abilityResult
-//            output.result = result
-            print("Ability hyperstat")
-        }
-        catch {
-            
-        }
+        loadAbilityMockData()
+        loadHyperStatMockData()
         
-        input.hyperPickerInput
-            .sink { [weak self] picker in
-                guard let self else { return }
-                self.output.hyperPickerOutput = picker
-                guard let result = self.output.hyperStatResult else { return }
-                switch output.hyperPickerOutput {
-                case 1: output.hyperStats = result.hyper_stat_preset_1
-                case 2: output.hyperStats = result.hyper_stat_preset_2
-                case 3: output.hyperStats = result.hyper_stat_preset_3
-                default: break
-                }
-            }
-            .store(in: &cancellables)
+//        callAbilityRequestTest()
+//        callHyperStatRequestTest()
         
         input.abilityPickerInput
             .sink { [weak self] picker in
-                guard let self else { return }
-                self.output.abilityPickerOutput = picker
-                guard let result = self.output.abilityResult else { return }
-                switch output.abilityPickerOutput {
-                case 1: output.ability = result.ability_preset_1
-                case 2: output.ability = result.ability_preset_2
-                case 3: output.ability = result.ability_preset_3
-                default: break
-                }
+                guard let self, let result = self.output.abilityResult else { return }
+                switchingAbilityPreset(picker, result: result)
             }
             .store(in: &cancellables)
+        
+        input.hyperPickerInput
+            .sink { [weak self] picker in
+                guard let self, let result = self.output.hyperStatResult else { return }
+                switchingHyperStatPreset(picker, result: result)
+            }
+            .store(in: &cancellables)
+    }
+}
+
+extension HyperStatViewModel {
+    private func loadAbilityMockData() {
+        do {
+            guard let data = MockDataManager.shared.loadData(fileName: "Ability") else { return }
+            let result = try JSONDecoder().decode(AbilityResponseModel.self, from: data)
+            print("Ability Mock Load")
+            output.abilityResult = result
+            switchingAbilityPreset(result.preset_no, result: result)
+        }
+        catch {
+            print("Error(Ability Info): \(error)")
+        }
+    }
+    
+    private func loadHyperStatMockData() {
+        do {
+            guard let data = MockDataManager.shared.loadData(fileName: "HyperStat") else { return }
+            let result = try JSONDecoder().decode(HyperStatResponseModel.self, from: data)
+            print("HyperStat Mock Load")
+            output.hyperStatResult = result
+            switchingHyperStatPreset(Int(result.use_preset_no)!, result: result)
+        }
+        catch {
+            print("Error(HyperStat Info): \(error)")
+        }
+    }
+    
+    private func loadAbilityData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .characterAbility(ocid: APIKey.fakerOcid), type: AbilityResponseModel.self)
+            print("Ability APIData Load")
+            output.abilityResult = result
+            switchingAbilityPreset(result.preset_no, result: result)
+        }
+    }
+    
+    private func loadHyperStatData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .characterHyperStat(ocid: APIKey.fakerOcid), type: HyperStatResponseModel.self)
+            print("HyperStat APIData Load")
+            output.hyperStatResult = result
+            switchingHyperStatPreset(Int(result.use_preset_no)!, result: result)
+        }
+    }
+    
+    private func switchingAbilityPreset(_ num: Int, result: AbilityResponseModel) {
+        output.abilityPickerOutput = num
+        switch output.abilityPickerOutput {
+        case 1: output.ability = result.ability_preset_1
+        case 2: output.ability = result.ability_preset_2
+        case 3: output.ability = result.ability_preset_3
+        default: break
+        }
+    }
+    
+    private func switchingHyperStatPreset(_ num: Int, result: HyperStatResponseModel) {
+        output.hyperPickerOutput = num
+        switch output.hyperPickerOutput {
+        case 1: output.hyperStats = result.hyper_stat_preset_1
+        case 2: output.hyperStats = result.hyper_stat_preset_2
+        case 3: output.hyperStats = result.hyper_stat_preset_3
+        default: break
+        }
     }
 }

@@ -11,6 +11,11 @@ import Alamofire
 enum Router {
     case ocid(query: String)
     case characterBasic(ocid: String)
+    case characterStat(ocid: String)
+    case characterHyperStat(ocid: String)
+    case characterEquipment(ocid: String)
+    case characterSymbol(ocid: String)
+    case characterAbility(ocid: String)
 }
 
 extension Router: TargetType {
@@ -29,6 +34,16 @@ extension Router: TargetType {
             return "/id"
         case .characterBasic:
             return "/character/basic"
+        case .characterStat:
+            return "/character/stat"
+        case .characterHyperStat:
+            return "/character/hyper-stat"
+        case .characterEquipment:
+            return "character/item-equipment"
+        case .characterSymbol:
+            return "character/symbol-equipment"
+        case .characterAbility:
+            return "character/ability"
         }
     }
     
@@ -46,7 +61,12 @@ extension Router: TargetType {
         switch self {
         case .ocid(let nick):
             return [URLQueryItem(name: "character_name", value: nick)]
-        case .characterBasic(let ocid):
+        case .characterBasic(let ocid),
+                .characterStat(let ocid),
+                .characterHyperStat(let ocid),
+                .characterEquipment(let ocid),
+                .characterSymbol(let ocid),
+                .characterAbility(let ocid):
             return [URLQueryItem(name: "ocid", value: ocid)]
         }
     }

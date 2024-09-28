@@ -26,10 +26,10 @@ final class EventViewModel: ObservableObject {
     }
     
     init() {
-        loadEvents()
-        loadNotices()
-        loadUpdates()
-        loadCashNotices()
+        loadEventMockData()
+        loadNoticeMockData()
+        loadUpdateMockData()
+        loadEventMockData()
     }
 }
 
@@ -43,7 +43,7 @@ extension EventViewModel {
 }
 
 extension EventViewModel {
-    private func loadEvents() {
+    private func loadEventMockData() {
         guard let data = MockDataManager.shared.loadData(fileName: "Events") else { return }
         do {
             let result = try JSONDecoder().decode(EventsResponseModel.self, from: data)
@@ -55,7 +55,7 @@ extension EventViewModel {
         }
     }
     
-    private func loadNotices() {
+    private func loadNoticeMockData() {
         guard let data = MockDataManager.shared.loadData(fileName: "Notices") else { return }
         do {
             let result = try JSONDecoder().decode(NoticesResponseModel.self, from: data)
@@ -67,7 +67,7 @@ extension EventViewModel {
         }
     }
     
-    private func loadUpdates() {
+    private func loadUpdateMockData() {
         guard let data = MockDataManager.shared.loadData(fileName: "Updates") else { return }
         do {
             let result = try JSONDecoder().decode(UpdatesResponseModel.self, from: data)
@@ -79,7 +79,7 @@ extension EventViewModel {
         }
     }
     
-    private func loadCashNotices() {
+    private func loadCashMockData() {
         guard let data = MockDataManager.shared.loadData(fileName: "Cash") else { return }
         do {
             let result = try JSONDecoder().decode(CashNoticesResponseModel.self, from: data)
