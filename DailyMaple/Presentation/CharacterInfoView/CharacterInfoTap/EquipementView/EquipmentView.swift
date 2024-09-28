@@ -30,6 +30,7 @@ struct EquipmentView: View {
                 }
             }
         }
+        .background(Color.infoBackground)
     }
     
     struct ItemRowView: View {
@@ -58,6 +59,7 @@ struct EquipmentView: View {
                 }
                 Spacer()
             }
+            .foregroundColor(.statTitle)
             .contentShape(.rect)
             .font(.mapleBold(16))
         }
