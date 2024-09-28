@@ -16,63 +16,69 @@ struct SymbolView: View {
     
     var body: some View {
         let columns = Array(repeating: GridItem(.flexible(minimum: 10, maximum: UIScreen.main.bounds.width / 6)), count: 6)
-        VStack {
-            LazyVGrid(columns: columns) {
-                ForEach(Region.allCases, id: \.rawValue) { region in
-                    Section(region.rawValue) {
-                        ForEach(region.symbols(symbols: viewModel.output.symbols), id: \.symbolCity) { symbol in
-                            VStack {
-                                SymbolRowView(symbol: symbol, selectedSymbol: $selectedSymbol)
-                                    .onTapGesture {
-                                        withAnimation {
-                                            selectedSymbol = symbol
+        ScrollView {
+            VStack {
+                LazyVGrid(columns: columns) {
+                    ForEach(Region.allCases, id: \.rawValue) { region in
+                        Section(region.rawValue) {
+                            ForEach(region.symbols(symbols: viewModel.output.symbols), id: \.symbolCity) { symbol in
+                                VStack {
+                                    SymbolRowView(symbol: symbol, selectedSymbol: $selectedSymbol)
+                                        .onTapGesture {
+                                            withAnimation {
+                                                selectedSymbol = symbol
+                                            }
                                         }
-                                    }
+                                }
                             }
                         }
+                        .font(.mapleBold(16))
                     }
-                    .font(.mapleBold(16))
+                    .foregroundStyle(.white)
+                    .padding(.vertical)
+                }
+                .padding(.horizontal)
+                Spacer()
+            }
+            .background(Color.infoBackground)
+            .background(selectedSymbol == nil ? .clear : .black.opacity(0.5))
+            .background(ClearBackground())
+            .overlay {
+                if let symbol = selectedSymbol {
+                    VStack(alignment: .leading) {
+                        Text(symbol.symbol_name)
+                        Text("성장 레벨: \(symbol.symbol_level)")
+                        Text("성장치 : \(symbol.symbol_growth_count)/\(symbol.symbol_require_growth_count)")
+                        Text("\(symbol.forceName): +\(symbol.symbol_force)")
+                        if symbol.symbol_str != "0" {
+                            Text("STR: +\(symbol.symbol_str)")
+                        }
+                        if symbol.symbol_dex != "0" {
+                            Text("DEX: +\(symbol.symbol_dex)")
+                        }
+                        if symbol.symbol_int != "0" {
+                            Text("INT: +\(symbol.symbol_int)")
+                        }
+                        if symbol.symbol_luk != "0" {
+                            Text("LUK: +\(symbol.symbol_luk)")
+                        }
+                        if symbol.symbol_str != "0" {
+                            Text("HP: +\(symbol.symbol_str)")
+                        }
+                    }
+                    .padding()
+                    .background(.background)
+                    .clipShape(.rect(cornerRadius: 30))
+                    .font(.mapleLight(16))
                 }
             }
-            .padding(.horizontal)
-            Spacer()
-        }
-        .background(selectedSymbol == nil ? Color(uiColor: .systemBackground) : .black.opacity(0.5))
-        .background(ClearBackground())
-        .overlay {
-            if let symbol = selectedSymbol {
-                VStack(alignment: .leading) {
-                    Text(symbol.symbol_name)
-                    Text("성장 레벨: \(symbol.symbol_level)")
-                    Text("성장치 : \(symbol.symbol_growth_count)/\(symbol.symbol_require_growth_count)")
-                    Text("\(symbol.forceName): +\(symbol.symbol_force)")
-                    if symbol.symbol_str != "0" {
-                        Text("STR: +\(symbol.symbol_str)")
-                    }
-                    if symbol.symbol_dex != "0" {
-                        Text("DEX: +\(symbol.symbol_dex)")
-                    }
-                    if symbol.symbol_int != "0" {
-                        Text("INT: +\(symbol.symbol_int)")
-                    }
-                    if symbol.symbol_luk != "0" {
-                        Text("LUK: +\(symbol.symbol_luk)")
-                    }
-                    if symbol.symbol_str != "0" {
-                        Text("HP: +\(symbol.symbol_str)")
-                    }
+            .onTapGesture {
+                withAnimation {
+                    selectedSymbol = nil
                 }
-                .padding()
-                .background(.background)
-                .clipShape(.rect(cornerRadius: 30))
-                .font(.mapleLight(16))
             }
         }
-        .onTapGesture {
-            withAnimation {
-                selectedSymbol = nil
-            }
-        }
+       
         
     }
     
