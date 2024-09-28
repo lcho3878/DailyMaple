@@ -16,6 +16,10 @@ enum Router {
     case characterEquipment(ocid: String)
     case characterSymbol(ocid: String)
     case characterAbility(ocid: String)
+    case notices
+    case updates
+    case events
+    case cashUpdates
 }
 
 extension Router: TargetType {
@@ -44,6 +48,14 @@ extension Router: TargetType {
             return "character/symbol-equipment"
         case .characterAbility:
             return "character/ability"
+        case .notices:
+            return "notice"
+        case .updates:
+            return "notice-update"
+        case .events:
+            return "notice-event"
+        case .cashUpdates:
+            return "notice-cashshop"
         }
     }
     
@@ -68,6 +80,8 @@ extension Router: TargetType {
                 .characterSymbol(let ocid),
                 .characterAbility(let ocid):
             return [URLQueryItem(name: "ocid", value: ocid)]
+        case .notices, .updates, .events, .cashUpdates:
+            return nil
         }
     }
 }
