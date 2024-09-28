@@ -26,6 +26,8 @@ struct CharacterInfoView: View {
                 }
             }
             .pickerStyle(.segmented)
+            .colorMultiply(.legendary)
+            .colorInvert()
                 CharacterInfoTapView(
                     picker: viewModel.output.picker,
                     statViewModel: statViewModel,
@@ -34,31 +36,92 @@ struct CharacterInfoView: View {
                     hyperStatViewModel: hyperStatViewModel
                 )
         }
-        .background(.background)
+        .background(Color.infoBackground)
     }
     
     struct CharacterHeaderView: View {
         let character: CharacterResponse
-        var body: some View {
+        
+        func roundedText(_ name: String?, _ content: String, firstColor: Color, secondColor: Color, backColor: Color) -> some View {
             HStack {
-                AsyncImage(url: URL(string: character.character_image)) { result in
-                    result.image?
-                        .resizable()
-                        .scaledToFill()
-                }
-                .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.width / 3)
                 Spacer()
-                
-                VStack(alignment: .leading) {
-                    Text(character.character_name)
-                    Text(character.character_class)
-                    Text("\(character.character_level) (\(character.character_exp_rate)%)")
-                    Text(character.world_name)
-                    Text(character.character_guild_name)
+                if let name {
+                    Text(name)
+                        .foregroundStyle(firstColor)
+                    Spacer()
                 }
+                Text(content)
+                    .foregroundStyle(secondColor)
+                
                 Spacer()
             }
-            .padding()
+            .padding(.vertical, 5)
+            .background(backColor)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .font(.mapleLight(12))
+            
+        }
+        
+        var body: some View {
+            HStack {
+                VStack(spacing: 10) {
+                    roundedText(nil, character.character_class,
+                                firstColor: .white,
+                                secondColor: .white,
+                                backColor: .gray)
+                        .font(.mapleLight(14))
+                    Spacer()
+                    roundedText("유니온", "8888",
+                                firstColor: .white,
+                                secondColor: .black,
+                                backColor: .gray)
+                    roundedText("무릉도장", "75층",
+                                firstColor: .white,
+                                secondColor: .black,
+                                backColor: .gray)
+                    roundedText("인기도", "728",
+                                firstColor: .white,
+                                secondColor: .black,
+                                backColor: .gray)
+                }
+                .padding(.horizontal)
+                
+                VStack {
+                    roundedText(nil, "Lv. \(character.character_level)",
+                                firstColor: .white,
+                                secondColor: .white,
+                                backColor: .gray)
+                    AsyncImage(url: URL(string: character.character_image)) { result in
+                        result.image?
+                            .resizable()
+                            .scaledToFill()
+                    }
+                    .frame(width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.width / 3)
+                    roundedText(nil, character.character_name,
+                                firstColor: .white,
+                                secondColor: .white,
+                                backColor: .rare)
+                }
+                .padding(.horizontal)
+                
+                VStack {
+                    Spacer()
+                    roundedText(nil, "길드",
+                                firstColor: .white,
+                                secondColor: .white,
+                                backColor: .rare)
+                    roundedText("길드", character.character_guild_name,
+                                firstColor: .white,
+                                secondColor: .black,
+                                backColor: .gray)
+                    roundedText("연합", character.character_guild_name,
+                                firstColor: .white,
+                                secondColor: .black,
+                                backColor: .gray)
+                }
+                .padding(.horizontal)
+            }
+            .frame(height: UIScreen.main.bounds.height / 4)
         }
     }
     
