@@ -8,7 +8,6 @@
 import Foundation
 
 struct CharacterResponse: Decodable {
-    let date: String
     let character_name: String
     let world_name: String
     let character_gender: String
