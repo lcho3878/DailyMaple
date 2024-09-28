@@ -24,15 +24,33 @@ final class CharacterInfoViewModel: ObservableObject {
     }
     
     init() {
-        // Character Data Load
+        // Mock Data
+        loadCharacterMockData()
+        
+        // Real API Request with TestOcid
+//        callTestRequest()
+    }
+}
+
+extension CharacterInfoViewModel {
+    
+    private func loadCharacterMockData() {
         do {
             guard let data = MockDataManager.shared.loadData(fileName: "Character") else { return }
             let result = try JSONDecoder().decode(CharacterResponse.self, from: data)
-            print("Character Info Load")
+            print("Character Mock Load")
             output.character = result
         }
-        catch{
+        catch {
             print("Error(Character Info): \(error)")
+        }
+    }
+    
+    private func loadCharacterData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .characterBasic(ocid: APIKey.fakerOcid), type: CharacterResponse.self)
+            print("Character APIData Request")
+            output.character = result
         }
     }
 }
