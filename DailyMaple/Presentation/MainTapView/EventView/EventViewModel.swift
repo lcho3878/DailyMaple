@@ -26,10 +26,15 @@ final class EventViewModel: ObservableObject {
     }
     
     init() {
-        loadEventMockData()
         loadNoticeMockData()
         loadUpdateMockData()
         loadEventMockData()
+        loadCashMockData()
+        
+//        loadNoticeData()
+//        loadUpdateData()
+//        loadEventData()
+//        loadCashData()
     }
 }
 
@@ -43,27 +48,24 @@ extension EventViewModel {
 }
 
 extension EventViewModel {
-    private func loadEventMockData() {
-        guard let data = MockDataManager.shared.loadData(fileName: "Events") else { return }
-        do {
-            let result = try JSONDecoder().decode(EventsResponseModel.self, from: data)
-            output.events = result.event_notice
-            print("Events Data Load")
-        }
-        catch {
-            print("Event Error")
-        }
-    }
     
     private func loadNoticeMockData() {
         guard let data = MockDataManager.shared.loadData(fileName: "Notices") else { return }
         do {
             let result = try JSONDecoder().decode(NoticesResponseModel.self, from: data)
             output.notices = result.notice
-            print("Notices Data Load")
+            print("Notices MockData Load")
         }
         catch {
             print("Notices Error")
+        }
+    }
+    
+    private func loadNoticeData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .notices, type: NoticesResponseModel.self)
+            output.notices = result.notice
+            print("Notices APIData Load")
         }
     }
     
@@ -72,10 +74,38 @@ extension EventViewModel {
         do {
             let result = try JSONDecoder().decode(UpdatesResponseModel.self, from: data)
             output.updates = result.update_notice
-            print("Updates Data Load")
+            print("Updates MockData Load")
         }
         catch {
             print("Updates Error")
+        }
+    }
+    
+    private func loadUpdateData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .updates, type: UpdatesResponseModel.self)
+            output.updates = result.update_notice
+            print("Updates APIData Load")
+        }
+    }
+    
+    private func loadEventMockData() {
+        guard let data = MockDataManager.shared.loadData(fileName: "Events") else { return }
+        do {
+            let result = try JSONDecoder().decode(EventsResponseModel.self, from: data)
+            output.events = result.event_notice
+            print("Events MockData Load")
+        }
+        catch {
+            print("Event Error")
+        }
+    }
+    
+    private func loadEventData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .events, type: EventsResponseModel.self)
+            output.events = result.event_notice
+            print("Events APIData Load")
         }
     }
     
@@ -84,10 +114,18 @@ extension EventViewModel {
         do {
             let result = try JSONDecoder().decode(CashNoticesResponseModel.self, from: data)
             output.cashNotices = result.cashshop_notice
-            print("CashNotices Data Load")
+            print("CashNotices MockData Load")
         }
         catch {
             print("CashNotices Error\n\(error)")
+        }
+    }
+    
+    private func loadCashData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .cashUpdates, type: CashNoticesResponseModel.self)
+            output.cashNotices = result.cashshop_notice
+            print("CashNotices APIData Load")
         }
     }
 }
