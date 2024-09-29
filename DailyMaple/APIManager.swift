@@ -22,10 +22,27 @@ final class APIManager {
         
         switch await result.result {
         case .success(let v): return v
-        case .failure(let e):
-            print("error: \(e)")
-            throw e
+        case .failure(let error):
+            if let responseData = await result.response.data{
+                do {
+                    let apiError = try JSONDecoder().decode(APIErrorResponse.self, from: responseData)
+                    throw apiError
+                } catch {
+                    guard let apiError = error as? APIErrorResponse else { throw APIErrorResponse.unknown}
+                    throw apiError
+                }
+            }
+            else {
+                throw APIErrorResponse.unknown
+            }
         }
     }
     
 }
+// MARK: - Items
+
+
+// MARK: - Error
+
+
+
