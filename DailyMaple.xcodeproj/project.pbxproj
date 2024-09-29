@@ -68,6 +68,7 @@
 		5484B37F2CA968A200049848 /* OcidCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B37E2CA968A200049848 /* OcidCheckView.swift */; };
 		5484B3822CA9698C00049848 /* UserDefault+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3812CA9698C00049848 /* UserDefault+.swift */; };
 		5484B3852CA98BE700049848 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3842CA98BE700049848 /* APIErrorResponse.swift */; };
+		5484B3882CA98F7100049848 /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3872CA98F7100049848 /* AppRootManager.swift */; };
 		548EBECC2CA3F42700FDC295 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EBECB2CA3F42700FDC295 /* Date+.swift */; };
 		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
 		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
@@ -159,6 +160,7 @@
 		5484B37E2CA968A200049848 /* OcidCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcidCheckView.swift; sourceTree = "<group>"; };
 		5484B3812CA9698C00049848 /* UserDefault+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+.swift"; sourceTree = "<group>"; };
 		5484B3842CA98BE700049848 /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
+		5484B3872CA98F7100049848 /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
 		548EBECB2CA3F42700FDC295 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		54A2A3402CA135800099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/HyperStat.json; sourceTree = "<group>"; };
 		54A2A3432CA135D80099239B /* HyperStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatView.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		5450FF912C9EEF87005F7D0A /* DailyMaple */ = {
 			isa = PBXGroup;
 			children = (
+				5484B3862CA98F6700049848 /* AppRootManager */,
 				5484B3802CA9693900049848 /* PropertyWrapper */,
 				54AD5FE22CA2C41E0033D2C2 /* RealmModel */,
 				5450FFDB2C9FD52A005F7D0A /* Custom */,
@@ -449,6 +452,14 @@
 			name = ErrorResponseModel;
 			sourceTree = "<group>";
 		};
+		5484B3862CA98F6700049848 /* AppRootManager */ = {
+			isa = PBXGroup;
+			children = (
+				5484B3872CA98F7100049848 /* AppRootManager.swift */,
+			);
+			path = AppRootManager;
+			sourceTree = "<group>";
+		};
 		54A2A3422CA135CC0099239B /* HyperStatView */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +622,7 @@
 				5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */,
 				546499C52CA6C8710027CA60 /* PresetPickerView.swift in Sources */,
 				5450FFE72C9FF7E0005F7D0A /* SymbolResponseModel.swift in Sources */,
+				5484B3882CA98F7100049848 /* AppRootManager.swift in Sources */,
 				546499C12CA5ED400027CA60 /* StatProtocol.swift in Sources */,
 				5450FFD52C9FD090005F7D0A /* EquipmentsResponseModel.swift in Sources */,
 				5484B3822CA9698C00049848 /* UserDefault+.swift in Sources */,
