@@ -62,6 +62,8 @@
 		546499D62CA722100027CA60 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499D52CA722100027CA60 /* TargetType.swift */; };
 		546499D82CA722540027CA60 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499D72CA722540027CA60 /* Router.swift */; };
 		546499DA2CA7F27F0027CA60 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499D92CA7F27F0027CA60 /* APIManager.swift */; };
+		5484B3772CA9565900049848 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3762CA9565900049848 /* SettingView.swift */; };
+		5484B3792CA95FB300049848 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3782CA95FB300049848 /* SettingViewModel.swift */; };
 		548EBECC2CA3F42700FDC295 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EBECB2CA3F42700FDC295 /* Date+.swift */; };
 		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
 		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
@@ -147,6 +149,8 @@
 		546499D52CA722100027CA60 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		546499D72CA722540027CA60 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		546499D92CA7F27F0027CA60 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		5484B3762CA9565900049848 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		5484B3782CA95FB300049848 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		548EBECB2CA3F42700FDC295 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		54A2A3402CA135800099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/HyperStat.json; sourceTree = "<group>"; };
 		54A2A3432CA135D80099239B /* HyperStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatView.swift; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 				5450FFC72C9F1352005F7D0A /* CharacterInfoTap */,
 				5450FFB12C9EF6FF005F7D0A /* CharacterInfoView.swift */,
 				5450FFB32C9EF706005F7D0A /* CharacterInfoViewModel.swift */,
+				5484B37A2CA95FB800049848 /* SettingView */,
 			);
 			name = CharacterInfoView;
 			path = ../CharacterInfoView;
@@ -397,6 +402,15 @@
 				546499992CA5C43A0027CA60 /* Cash.json */,
 			);
 			name = Notice;
+			sourceTree = "<group>";
+		};
+		5484B37A2CA95FB800049848 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				5484B3762CA9565900049848 /* SettingView.swift */,
+				5484B3782CA95FB300049848 /* SettingViewModel.swift */,
+			);
+			path = SettingView;
 			sourceTree = "<group>";
 		};
 		54A2A3422CA135CC0099239B /* HyperStatView */ = {
@@ -538,6 +552,7 @@
 				546499CB2CA70F490027CA60 /* RealmManager.swift in Sources */,
 				54A2A3482CA1369B0099239B /* HyperStatResponseModel.swift in Sources */,
 				54A2A34D2CA152C30099239B /* AbilityResponseModel.swift in Sources */,
+				5484B3792CA95FB300049848 /* SettingViewModel.swift in Sources */,
 				5450FFD82C9FD153005F7D0A /* PropertyReflectable.swift in Sources */,
 				546499C32CA6895A0027CA60 /* Color+.swift in Sources */,
 				546499A12CA5C7330027CA60 /* CashNoticesResponseModel.swift in Sources */,
@@ -561,6 +576,7 @@
 				546499C12CA5ED400027CA60 /* StatProtocol.swift in Sources */,
 				5450FFD52C9FD090005F7D0A /* EquipmentsResponseModel.swift in Sources */,
 				5450FFDA2C9FD499005F7D0A /* EquipmentDetailView.swift in Sources */,
+				5484B3772CA9565900049848 /* SettingView.swift in Sources */,
 				54AD5FE42CA2C4510033D2C2 /* DailyQuest.swift in Sources */,
 				5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */,
 				5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */,
