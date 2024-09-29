@@ -13,7 +13,9 @@ final class APIManager {
     static let shared = APIManager()
     
     private init() {}
-    
+}
+
+extension APIManager {
     func callRequest<T: Decodable>(api: Router, type: T.Type) async throws -> T {
         let request = try api.asURLRequest()
         let result = AF.request(request)
@@ -22,7 +24,7 @@ final class APIManager {
         
         switch await result.result {
         case .success(let v): return v
-        case .failure(let error):
+        case .failure(_):
             if let responseData = await result.response.data{
                 do {
                     let apiError = try JSONDecoder().decode(APIErrorResponse.self, from: responseData)
@@ -37,12 +39,7 @@ final class APIManager {
             }
         }
     }
-    
 }
-// MARK: - Items
-
-
-// MARK: - Error
 
 
 
