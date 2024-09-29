@@ -22,7 +22,12 @@ struct CharacterStatResponseModel: Decodable {
             return statValue
         }
         else {
-            return statValue.formatNumberString()
+            if stat.stat_name == "전투력" {
+                return statValue.formatNumberStringKorean()
+            }
+            else {
+                return statValue.formatNumberString()
+            }
         }
     }
     

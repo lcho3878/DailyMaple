@@ -23,4 +23,22 @@ extension String {
         guard let formattedNumber = String.numberFormatter.string(from: NSNumber(value: number)) else { return "" }
         return formattedNumber
     }
+    
+    public func formatNumberStringKorean() -> String {
+        guard let number = Int(self) else { return "" }
+        var result = ""
+        let uk = number / 100000000
+        let man = (number % 100000000) / 10000
+        let other = number % 10000
+        if uk > 0 {
+            result.append("\(uk)억 ")
+        }
+        if man > 0 {
+            result.append("\(man)만 ")
+        }
+        if other > 0 {
+            result.append("\(other)")
+        }
+        return result.isEmpty ? "0" : result
+    }
 }
