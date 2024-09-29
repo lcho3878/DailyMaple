@@ -67,6 +67,7 @@
 		5484B37D2CA967CE00049848 /* APIKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B37C2CA967CE00049848 /* APIKeyView.swift */; };
 		5484B37F2CA968A200049848 /* OcidCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B37E2CA968A200049848 /* OcidCheckView.swift */; };
 		5484B3822CA9698C00049848 /* UserDefault+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3812CA9698C00049848 /* UserDefault+.swift */; };
+		5484B3852CA98BE700049848 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3842CA98BE700049848 /* APIErrorResponse.swift */; };
 		548EBECC2CA3F42700FDC295 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EBECB2CA3F42700FDC295 /* Date+.swift */; };
 		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
 		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
@@ -157,6 +158,7 @@
 		5484B37C2CA967CE00049848 /* APIKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyView.swift; sourceTree = "<group>"; };
 		5484B37E2CA968A200049848 /* OcidCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcidCheckView.swift; sourceTree = "<group>"; };
 		5484B3812CA9698C00049848 /* UserDefault+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+.swift"; sourceTree = "<group>"; };
+		5484B3842CA98BE700049848 /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
 		548EBECB2CA3F42700FDC295 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		54A2A3402CA135800099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/HyperStat.json; sourceTree = "<group>"; };
 		54A2A3432CA135D80099239B /* HyperStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatView.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				546499D52CA722100027CA60 /* TargetType.swift */,
 				546499D92CA7F27F0027CA60 /* APIManager.swift */,
 				546499D72CA722540027CA60 /* Router.swift */,
+				5484B3832CA98BD700049848 /* ErrorResponseModel */,
 				5450FFA92C9EF184005F7D0A /* ResponseModel */,
 				5450FFA62C9EF11F005F7D0A /* Mock */,
 			);
@@ -438,6 +441,14 @@
 			path = PropertyWrapper;
 			sourceTree = "<group>";
 		};
+		5484B3832CA98BD700049848 /* ErrorResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				5484B3842CA98BE700049848 /* APIErrorResponse.swift */,
+			);
+			name = ErrorResponseModel;
+			sourceTree = "<group>";
+		};
 		54A2A3422CA135CC0099239B /* HyperStatView */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +618,7 @@
 				5484B3772CA9565900049848 /* SettingView.swift in Sources */,
 				54AD5FE42CA2C4510033D2C2 /* DailyQuest.swift in Sources */,
 				5450FFDE2C9FD56C005F7D0A /* ClearBackgroundView.swift in Sources */,
+				5484B3852CA98BE700049848 /* APIErrorResponse.swift in Sources */,
 				5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */,
 				5450FFD12C9FD019005F7D0A /* EquipmentView.swift in Sources */,
 				5464999F2CA5C6CC0027CA60 /* UpdatesResponseModel.swift in Sources */,
