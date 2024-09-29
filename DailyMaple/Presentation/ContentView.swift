@@ -18,7 +18,7 @@ struct ContentView: View {
             case .api:
                 APIKeyView()
             case .ocid:
-                OcidCheckView()
+                OcidView()
             case .main:
                 MainTabView()
             }
