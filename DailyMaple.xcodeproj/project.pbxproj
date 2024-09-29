@@ -72,6 +72,12 @@
 		5484B38A2CA9975F00049848 /* OcidResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3892CA9975F00049848 /* OcidResponseModel.swift */; };
 		5484B3902CA9A48A00049848 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B38F2CA9A48A00049848 /* UserDefaultManager.swift */; };
 		5484B3922CA9AB8500049848 /* BuildTestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3912CA9AB8500049848 /* BuildTestManager.swift */; };
+		5484B3942CA9B77900049848 /* PopularityResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3932CA9B77900049848 /* PopularityResponseModel.swift */; };
+		5484B3972CA9B82300049848 /* Popularity.json in Resources */ = {isa = PBXBuildFile; fileRef = 5484B3952CA9B82300049848 /* Popularity.json */; };
+		5484B39A2CA9BB9F00049848 /* Dojang.json in Resources */ = {isa = PBXBuildFile; fileRef = 5484B3982CA9BB9F00049848 /* Dojang.json */; };
+		5484B39C2CA9BBD000049848 /* DojangResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B39B2CA9BBD000049848 /* DojangResponseModel.swift */; };
+		5484B39E2CA9BCF200049848 /* UnionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B39D2CA9BCF200049848 /* UnionResponseModel.swift */; };
+		5484B3A12CA9BD0500049848 /* Union.json in Resources */ = {isa = PBXBuildFile; fileRef = 5484B39F2CA9BD0500049848 /* Union.json */; };
 		548EBECC2CA3F42700FDC295 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EBECB2CA3F42700FDC295 /* Date+.swift */; };
 		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
 		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
@@ -167,6 +173,12 @@
 		5484B3892CA9975F00049848 /* OcidResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcidResponseModel.swift; sourceTree = "<group>"; };
 		5484B38F2CA9A48A00049848 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		5484B3912CA9AB8500049848 /* BuildTestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTestManager.swift; sourceTree = "<group>"; };
+		5484B3932CA9B77900049848 /* PopularityResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityResponseModel.swift; sourceTree = "<group>"; };
+		5484B3962CA9B82300049848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Popularity.json; sourceTree = "<group>"; };
+		5484B3992CA9BB9F00049848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Dojang.json; sourceTree = "<group>"; };
+		5484B39B2CA9BBD000049848 /* DojangResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DojangResponseModel.swift; sourceTree = "<group>"; };
+		5484B39D2CA9BCF200049848 /* UnionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionResponseModel.swift; sourceTree = "<group>"; };
+		5484B3A02CA9BD0500049848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Union.json; sourceTree = "<group>"; };
 		548EBECB2CA3F42700FDC295 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		54A2A3402CA135800099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/HyperStat.json; sourceTree = "<group>"; };
 		54A2A3432CA135D80099239B /* HyperStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatView.swift; sourceTree = "<group>"; };
@@ -274,6 +286,9 @@
 				5464999C2CA5C48B0027CA60 /* NoticesResponseModel.swift */,
 				5464999E2CA5C6CC0027CA60 /* UpdatesResponseModel.swift */,
 				546499A02CA5C7330027CA60 /* CashNoticesResponseModel.swift */,
+				5484B3932CA9B77900049848 /* PopularityResponseModel.swift */,
+				5484B39B2CA9BBD000049848 /* DojangResponseModel.swift */,
+				5484B39D2CA9BCF200049848 /* UnionResponseModel.swift */,
 			);
 			name = ResponseModel;
 			sourceTree = "<group>";
@@ -282,7 +297,10 @@
 			isa = PBXGroup;
 			children = (
 				5450FFAD2C9EF5B5005F7D0A /* Character.json */,
+				5484B3952CA9B82300049848 /* Popularity.json */,
+				5484B3982CA9BB9F00049848 /* Dojang.json */,
 				5450FFE32C9FF6EF005F7D0A /* Symbol.json */,
+				5484B39F2CA9BD0500049848 /* Union.json */,
 				546499922CA5C31E0027CA60 /* Notice */,
 				5450FFCC2C9FCF8D005F7D0A /* Items.json */,
 				5450FFC22C9F0CAA005F7D0A /* Stats.json */,
@@ -575,6 +593,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5484B3972CA9B82300049848 /* Popularity.json in Resources */,
 				5450FFBC2C9F08EB005F7D0A /* Maplestory OTF Light.otf in Resources */,
 				5450FF9A2C9EEF88005F7D0A /* Preview Assets.xcassets in Resources */,
 				54A2A3412CA135800099239B /* HyperStat.json in Resources */,
@@ -584,6 +603,8 @@
 				546499982CA5C3F30027CA60 /* Updates.json in Resources */,
 				54A2A34B2CA151F50099239B /* Ability.json in Resources */,
 				5450FFCE2C9FCF8D005F7D0A /* Items.json in Resources */,
+				5484B39A2CA9BB9F00049848 /* Dojang.json in Resources */,
+				5484B3A12CA9BD0500049848 /* Union.json in Resources */,
 				5450FFE52C9FF6EF005F7D0A /* Symbol.json in Resources */,
 				546499952CA5C3B10027CA60 /* Notices.json in Resources */,
 				5450FFC42C9F0CAA005F7D0A /* Stats.json in Resources */,
@@ -609,6 +630,7 @@
 				546499D62CA722100027CA60 /* TargetType.swift in Sources */,
 				5464998B2CA55E4B0027CA60 /* EventViewModel.swift in Sources */,
 				546499CB2CA70F490027CA60 /* RealmManager.swift in Sources */,
+				5484B3942CA9B77900049848 /* PopularityResponseModel.swift in Sources */,
 				54A2A3482CA1369B0099239B /* HyperStatResponseModel.swift in Sources */,
 				54A2A34D2CA152C30099239B /* AbilityResponseModel.swift in Sources */,
 				5484B3792CA95FB300049848 /* SettingViewModel.swift in Sources */,
@@ -617,6 +639,7 @@
 				546499A12CA5C7330027CA60 /* CashNoticesResponseModel.swift in Sources */,
 				546499BF2CA5D54C0027CA60 /* Eventable.swift in Sources */,
 				5484B37D2CA967CE00049848 /* APIKeyView.swift in Sources */,
+				5484B39E2CA9BCF200049848 /* UnionResponseModel.swift in Sources */,
 				5450FFA42C9EF066005F7D0A /* APIKey.swift in Sources */,
 				546499CD2CA719660027CA60 /* QuestObject.swift in Sources */,
 				5450FFAB2C9EF551005F7D0A /* CharacterResponse.swift in Sources */,
@@ -628,6 +651,7 @@
 				5450FFB22C9EF6FF005F7D0A /* CharacterInfoView.swift in Sources */,
 				54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */,
 				5450FFC92C9F1360005F7D0A /* CharacterStatView.swift in Sources */,
+				5484B39C2CA9BBD000049848 /* DojangResponseModel.swift in Sources */,
 				5464999D2CA5C48B0027CA60 /* NoticesResponseModel.swift in Sources */,
 				54AD5FDF2CA2C3CB0033D2C2 /* DailyQuestView.swift in Sources */,
 				5450FFA82C9EF133005F7D0A /* MockDataManager.swift in Sources */,
@@ -719,6 +743,30 @@
 				5464999A2CA5C43A0027CA60 /* en */,
 			);
 			name = Cash.json;
+			sourceTree = "<group>";
+		};
+		5484B3952CA9B82300049848 /* Popularity.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5484B3962CA9B82300049848 /* en */,
+			);
+			name = Popularity.json;
+			sourceTree = "<group>";
+		};
+		5484B3982CA9BB9F00049848 /* Dojang.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5484B3992CA9BB9F00049848 /* en */,
+			);
+			name = Dojang.json;
+			sourceTree = "<group>";
+		};
+		5484B39F2CA9BD0500049848 /* Union.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5484B3A02CA9BD0500049848 /* en */,
+			);
+			name = Union.json;
 			sourceTree = "<group>";
 		};
 		54A2A33F2CA135800099239B /* HyperStat.json */ = {
