@@ -8,26 +8,30 @@
 import SwiftUI
 
 struct CharacterInfoView: View {
-    @StateObject private var viewModel = CharacterInfoViewModel()
+    @ObservedObject private var viewModel = CharacterInfoViewModel()
     @StateObject private var statViewModel = CharacterStatViewModel()
     @StateObject private var equipViewModel = EquipmentViewModel()
     @StateObject private var symbolViewModel = SymbolViewModel()
     @StateObject private var hyperStatViewModel = HyperStatViewModel()
     
     var body: some View {
-        VStack {
-            if let character = viewModel.output.character {
-                CharacterHeaderView(character: character)
-                    .font(.mapleBold(16))
-            }
-            Picker("Menu", selection: $viewModel.output.picker) {
-                ForEach(CharacterInfoViewModel.TapMenu.allCases, id: \.self) {
-                    Text($0.rawValue)
+        NavigationView {
+            VStack {
+                if let character = viewModel.output.character {
+                    CharacterHeaderView(viewModel: viewModel, character: character)
+                        .font(.mapleBold(16))
                 }
-            }
-            .pickerStyle(.segmented)
-            .colorMultiply(.legendary)
-            .colorInvert()
+                else {
+                    SettingButtonView()
+                }
+                Picker("Menu", selection: $viewModel.output.picker) {
+                    ForEach(CharacterInfoViewModel.TapMenu.allCases, id: \.self) {
+                        Text($0.rawValue)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .colorMultiply(.legendary)
+                .colorInvert()
                 CharacterInfoTapView(
                     picker: viewModel.output.picker,
                     statViewModel: statViewModel,
@@ -35,11 +39,13 @@ struct CharacterInfoView: View {
                     symbolViewModel: symbolViewModel,
                     hyperStatViewModel: hyperStatViewModel
                 )
+            }
+            .background(Color.infoBackground)
         }
-        .background(Color.infoBackground)
     }
     
     struct CharacterHeaderView: View {
+        @ObservedObject var viewModel: CharacterInfoViewModel
         let character: CharacterResponse
         
         func roundedText(_ name: String?, _ content: String, firstColor: Color, secondColor: Color, backColor: Color) -> some View {
@@ -69,17 +75,17 @@ struct CharacterInfoView: View {
                                 firstColor: .white,
                                 secondColor: .white,
                                 backColor: .gray)
-                        .font(.mapleLight(14))
+                    .font(.mapleLight(14))
                     Spacer()
-                    roundedText("유니온", "8888",
+                    roundedText("유니온", "\(viewModel.output.unionLevel)",
                                 firstColor: .white,
                                 secondColor: .black,
                                 backColor: .gray)
-                    roundedText("무릉도장", "75층",
+                    roundedText("무릉도장", "\(viewModel.output.dojang)층",
                                 firstColor: .white,
                                 secondColor: .black,
                                 backColor: .gray)
-                    roundedText("인기도", "728",
+                    roundedText("인기도", "\(viewModel.output.popularity)",
                                 firstColor: .white,
                                 secondColor: .black,
                                 backColor: .gray)
@@ -105,16 +111,13 @@ struct CharacterInfoView: View {
                 .padding(.horizontal)
                 
                 VStack {
+                    SettingButtonView()
                     Spacer()
                     roundedText(nil, "길드",
                                 firstColor: .white,
                                 secondColor: .white,
                                 backColor: .rare)
-                    roundedText("길드", character.character_guild_name,
-                                firstColor: .white,
-                                secondColor: .black,
-                                backColor: .gray)
-                    roundedText("연합", character.character_guild_name,
+                    roundedText("길드", character.character_guild_name ?? "",
                                 firstColor: .white,
                                 secondColor: .black,
                                 backColor: .gray)
@@ -141,6 +144,22 @@ struct CharacterInfoView: View {
                 SymbolView(viewModel: symbolViewModel)
             case .hyperStat:
                 HyperStatView(viewModel: hyperStatViewModel)
+            }
+        }
+    }
+    
+    struct SettingButtonView: View {
+        var body: some View {
+            NavigationLink {
+                SettingView()
+            } label: {
+                HStack {
+                    Spacer()
+                    Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .frame(maxWidth: 30, maxHeight: 30)
+                }
+                .foregroundColor(.statTitle)
             }
         }
     }
