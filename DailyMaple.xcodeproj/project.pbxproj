@@ -69,6 +69,7 @@
 		5484B3822CA9698C00049848 /* UserDefault+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3812CA9698C00049848 /* UserDefault+.swift */; };
 		5484B3852CA98BE700049848 /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3842CA98BE700049848 /* APIErrorResponse.swift */; };
 		5484B3882CA98F7100049848 /* AppRootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3872CA98F7100049848 /* AppRootManager.swift */; };
+		5484B38A2CA9975F00049848 /* OcidResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3892CA9975F00049848 /* OcidResponseModel.swift */; };
 		548EBECC2CA3F42700FDC295 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EBECB2CA3F42700FDC295 /* Date+.swift */; };
 		54A2A3412CA135800099239B /* HyperStat.json in Resources */ = {isa = PBXBuildFile; fileRef = 54A2A33F2CA135800099239B /* HyperStat.json */; };
 		54A2A3442CA135D80099239B /* HyperStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A2A3432CA135D80099239B /* HyperStatView.swift */; };
@@ -161,6 +162,7 @@
 		5484B3812CA9698C00049848 /* UserDefault+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+.swift"; sourceTree = "<group>"; };
 		5484B3842CA98BE700049848 /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
 		5484B3872CA98F7100049848 /* AppRootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootManager.swift; sourceTree = "<group>"; };
+		5484B3892CA9975F00049848 /* OcidResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcidResponseModel.swift; sourceTree = "<group>"; };
 		548EBECB2CA3F42700FDC295 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		54A2A3402CA135800099239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/HyperStat.json; sourceTree = "<group>"; };
 		54A2A3432CA135D80099239B /* HyperStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperStatView.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				5450FFAA2C9EF551005F7D0A /* CharacterResponse.swift */,
+				5484B3892CA9975F00049848 /* OcidResponseModel.swift */,
 				5450FFE62C9FF7E0005F7D0A /* SymbolResponseModel.swift */,
 				5450FFC52C9F1178005F7D0A /* CharacterStatResponseModel.swift */,
 				5450FFD42C9FD090005F7D0A /* EquipmentsResponseModel.swift */,
@@ -593,6 +596,7 @@
 			files = (
 				5484B37F2CA968A200049848 /* OcidCheckView.swift in Sources */,
 				5450FFC02C9F0B2F005F7D0A /* Font+.swift in Sources */,
+				5484B38A2CA9975F00049848 /* OcidResponseModel.swift in Sources */,
 				5450FFEC2C9FFCA5005F7D0A /* SymbolViewModel.swift in Sources */,
 				5450FF952C9EEF87005F7D0A /* ContentView.swift in Sources */,
 				546499D62CA722100027CA60 /* TargetType.swift in Sources */,
