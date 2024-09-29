@@ -62,6 +62,7 @@
 		546499D62CA722100027CA60 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499D52CA722100027CA60 /* TargetType.swift */; };
 		546499D82CA722540027CA60 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499D72CA722540027CA60 /* Router.swift */; };
 		546499DA2CA7F27F0027CA60 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499D92CA7F27F0027CA60 /* APIManager.swift */; };
+		54721EBC2CA9CB8200E10508 /* APIKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54721EBB2CA9CB8200E10508 /* APIKeyViewModel.swift */; };
 		5484B3772CA9565900049848 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3762CA9565900049848 /* SettingView.swift */; };
 		5484B3792CA95FB300049848 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3782CA95FB300049848 /* SettingViewModel.swift */; };
 		5484B37D2CA967CE00049848 /* APIKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B37C2CA967CE00049848 /* APIKeyView.swift */; };
@@ -163,6 +164,7 @@
 		546499D52CA722100027CA60 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		546499D72CA722540027CA60 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		546499D92CA7F27F0027CA60 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		54721EBB2CA9CB8200E10508 /* APIKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyViewModel.swift; sourceTree = "<group>"; };
 		5484B3762CA9565900049848 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		5484B3782CA95FB300049848 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		5484B37C2CA967CE00049848 /* APIKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyView.swift; sourceTree = "<group>"; };
@@ -443,6 +445,15 @@
 			name = Notice;
 			sourceTree = "<group>";
 		};
+		54721EBD2CA9E1E600E10508 /* APIKeyView */ = {
+			isa = PBXGroup;
+			children = (
+				5484B37C2CA967CE00049848 /* APIKeyView.swift */,
+				54721EBB2CA9CB8200E10508 /* APIKeyViewModel.swift */,
+			);
+			path = APIKeyView;
+			sourceTree = "<group>";
+		};
 		5484B37A2CA95FB800049848 /* SettingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,7 +466,7 @@
 		5484B37B2CA9677100049848 /* OnboardingView */ = {
 			isa = PBXGroup;
 			children = (
-				5484B37C2CA967CE00049848 /* APIKeyView.swift */,
+				54721EBD2CA9E1E600E10508 /* APIKeyView */,
 				5484B37E2CA968A200049848 /* OcidCheckView.swift */,
 			);
 			path = OnboardingView;
@@ -658,6 +669,7 @@
 				546499C52CA6C8710027CA60 /* PresetPickerView.swift in Sources */,
 				5450FFE72C9FF7E0005F7D0A /* SymbolResponseModel.swift in Sources */,
 				5484B3882CA98F7100049848 /* AppRootManager.swift in Sources */,
+				54721EBC2CA9CB8200E10508 /* APIKeyViewModel.swift in Sources */,
 				546499C12CA5ED400027CA60 /* StatProtocol.swift in Sources */,
 				5450FFD52C9FD090005F7D0A /* EquipmentsResponseModel.swift in Sources */,
 				5484B3822CA9698C00049848 /* UserDefault+.swift in Sources */,
