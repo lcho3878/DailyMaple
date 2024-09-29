@@ -16,7 +16,7 @@ struct CharacterResponse: Decodable {
     let character_level: Int
     let character_exp: Int
     let character_exp_rate: String
-    let character_guild_name: String
+    let character_guild_name: String?
     let character_image: String
     let liberation_quest_clear_flag: String
 }

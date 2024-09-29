@@ -12,16 +12,17 @@ struct CharacterStatResponseModel: Decodable {
     
     struct Stat: Decodable {
         let stat_name: String
-        let stat_value: String
+        let stat_value: String?
     }
     
     func statValue(name: String) -> String {
         guard let stat = final_stat.first(where: {$0.stat_name == name }) else { return "정보 없음" }
-        if stat.stat_value.formatNumberString().isEmpty {
-            return stat.stat_value
+        guard let statValue = stat.stat_value else { return "-"}
+        if statValue.formatNumberString().isEmpty {
+            return statValue
         }
         else {
-            return stat.stat_value.formatNumberString()
+            return statValue.formatNumberString()
         }
     }
     
