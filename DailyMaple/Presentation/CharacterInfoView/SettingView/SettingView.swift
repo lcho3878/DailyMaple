@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingView: View {
+    @EnvironmentObject private var appRootManager: AppRootManager
     @StateObject private var viewModel = SettingViewModel()
-    @State private var tempText = ""
     
     var body: some View {
         List {
@@ -23,32 +23,44 @@ struct SettingView: View {
                 viewModel.input.licenseTap.send(())
             }
         }
-        .alert("캐릭터 변경 alert", isPresented: $viewModel.output.characterAlert) {
-              TextField("Enter your name", text: $tempText)
-              Button("OK", action: submit)
-          } message: {
-              Text("Xcode will print whatever you type.")
-          }
-          .alert("apiAlert", isPresented: $viewModel.output.apiAlert) {
-              Button(role: .cancel) {
-                  print("Cancel Click")
-              } label: {
-                  Text("Cancel")
-              }
-              Button(role: .destructive) {
-                  print("OK Click")
-              } label: {
-                  Text("OK")
-              }
-
-            } message: {
-                Text("Xcode will print whatever you type.")
+        .foregroundColor(.black)
+        .font(.mapleLight(20))
+        .alert("대표 캐릭터 삭제", isPresented: $viewModel.output.characterAlert) {
+            Button(role: .cancel) {
+            } label: {
+                Text("취소")
             }
+            Button(role: .destructive) {
+                appRootManager.ocid = nil
+                appRootManager.currentRoot = .ocid
+            } label: {
+                Text("삭제")
+            }
+        } message: {
+            Text("저장된 대표 캐릭터 정보가 삭제됩니다.")
+        }
+        
+        .alert("APIKey 삭제", isPresented: $viewModel.output.apiAlert) {
+            Button(role: .cancel) {
+            } label: {
+                Text("취소")
+            }
+            Button(role: .destructive) {
+                appRootManager.ocid = nil
+                appRootManager.apikey = nil
+                appRootManager.currentRoot = .api
+            } label: {
+                Text("삭제")
+            }
+        } message: {
+            Text("저장된 APIKey 정보가 삭제됩니다.")
+        }
         
      
     }
     func submit() {
-        print("You entered \(tempText)")
+        UserDefaultManager.ocid = nil
+        appRootManager.currentRoot = .ocid
     }
     
     struct SomeButton: View {
