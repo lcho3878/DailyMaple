@@ -20,6 +20,7 @@ enum Router {
     case updates
     case events
     case cashUpdates
+    case checkAPIValidation(key: String)
 }
 
 extension Router: TargetType {
@@ -56,11 +57,18 @@ extension Router: TargetType {
             return "notice-event"
         case .cashUpdates:
             return "notice-cashshop"
+        case .checkAPIValidation:
+            return "notice"
         }
     }
     
     var header: [String : String] {
         switch self {
+        case .checkAPIValidation(let key):
+            return [
+                "x-nxopen-api-key": key,
+                "accept": "application/json"
+            ]
         default:
             return [
                 "x-nxopen-api-key": APIKey.key,
@@ -80,7 +88,7 @@ extension Router: TargetType {
                 .characterSymbol(let ocid),
                 .characterAbility(let ocid):
             return [URLQueryItem(name: "ocid", value: ocid)]
-        case .notices, .updates, .events, .cashUpdates:
+        case .notices, .updates, .events, .cashUpdates, .checkAPIValidation:
             return nil
         }
     }
