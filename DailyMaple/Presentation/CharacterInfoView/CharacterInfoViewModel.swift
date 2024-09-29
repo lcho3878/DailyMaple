@@ -22,10 +22,16 @@ final class CharacterInfoViewModel: ObservableObject {
     struct Output {
         var character: CharacterResponse?
         var picker: TapMenu = .character
+        var popularity: Int = 0
+        var dojang: Int = 0
+        var unionLevel: Int = 0
     }
     
     init() {
         BuildTestManager.shared.isNetworking ? loadCharacterData() : loadCharacterMockData()
+        BuildTestManager.shared.isNetworking ? loadCharacterPopData() : loadCharacterPopMockData()
+        BuildTestManager.shared.isNetworking ? loadCharacterDojangData() : loadCharacterDojangMockData()
+        BuildTestManager.shared.isNetworking ? loadUnionData() : loadUnionMockData()
     }
 }
 
@@ -51,6 +57,73 @@ extension CharacterInfoViewModel {
                 self?.output.character = result
             }
 
+        }
+    }
+    
+    private func loadCharacterPopMockData() {
+        do {
+            guard let data = MockDataManager.shared.loadData(fileName: "Popularity") else { return }
+            let result = try JSONDecoder().decode(PopularityResponseModel.self, from: data)
+            print("Popularity Mock Load")
+            output.popularity = result.popularity
+        }
+        catch {
+            print("Error(Character Info): \(error)")
+        }
+    }
+    
+    private func loadCharacterPopData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .characterPopularity, type: PopularityResponseModel.self)
+            print("Popularity APIData Request")
+            DispatchQueue.main.async { [weak self] in
+                self?.output.popularity = result.popularity
+            }
+        }
+    }
+    
+    private func loadCharacterDojangMockData() {
+        do {
+            guard let data = MockDataManager.shared.loadData(fileName: "Dojang") else { return }
+            let result = try JSONDecoder().decode(DojangResponseModel.self, from: data)
+            print("Dojang Mock Load")
+            output.dojang = result.dojang_best_floor
+        }
+        catch {
+            print("Error(Character Info): \(error)")
+        }
+    }
+    
+    private func loadCharacterDojangData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .characterDojang, type: DojangResponseModel.self)
+            print("Dojang APIData Request")
+            DispatchQueue.main.async { [weak self] in
+                self?.output.dojang = result.dojang_best_floor
+            }
+
+        }
+    }
+
+    private func loadUnionMockData() {
+        do {
+            guard let data = MockDataManager.shared.loadData(fileName: "Union") else { return }
+            let result = try JSONDecoder().decode(UnionResponseModel.self, from: data)
+            print("Union Mock Load")
+            output.unionLevel = result.union_level
+        }
+        catch {
+            print("Error(Character Info): \(error)")
+        }
+    }
+    
+    private func loadUnionData() {
+        Task {
+            let result = try await APIManager.shared.callRequest(api: .union, type: UnionResponseModel.self)
+            print("Union APIData Request")
+            DispatchQueue.main.async { [weak self] in
+                self?.output.unionLevel = result.union_level
+            }
         }
     }
 }
