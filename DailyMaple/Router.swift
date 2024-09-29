@@ -10,12 +10,12 @@ import Alamofire
 
 enum Router {
     case ocid(query: String)
-    case characterBasic(ocid: String)
-    case characterStat(ocid: String)
-    case characterHyperStat(ocid: String)
-    case characterEquipment(ocid: String)
-    case characterSymbol(ocid: String)
-    case characterAbility(ocid: String)
+    case characterBasic
+    case characterStat
+    case characterHyperStat
+    case characterEquipment
+    case characterSymbol
+    case characterAbility
     case notices
     case updates
     case events
@@ -81,13 +81,13 @@ extension Router: TargetType {
         switch self {
         case .ocid(let nick):
             return [URLQueryItem(name: "character_name", value: nick)]
-        case .characterBasic(let ocid),
-                .characterStat(let ocid),
-                .characterHyperStat(let ocid),
-                .characterEquipment(let ocid),
-                .characterSymbol(let ocid),
-                .characterAbility(let ocid):
-            return [URLQueryItem(name: "ocid", value: ocid)]
+        case .characterBasic,
+                .characterStat,
+                .characterHyperStat,
+                .characterEquipment,
+                .characterSymbol,
+                .characterAbility:
+            return [URLQueryItem(name: "ocid", value: UserDefaultManager.ocid)]
         case .notices, .updates, .events, .cashUpdates, .checkAPIValidation:
             return nil
         }
