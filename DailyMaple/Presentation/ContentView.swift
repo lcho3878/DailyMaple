@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    
+    @StateObject private var appRootManager = AppRootManager()
+    
     var body: some View {
-        if let ocid = UserDefaults.standard.string(forKey: "ocid") {
-            MainTabView()
+        Group {
+            switch appRootManager.currentRoot {
+            case .api:
+                APIKeyView()
+            case .ocid:
+                OcidCheckView()
+            case .main:
+                MainTabView()
+            }
         }
-        else if let apiKey = UserDefaults.standard.string(forKey: "apiKey") {
-            OcidCheckView()
-        }
-        else {
-            APIKeyView()
-        }
+        .environmentObject(appRootManager)
+        
     }
 }
 
