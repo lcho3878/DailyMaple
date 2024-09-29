@@ -29,11 +29,8 @@ final class EquipmentViewModel: ObservableObject {
     }
     
     init() {
-        // Mock Data
-        loadEquipmentsMockData()
-        
-        // Real API Request with TestOcid
-//        callTestRequest()
+        BuildTestManager.shared.isNetworking ? loadEquipmentsData() : loadEquipmentsMockData()
+       
         
         input.pickerInput
             .sink { [weak self] num in
@@ -61,15 +58,18 @@ extension EquipmentViewModel {
     
     private func loadEquipmentsData() {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterEquipment(ocid: APIKey.fakerOcid), type: EquipmentsResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterEquipment, type: EquipmentsResponseModel.self)
             print("Equipments APIData Load")
-            output.result = result
-            switchingPreset(result.preset_no, result: result)
+            DispatchQueue.main.async { [weak self] in
+                self?.output.result = result
+                self?.switchingPreset(result.preset_no, result: result)
+            }
         }
     }
     
     private func switchingPreset(_ num: Int, result: Items) {
         output.pickerOutput = num
+        print("equit presetnum: \(num)")
         switch num {
         case 1: output.items = result.item_equipment_preset_1
         case 2: output.items = result.item_equipment_preset_2

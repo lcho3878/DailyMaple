@@ -27,16 +27,13 @@ final class HyperStatViewModel: ObservableObject {
         var abilityResult: AbilityResponseModel?
         var hyperStats: [HyperStat] = []
         var ability: Ability = Ability(ability_preset_grade: "", ability_info: [])
-        var hyperPickerOutput = 1
+        var hyperPickerOutput = 3
         var abilityPickerOutput = 3
     }
     
     init() {
-        loadAbilityMockData()
-        loadHyperStatMockData()
-        
-//        callAbilityRequestTest()
-//        callHyperStatRequestTest()
+        BuildTestManager.shared.isNetworking ? loadAbilityData() : loadAbilityMockData()
+        BuildTestManager.shared.isNetworking ? loadHyperStatData() : loadHyperStatMockData()
         
         input.abilityPickerInput
             .sink { [weak self] picker in
@@ -83,19 +80,23 @@ extension HyperStatViewModel {
     
     private func loadAbilityData() {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterAbility(ocid: APIKey.fakerOcid), type: AbilityResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterAbility, type: AbilityResponseModel.self)
             print("Ability APIData Load")
-            output.abilityResult = result
-            switchingAbilityPreset(result.preset_no, result: result)
+            DispatchQueue.main.async { [weak self] in
+                self?.output.abilityResult = result
+                self?.switchingAbilityPreset(result.preset_no, result: result)
+            }
         }
     }
     
     private func loadHyperStatData() {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterHyperStat(ocid: APIKey.fakerOcid), type: HyperStatResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterHyperStat, type: HyperStatResponseModel.self)
             print("HyperStat APIData Load")
-            output.hyperStatResult = result
-            switchingHyperStatPreset(Int(result.use_preset_no)!, result: result)
+            DispatchQueue.main.async { [weak self] in
+                self?.output.hyperStatResult = result
+                self?.switchingHyperStatPreset(Int(result.use_preset_no)!, result: result)
+            }
         }
     }
     

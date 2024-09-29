@@ -15,11 +15,7 @@ final class CharacterStatViewModel: ObservableObject {
     }
     
     init() {
-        // Mock Data
-        loadStatMockData()
-        
-        // Real API Request with TestOcid
-//        callTestRequest()
+        BuildTestManager.shared.isNetworking ? loadStatData() : loadStatMockData()
     }
 }
 
@@ -38,9 +34,11 @@ extension CharacterStatViewModel {
     
     private func loadStatData() {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterStat(ocid: APIKey.fakerOcid), type: CharacterStatResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterStat, type: CharacterStatResponseModel.self)
             print("Stat APIData Load")
-            output.stats = result
+            DispatchQueue.main.async { [weak self] in
+                self?.output.stats = result
+            }
         }
     }
 }

@@ -28,11 +28,7 @@ final class SymbolViewModel: ObservableObject {
     }
     
     init() {
-        // Mock Data
-        loadSymbolMockData()
-        
-        // Real API Request with TestOcid
-//        callTestRequest()
+        BuildTestManager.shared.isNetworking ? loadSymbolData() : loadSymbolMockData()
     }
 }
 
@@ -51,9 +47,11 @@ extension SymbolViewModel {
     
     private func loadSymbolData() {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterSymbol(ocid: APIKey.blackOcid), type: SymbolResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterSymbol, type: SymbolResponseModel.self)
             print("Symbol APIData Load")
-            output.symbols = result.symbol
+            DispatchQueue.main.async { [weak self] in
+                self?.output.symbols = result.symbol
+            }
         }
     }
 }

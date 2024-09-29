@@ -10,6 +10,7 @@ import Combine
 //import SwiftUI
 
 final class CharacterInfoViewModel: ObservableObject {
+    
     private var cancellables = Set<AnyCancellable>()
     var input = Input()
     @Published var output = Output()
@@ -24,11 +25,7 @@ final class CharacterInfoViewModel: ObservableObject {
     }
     
     init() {
-        // Mock Data
-        loadCharacterMockData()
-        
-        // Real API Request with TestOcid
-//        callTestRequest()
+        BuildTestManager.shared.isNetworking ? loadCharacterData() : loadCharacterMockData()
     }
 }
 
@@ -48,9 +45,12 @@ extension CharacterInfoViewModel {
     
     private func loadCharacterData() {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterBasic(ocid: APIKey.fakerOcid), type: CharacterResponse.self)
+            let result = try await APIManager.shared.callRequest(api: .characterBasic, type: CharacterResponse.self)
             print("Character APIData Request")
-            output.character = result
+            DispatchQueue.main.async { [weak self] in
+                self?.output.character = result
+            }
+
         }
     }
 }
