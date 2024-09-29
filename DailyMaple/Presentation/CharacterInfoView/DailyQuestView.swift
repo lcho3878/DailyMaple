@@ -14,6 +14,7 @@ struct DailyQuestView: View {
     
     @State private var inputText = ""
     @State private var isModifying = false
+    @State private var isError = false
     
     var body: some View {
         NavigationView {
@@ -27,15 +28,11 @@ struct DailyQuestView: View {
                     TextField("직접 입력하기", text: $inputText)
                         .padding(.vertical)
                         .onSubmit {
-                            guard !inputText.isEmpty else { return }
-                            let quest = DailyQuest(title: inputText)
-                            $dailyQuest.append(quest)
+                            addQuest(inputText: inputText)
                             inputText = ""
                         }
                     Button(action: {
-                        guard !inputText.isEmpty else { return }
-                        let quest = DailyQuest(title: inputText)
-                        $dailyQuest.append(quest)
+                        addQuest(inputText: inputText)
                         inputText = ""
                     }, label: {
                         Text("추가")
@@ -97,6 +94,14 @@ struct DailyQuestView: View {
                     })
                 }
             })
+        }
+        .alert("안내", isPresented: $isError) {
+            Button(role: .cancel) {} label: {
+                Text("확인")
+            }
+
+        } message: {
+            Text("이미 동일한 이름의 퀘스트가 존재합니다.")
         }
         .onAppear(perform: {
             RealmManager.shared.printRealmURL()
@@ -160,6 +165,18 @@ struct DailyQuestView: View {
                 })
             }
         }
+    }
+}
+
+extension DailyQuestView {
+    private func addQuest(inputText: String) {
+        guard !inputText.isEmpty else { return }
+        let quest = DailyQuest(title: inputText)
+        guard dailyQuest.filter({ $0.title == inputText }).isEmpty else {
+            isError.toggle()
+            return
+        }
+        $dailyQuest.append(quest)
     }
 }
 
