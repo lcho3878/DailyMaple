@@ -13,22 +13,25 @@ struct HyperStatView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("어빌리티")
-                    .padding(.bottom)
-                    .foregroundColor(.legendary)
-                    .font(.mapleBold(16))
-                    PresetPickerView(input: viewModel.input.abilityPickerInput, output: $viewModel.output.abilityPickerOutput)
-                    AbilityContentView(viewModel: viewModel)
+                VStack {
+                    Text("어빌리티")
+                        .padding(.bottom)
+                        .foregroundColor(.legendary)
+                        .font(.mapleBold(16))
+                        PresetPickerView(input: viewModel.input.abilityPickerInput, output: $viewModel.output.abilityPickerOutput)
+                        AbilityContentView(viewModel: viewModel)
+                    
+                }
+                .padding(.vertical)
+                .background(Color.statBackground)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .padding(.vertical)
                 
+                HyperStatContentView(viewModel: viewModel)
+                    .padding(.vertical)
             }
-            .padding(.vertical)
-            .background(Color.statBackground)
-            .clipShape(RoundedRectangle(cornerRadius: 16))
-            .padding(.vertical)
-            
-            HyperStatContentView(viewModel: viewModel)
+            .background(Color.infoBackground)
         }
-        .background(Color.infoBackground)
     }
     
     struct AbilityContentView: View {

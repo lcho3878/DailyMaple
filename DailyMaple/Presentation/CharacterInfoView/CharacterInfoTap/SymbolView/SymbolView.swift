@@ -40,6 +40,7 @@ struct SymbolView: View {
                 .padding(.horizontal)
                 Spacer()
             }
+            .frame(maxWidth: .infinity)
             .background(Color.infoBackground)
             .background(selectedSymbol == nil ? .clear : .black.opacity(0.5))
             .background(ClearBackground())

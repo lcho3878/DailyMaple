@@ -29,8 +29,8 @@ struct EquipmentView: View {
                     EquipmentDetailView(item: item)
                 }
             }
+            .background(Color.infoBackground)
         }
-        .background(Color.infoBackground)
     }
     
     struct ItemRowView: View {
