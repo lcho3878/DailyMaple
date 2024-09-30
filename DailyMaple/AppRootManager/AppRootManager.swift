@@ -19,20 +19,21 @@ final class AppRootManager: ObservableObject {
     @Published var currentRoot: AppRoot = .api
     
     init() {
-        if BuildTestManager.shared.isNetworking {
-            if apikey == nil {
-                currentRoot = .api
-            }
-            else if ocid == nil {
-                currentRoot = .ocid
-            }
-            else {
-                currentRoot = .main
-            }
+//        if BuildTestManager.shared.isNetworking {
+//            if apikey == nil {
+//                currentRoot = .api
+//            }
+//            else 
+        if ocid == nil {
+            currentRoot = .ocid
         }
         else {
             currentRoot = .main
         }
+//        }
+//        else {
+//            currentRoot = .main
+//        }
 
     }
 }
