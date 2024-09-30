@@ -43,6 +43,13 @@ final class RealmManager {
         }
     }
     
+    func updateWeeklyQuest(_ quest: WeeklyQuest) {
+        try! realm.write {
+            quest.thaw()?.endDate = Date().nextMonday()
+            quest.thaw()?.isComplete = false
+        }
+    }
+    
     func removeAllObjects<T: Object>(_ type: T.Type) {
         let objects = realm.objects(T.self)
         try! realm.write {
@@ -50,3 +57,4 @@ final class RealmManager {
         }
     }
 }
+
