@@ -18,18 +18,23 @@ struct CharacterInfoView: View {
         NavigationView {
             VStack(spacing: 0) {
                 VStack {
-                    if let character = viewModel.output.character {
-                        CharacterHeaderView(viewModel: viewModel, character: character)
-                            .font(.mapleBold(16))
+                    VStack {
+                        if let character = viewModel.output.character {
+                            CharacterHeaderView(viewModel: viewModel, character: character)
+                                .font(.mapleBold(16))
+     
+                        }
+                        else {
+                            SettingButtonView()
+                        }
                     }
-                    else {
-                        SettingButtonView()
-                    }
+                    .padding(.vertical)
                     Picker("Menu", selection: $viewModel.output.picker) {
                         ForEach(CharacterInfoViewModel.TapMenu.allCases, id: \.self) {
                             Text($0.rawValue)
                         }
                     }
+                    .padding(.top)
                     .pickerStyle(.segmented)
                     .colorMultiply(.rare)
                     .colorInvert()
