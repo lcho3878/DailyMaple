@@ -42,4 +42,11 @@ final class RealmManager {
             quest.thaw()?.isComplete = false
         }
     }
+    
+    func removeAllObjects<T: Object>(_ type: T.Type) {
+        let objects = realm.objects(T.self)
+        try! realm.write {
+            realm.delete(objects)
+        }
+    }
 }
