@@ -17,13 +17,11 @@ final class SettingViewModel: ObservableObject {
     
     struct Input {
         let characterChangeTap = PassthroughSubject<Void, Never>()
-        let apiChangeTap = PassthroughSubject<Void, Never>()
         let licenseTap = PassthroughSubject<Void, Never>()
     }
     
     struct Output {
         var characterAlert = false
-        var apiAlert = false
         var licenseAlert = false
     }
     
@@ -31,12 +29,6 @@ final class SettingViewModel: ObservableObject {
         input.characterChangeTap
             .sink { [weak self] _ in
                 self?.output.characterAlert = true
-            }
-            .store(in: &cancellables)
-        
-        input.apiChangeTap
-            .sink { [weak self] _ in
-                self?.output.apiAlert = true
             }
             .store(in: &cancellables)
         
