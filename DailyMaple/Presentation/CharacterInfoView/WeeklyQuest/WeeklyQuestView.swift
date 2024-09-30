@@ -126,7 +126,7 @@ struct WeeklyQuestView: View {
                 Text("취소")
             }
             Button(role: .destructive) {
-                RealmManager.shared.removeAllObjects(DailyQuest.self)
+                RealmManager.shared.removeAllObjects(WeeklyQuest.self)
             } label: {
                 Text("삭제")
             }
