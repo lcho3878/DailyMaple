@@ -26,15 +26,10 @@ final class EventViewModel: ObservableObject {
     }
     
     init() {
-        loadNoticeMockData()
-        loadUpdateMockData()
-        loadEventMockData()
-        loadCashMockData()
-        
-//        loadNoticeData()
-//        loadUpdateData()
-//        loadEventData()
-//        loadCashData()
+        BuildTestManager.shared.isNetworking ? loadNoticeData() : loadNoticeMockData()
+        BuildTestManager.shared.isNetworking ? loadUpdateData() : loadUpdateMockData()
+        BuildTestManager.shared.isNetworking ? loadEventData() : loadEventMockData()
+        BuildTestManager.shared.isNetworking ? loadCashData() : loadCashMockData()
     }
 }
 
@@ -64,7 +59,10 @@ extension EventViewModel {
     private func loadNoticeData() {
         Task {
             let result = try await APIManager.shared.callRequest(api: .notices, type: NoticesResponseModel.self)
-            output.notices = result.notice
+            DispatchQueue.main.async { [weak self] in
+                self?.output.notices = result.notice
+            }
+           
             print("Notices APIData Load")
         }
     }
@@ -84,7 +82,9 @@ extension EventViewModel {
     private func loadUpdateData() {
         Task {
             let result = try await APIManager.shared.callRequest(api: .updates, type: UpdatesResponseModel.self)
-            output.updates = result.update_notice
+            DispatchQueue.main.async { [weak self] in
+                self?.output.updates = result.update_notice
+            }
             print("Updates APIData Load")
         }
     }
@@ -104,7 +104,9 @@ extension EventViewModel {
     private func loadEventData() {
         Task {
             let result = try await APIManager.shared.callRequest(api: .events, type: EventsResponseModel.self)
-            output.events = result.event_notice
+            DispatchQueue.main.async { [weak self] in
+                self?.output.events = result.event_notice
+            }
             print("Events APIData Load")
         }
     }
@@ -124,7 +126,9 @@ extension EventViewModel {
     private func loadCashData() {
         Task {
             let result = try await APIManager.shared.callRequest(api: .cashUpdates, type: CashNoticesResponseModel.self)
-            output.cashNotices = result.cashshop_notice
+            DispatchQueue.main.async { [weak self] in
+                self?.output.cashNotices = result.cashshop_notice
+            }
             print("CashNotices APIData Load")
         }
     }
