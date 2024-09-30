@@ -29,6 +29,8 @@ struct OcidView: View {
                     .background(.orange)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             }
+            Text("이 앱은 NEXON Open API를 사용하여 제공된 데이터를 기반으로 합니다.")
+                .padding()
         }
         .onChange(of: viewModel.output.ocid) { ocid in
             appRootManager.ocid = ocid

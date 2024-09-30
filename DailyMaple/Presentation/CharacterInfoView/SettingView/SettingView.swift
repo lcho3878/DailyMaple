@@ -30,21 +30,22 @@ struct SettingView: View {
             }
             .foregroundColor(.black)
             .font(.mapleBold(18))
-            .alert("대표 캐릭터 변경", isPresented: $viewModel.output.characterAlert) {
-                Button(role: .cancel) {
-                } label: {
-                    Text("취소")
-                }
-                Button(role: .destructive) {
-                    appRootManager.ocid = nil
-                    appRootManager.currentRoot = .ocid
-                } label: {
-                    Text("삭제")
-                }
-            } message: {
-                Text("저장된 대표 캐릭터 정보가 삭제됩니다.")
+            Text("이 앱은 NEXON Open API를 사용하여 제공된 데이터를 기반으로 합니다.")
+                .font(.mapleLight(16))
+        }
+        .alert("대표 캐릭터 변경", isPresented: $viewModel.output.characterAlert) {
+            Button(role: .cancel) {
+            } label: {
+                Text("취소")
             }
-
+            Button(role: .destructive) {
+                appRootManager.ocid = nil
+                appRootManager.currentRoot = .ocid
+            } label: {
+                Text("삭제")
+            }
+        } message: {
+            Text("저장된 대표 캐릭터 정보가 삭제됩니다.")
         }
      
     }
