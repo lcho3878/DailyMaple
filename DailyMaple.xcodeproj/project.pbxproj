@@ -535,8 +535,7 @@
 		54AD5FDD2CA2C3B50033D2C2 /* QuestView */ = {
 			isa = PBXGroup;
 			children = (
-				54AD5FDE2CA2C3CB0033D2C2 /* DailyQuestView.swift */,
-				5436F7AF2CA42BAB0038FA95 /* DailyQuestListView.swift */,
+				54D2E73D2CAA8A85001724BE /* DailyQuest */,
 			);
 			name = QuestView;
 			path = ../CharacterInfoView;
@@ -557,6 +556,15 @@
 				54D2E73B2CAA86E3001724BE /* PlaceholderStyle.swift */,
 			);
 			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		54D2E73D2CAA8A85001724BE /* DailyQuest */ = {
+			isa = PBXGroup;
+			children = (
+				54AD5FDE2CA2C3CB0033D2C2 /* DailyQuestView.swift */,
+				5436F7AF2CA42BAB0038FA95 /* DailyQuestListView.swift */,
+			);
+			path = DailyQuest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
