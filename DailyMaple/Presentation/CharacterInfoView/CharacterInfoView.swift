@@ -106,6 +106,7 @@ struct CharacterInfoView: View {
                             .scaledToFill()
                     }
                     .frame(width: UIScreen.main.bounds.width / 4, height: UIScreen.main.bounds.width / 3)
+                    roundedText(nil, character.world_name, firstColor: .white, secondColor: .white, backColor: .gray)
                     roundedText(nil, character.character_name,
                                 firstColor: .white,
                                 secondColor: .white,
@@ -120,7 +121,7 @@ struct CharacterInfoView: View {
                                 firstColor: .white,
                                 secondColor: .white,
                                 backColor: .rare)
-                    roundedText("길드", character.character_guild_name ?? "",
+                    roundedText("길드", character.character_guild_name ?? " - ",
                                 firstColor: .white,
                                 secondColor: .black,
                                 backColor: .gray)
