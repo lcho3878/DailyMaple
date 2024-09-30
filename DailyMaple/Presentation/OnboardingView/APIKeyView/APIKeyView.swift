@@ -14,35 +14,43 @@ struct APIKeyView: View {
     @StateObject private var viewModel = APIKeyViewModel()
     
     var body: some View {
-        VStack {
-            Text("APIKey 입력")
-                .font(.mapleBold(20))
-            TextField("발급받은 APIKey를 입력해주세요.", text: $viewModel.input.key)
-                .padding(.vertical)
-                .background(.white)
-                .padding()
-            Button {
-                viewModel.input.buttonTap.send(())
-            } label: {
-                Text("확인")
-                    .foregroundStyle(.black)
+        NavigationView {
+            VStack {
+                Text("APIKey 입력")
+                    .font(.mapleBold(20))
+                TextField("발급받은 APIKey를 입력해주세요.", text: $viewModel.input.key)
+                    .padding(.vertical)
+                    .background(.white)
                     .padding()
-                    .padding(.horizontal)
-                    .background(.orange)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                
+                Button {
+                    viewModel.input.buttonTap.send(())
+                } label: {
+                    Text("확인")
+                        .foregroundStyle(.black)
+                        .padding()
+                        .padding(.horizontal)
+                        .background(.orange)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                    
+                }
+                NavigationLink {
+                    WebView(urlToLoad: Notion.apikeyGuide)
+                } label: {
+                    Text("APIKey 발급 가이드")
+                }
+            }
+            .onChange(of: viewModel.output.key) { key in
+                appRootManager.apikey = key
+                appRootManager.currentRoot = .ocid
+            }
+            .font(.mapleBold(16))
+            .frame(maxHeight: .infinity)
+            .background(Color.infoBackground)
+            .alert(item: $viewModel.output.apiError) { item in
+                Alert(title: Text(item.errorType.message), dismissButton: .default(Text("확인")))
             }
         }
-        .onChange(of: viewModel.output.key) { key in
-            appRootManager.apikey = key
-            appRootManager.currentRoot = .ocid
-        }
-        .font(.mapleBold(16))
-        .frame(maxHeight: .infinity)
-        .background(Color.infoBackground)
-        .alert(item: $viewModel.output.apiError) { item in
-            Alert(title: Text(item.errorType.message), dismissButton: .default(Text("확인")))
-        }
+        
     }
 }
 
