@@ -38,9 +38,8 @@ struct SymbolView: View {
                     .padding(.vertical)
                 }
                 .padding(.horizontal)
-                Spacer()
+                .padding(.bottom, 50)
             }
-            .frame(maxWidth: .infinity)
             .background(Color.infoBackground)
             .background(selectedSymbol == nil ? .clear : .black.opacity(0.5))
             .background(ClearBackground())
@@ -113,5 +112,4 @@ struct SymbolView: View {
 
 #Preview {
     SymbolView(viewModel: SymbolViewModel())
-//    ContentView()
 }
