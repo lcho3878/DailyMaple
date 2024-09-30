@@ -24,7 +24,7 @@ struct MainTabView: View {
             }
             
             VStack {
-                DailyQuestView()
+                QuestTabView()
             }
             .tabItem {
                 Image(systemName: "note.text")

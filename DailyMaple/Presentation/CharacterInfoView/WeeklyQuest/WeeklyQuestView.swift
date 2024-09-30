@@ -164,7 +164,7 @@ struct WeeklyQuestView: View {
             HStack {
                 Image(systemName: quest.isComplete ? "checkmark.circle.fill" : "arrowshape.right.fill" )
                     .foregroundColor(.rare)
-                Text("[일간] \(quest.title)")
+                Text("[주간] \(quest.title)")
                     .foregroundStyle(Color.statTitle)
                     .strikethrough(quest.isComplete, color: .white)
                 Spacer()

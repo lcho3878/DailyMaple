@@ -95,6 +95,7 @@
 		54D2E7402CAA8B44001724BE /* WeeklyQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D2E73F2CAA8B44001724BE /* WeeklyQuestView.swift */; };
 		54D2E7422CAA8B66001724BE /* WeeklyQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D2E7412CAA8B66001724BE /* WeeklyQuest.swift */; };
 		54D2E7442CAA8BBA001724BE /* WeeklyQuestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D2E7432CAA8BBA001724BE /* WeeklyQuestListView.swift */; };
+		54D2E7462CAA93C3001724BE /* QuestTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D2E7452CAA93C3001724BE /* QuestTabView.swift */; };
 		54F30DE12CA3DDFE0079761F /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54AD5FD22CA2BE1A0033D2C2 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -201,6 +202,7 @@
 		54D2E73F2CAA8B44001724BE /* WeeklyQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyQuestView.swift; sourceTree = "<group>"; };
 		54D2E7412CAA8B66001724BE /* WeeklyQuest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyQuest.swift; sourceTree = "<group>"; };
 		54D2E7432CAA8BBA001724BE /* WeeklyQuestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyQuestListView.swift; sourceTree = "<group>"; };
+		54D2E7452CAA93C3001724BE /* QuestTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,6 +545,7 @@
 			children = (
 				54D2E73E2CAA8A9A001724BE /* WeeklyQuest */,
 				54D2E73D2CAA8A85001724BE /* DailyQuest */,
+				54D2E7452CAA93C3001724BE /* QuestTabView.swift */,
 			);
 			name = QuestView;
 			path = ../CharacterInfoView;
@@ -732,6 +735,7 @@
 				5450FFB42C9EF706005F7D0A /* CharacterInfoViewModel.swift in Sources */,
 				5450FFD12C9FD019005F7D0A /* EquipmentView.swift in Sources */,
 				5464999F2CA5C6CC0027CA60 /* UpdatesResponseModel.swift in Sources */,
+				54D2E7462CAA93C3001724BE /* QuestTabView.swift in Sources */,
 				546499892CA55E400027CA60 /* EventView.swift in Sources */,
 				54A2A3522CA160750099239B /* MainTabView.swift in Sources */,
 				5436F7B42CA46CD90038FA95 /* StrokeText.swift in Sources */,
