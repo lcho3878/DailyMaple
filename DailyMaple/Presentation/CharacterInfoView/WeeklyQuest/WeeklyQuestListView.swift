@@ -15,16 +15,16 @@ struct WeeklyQuestListView: View {
     
     var body: some View {
         List {
-            ListView(data: MonsterPark.allCases) { item in
+            ListView(data: EpicDungeon.allCases) { item in
                 addItem(item.rawValue)
             }
             ListView(data: ArcaneRegion.allCases) { item in
                 addItem(item.rawValue)
             }
-            ListView(data: TenebrisRegion.allCases) { item in
+            ListView(data: GuildContent.allCases) { item in
                 addItem(item.rawValue)
             }
-            ListView(data: AuthenticRegion.allCases) { item in
+            ListView(data: WeeklyContent.allCases) { item in
                 addItem(item.rawValue)
             }
         }
@@ -62,11 +62,11 @@ struct WeeklyQuestListView: View {
 
 extension WeeklyQuestListView {
     
-    private enum MonsterPark: String, CaseIterable, QuestHeader {
-        case monsterPark = "몬스터 파크"
-        case extremeMonsterPark = "익스트림 몬스터 파크"
+    private enum EpicDungeon: String, CaseIterable, QuestHeader {
+        case anlgerCompany = "에픽던전 : 앵글러 컴퍼니"
+        case hignMountain = "에픽던전 : 하이마운틴"
         
-        static var header = "아케인 리버"
+        static var header = "에픽던전"
         var isOn: Bool {
             guard let object = RealmManager.shared.getObject(WeeklyQuest.self, key: self.rawValue) else { return false }
             return object.isOn
@@ -74,12 +74,12 @@ extension WeeklyQuestListView {
     }
     
     private enum ArcaneRegion: String, CaseIterable, QuestHeader {
-        case vanishingJourney = "소멸의 여로"
-        case chuChuIsland = "츄츄 아일랜드"
-        case lachelein = "레헬른"
-        case arcana = "아르카나"
-        case morass = "모라스"
-        case esfera = "에스페라"
+        case erdaSpectrum = "에르다 스펙트럼"
+        case mooto = "배고픈 무토"
+        case midnightChaser = "미드나잇 체이서"
+        case spiritSaver = "스피릿 세이비어"
+        case enhimeDefense = "엔하임 디펜스"
+        case protectEspera = "프로텍트 에스페라"
         
         static var header = "아케인 리버"
         var isOn: Bool {
@@ -88,27 +88,26 @@ extension WeeklyQuestListView {
         }
     }
     
-    private enum TenebrisRegion: String, CaseIterable, QuestHeader {
-        case moonbridge = "문브릿지"
-        case labyrinthOfSuffering = "고통의 미궁"
-        case limen = "리멘"
+    private enum GuildContent: String, CaseIterable, QuestHeader {
+        case weeklyMission = "주간 미션"
+        case underwater = "지하 수로"
+        case flagRace = "플래그 레이스"
         
-        static var header = "테네브리스"
+        static var header = "길드 컨텐츠"
         var isOn: Bool {
             guard let object = RealmManager.shared.getObject(WeeklyQuest.self, key: self.rawValue) else { return false }
             return object.isOn
         }
     }
     
-    private enum AuthenticRegion: String, CaseIterable, QuestHeader {
-        case cernium = "세르니움"
-        case arcs = "아르크스"
-        case odium = "오디움"
-        case shangriLa = "도원경"
-        case arteria = "아르테리아"
-        case karcion = "카르시온"
+    private enum WeeklyContent: String, CaseIterable, QuestHeader {
+        case diligentInvestigation = "[소멸의 여로] 성실한 조사에 대한 보답"
+        case critias = "크리티아스"
+        case corruptedWorldTree = "타락한 세계수"
+        case heaven = "헤이븐"
         
-        static var header = "그란디스 대륙"
+        
+        static var header = "주간 퀘스트"
         var isOn: Bool {
             guard let object = RealmManager.shared.getObject(WeeklyQuest.self, key: self.rawValue) else { return false }
             return object.isOn
