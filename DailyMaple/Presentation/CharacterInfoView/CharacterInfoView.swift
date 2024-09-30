@@ -16,22 +16,25 @@ struct CharacterInfoView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                if let character = viewModel.output.character {
-                    CharacterHeaderView(viewModel: viewModel, character: character)
-                        .font(.mapleBold(16))
-                }
-                else {
-                    SettingButtonView()
-                }
-                Picker("Menu", selection: $viewModel.output.picker) {
-                    ForEach(CharacterInfoViewModel.TapMenu.allCases, id: \.self) {
-                        Text($0.rawValue)
+            VStack(spacing: 0) {
+                VStack {
+                    if let character = viewModel.output.character {
+                        CharacterHeaderView(viewModel: viewModel, character: character)
+                            .font(.mapleBold(16))
                     }
+                    else {
+                        SettingButtonView()
+                    }
+                    Picker("Menu", selection: $viewModel.output.picker) {
+                        ForEach(CharacterInfoViewModel.TapMenu.allCases, id: \.self) {
+                            Text($0.rawValue)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .colorMultiply(.rare)
+                    .colorInvert()
                 }
-                .pickerStyle(.segmented)
-                .colorMultiply(.legendary)
-                .colorInvert()
+                .background(Color.infoBackground)
                 CharacterInfoTapView(
                     picker: viewModel.output.picker,
                     statViewModel: statViewModel,
@@ -40,7 +43,7 @@ struct CharacterInfoView: View {
                     hyperStatViewModel: hyperStatViewModel
                 )
             }
-            .background(Color.infoBackground)
+            
         }
     }
     
@@ -166,5 +169,6 @@ struct CharacterInfoView: View {
 }
 
 #Preview {
-    CharacterInfoView()
+//    CharacterInfoView()
+    ContentView()
 }
