@@ -39,8 +39,6 @@ struct DailyQuestView: View {
                                 inputText = ""
                             }
                     }
-                    .background(.white)
-                    
                     Button(action: {
                         addQuest(inputText: inputText)
                         inputText = ""
@@ -93,10 +91,11 @@ struct DailyQuestView: View {
                         }
                     }
                 }
+                Spacer()
             }
             .padding()
-            .foregroundColor(Color.rare)
-            .background(Color.infoBackground)
+            .foregroundColor(.rare)
+            .background(Color.infoBackground, ignoresSafeAreaEdges: .top)
             .toolbar(content: {
                 if isModifying {
                     ToolbarItem {
@@ -214,12 +213,12 @@ extension DailyQuestView {
     }
     
     private func deleteAllQuest() {
-
+        
     }
 }
 
 #Preview {
-    DailyQuestView()
+    ContentView()
 }
 
 

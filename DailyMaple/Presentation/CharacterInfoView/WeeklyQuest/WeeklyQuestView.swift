@@ -40,7 +40,6 @@ struct WeeklyQuestView: View {
                                 inputText = ""
                             }
                     }
-                    .background(.white)
                     
                     Button(action: {
                         addQuest(inputText: inputText)
@@ -97,7 +96,7 @@ struct WeeklyQuestView: View {
             }
             .padding()
             .foregroundColor(Color.rare)
-            .background(Color.infoBackground)
+            .background(Color.infoBackground, ignoresSafeAreaEdges: .top)
             .toolbar(content: {
                 if isModifying {
                     ToolbarItem {

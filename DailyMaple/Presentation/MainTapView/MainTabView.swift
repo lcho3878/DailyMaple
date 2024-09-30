@@ -15,21 +15,18 @@ struct MainTabView: View {
                     Image(systemName: "person.fill")
                     Text("캐릭터 정보")
                 }
-            VStack {
-                EventView()
+            QuestTabView()
+            .tabItem {
+                Image(systemName: "note.text")
+                Text("메할일")
             }
+            EventView()
             .tabItem {
                 Image(systemName: "calendar")
                 Text("이벤트")
             }
             
-            VStack {
-                QuestTabView()
-            }
-            .tabItem {
-                Image(systemName: "note.text")
-                Text("메할일")
-            }
+           
         }
     }
 }
