@@ -19,9 +19,11 @@ extension Date {
         return nextMidnight
     }
     
-    public func nextThursDay() -> Date {
+    public func nextMonday() -> Date {
         let calender = Calendar.current
-        return calender.date(bySetting: .weekday, value: 5, of: Date()) ?? Date()
+        let now = Date()
+        let nextMonday = calender.nextDate(after: now, matching: DateComponents(weekday: 2), matchingPolicy: .nextTime)
+        return nextMonday ?? Date()
     }
     
     public func asString() -> String {
