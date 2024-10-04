@@ -64,6 +64,8 @@
 		546499DA2CA7F27F0027CA60 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546499D92CA7F27F0027CA60 /* APIManager.swift */; };
 		54721EBC2CA9CB8200E10508 /* APIKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54721EBB2CA9CB8200E10508 /* APIKeyViewModel.swift */; };
 		54721EC02CA9E44600E10508 /* OcidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54721EBF2CA9E44600E10508 /* OcidViewModel.swift */; };
+		5474E0612CAE9D790054E890 /* SearchTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474E0602CAE9D790054E890 /* SearchTabView.swift */; };
+		5474E0632CAE9DAB0054E890 /* SearchTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5474E0622CAE9DAB0054E890 /* SearchTabViewModel.swift */; };
 		5484B3772CA9565900049848 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3762CA9565900049848 /* SettingView.swift */; };
 		5484B3792CA95FB300049848 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B3782CA95FB300049848 /* SettingViewModel.swift */; };
 		5484B37D2CA967CE00049848 /* APIKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B37C2CA967CE00049848 /* APIKeyView.swift */; };
@@ -172,6 +174,8 @@
 		546499D92CA7F27F0027CA60 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		54721EBB2CA9CB8200E10508 /* APIKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyViewModel.swift; sourceTree = "<group>"; };
 		54721EBF2CA9E44600E10508 /* OcidViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcidViewModel.swift; sourceTree = "<group>"; };
+		5474E0602CAE9D790054E890 /* SearchTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabView.swift; sourceTree = "<group>"; };
+		5474E0622CAE9DAB0054E890 /* SearchTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabViewModel.swift; sourceTree = "<group>"; };
 		5484B3762CA9565900049848 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		5484B3782CA95FB300049848 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		5484B37C2CA967CE00049848 /* APIKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyView.swift; sourceTree = "<group>"; };
@@ -476,6 +480,15 @@
 			path = OcidCheckView;
 			sourceTree = "<group>";
 		};
+		5474E05F2CAE9D6E0054E890 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				5474E0602CAE9D790054E890 /* SearchTabView.swift */,
+				5474E0622CAE9DAB0054E890 /* SearchTabViewModel.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 		5484B37A2CA95FB800049848 /* SettingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +545,7 @@
 		54A2A3502CA160570099239B /* MainTapView */ = {
 			isa = PBXGroup;
 			children = (
+				5474E05F2CAE9D6E0054E890 /* SearchView */,
 				546499872CA55E320027CA60 /* EventView */,
 				5450FFB02C9EF6DE005F7D0A /* CharacterInfoView */,
 				54AD5FDD2CA2C3B50033D2C2 /* QuestView */,
@@ -682,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5474E0632CAE9DAB0054E890 /* SearchTabViewModel.swift in Sources */,
 				5484B3902CA9A48A00049848 /* UserDefaultManager.swift in Sources */,
 				5484B37F2CA968A200049848 /* OcidView.swift in Sources */,
 				5450FFC02C9F0B2F005F7D0A /* Font+.swift in Sources */,
@@ -692,6 +707,7 @@
 				546499D62CA722100027CA60 /* TargetType.swift in Sources */,
 				5464998B2CA55E4B0027CA60 /* EventViewModel.swift in Sources */,
 				546499CB2CA70F490027CA60 /* RealmManager.swift in Sources */,
+				5474E0612CAE9D790054E890 /* SearchTabView.swift in Sources */,
 				5484B3942CA9B77900049848 /* PopularityResponseModel.swift in Sources */,
 				54A2A3482CA1369B0099239B /* HyperStatResponseModel.swift in Sources */,
 				54A2A34D2CA152C30099239B /* AbilityResponseModel.swift in Sources */,
