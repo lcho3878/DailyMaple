@@ -15,6 +15,11 @@ struct MainTabView: View {
                     Image(systemName: "person.fill")
                     Text("캐릭터 정보")
                 }
+            SearchTabView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("캐릭터 검색")
+                }
             QuestTabView()
             .tabItem {
                 Image(systemName: "note.text")
