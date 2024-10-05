@@ -18,6 +18,7 @@ final class EquipmentViewModel: ObservableObject {
     @Published var output = Output()
     
     struct Input {
+        let ocid = PassthroughSubject<String, Never>()
         var selectedItem: Items.Item?
         var pickerInput = PassthroughSubject<Int, Never>()
     }
@@ -29,7 +30,12 @@ final class EquipmentViewModel: ObservableObject {
     }
     
     init() {
-        BuildTestManager.shared.isNetworking ? loadEquipmentsData() : loadEquipmentsMockData()
+        input.ocid.sink { [weak self] ocid in
+            guard let self else { return }
+            BuildTestManager.shared.isNetworking ? loadEquipmentsData(ocid) : loadEquipmentsMockData()
+        }
+        .store(in: &cancellables)
+        
        
         
         input.pickerInput
@@ -56,9 +62,9 @@ extension EquipmentViewModel {
         }
     }
     
-    private func loadEquipmentsData() {
+    private func loadEquipmentsData(_ ocid: String) {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterEquipment, type: EquipmentsResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterEquipment(ocid: ocid), type: EquipmentsResponseModel.self)
             print("Equipments APIData Load")
             DispatchQueue.main.async { [weak self] in
                 self?.output.result = result

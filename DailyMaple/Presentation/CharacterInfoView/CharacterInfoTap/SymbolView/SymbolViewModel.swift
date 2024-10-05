@@ -6,11 +6,19 @@
 //
 
 import Foundation
+import Combine
 
 final class SymbolViewModel: ObservableObject {
     typealias Symbol = SymbolResponseModel.Symbol
+
+    private var cancellables = Set<AnyCancellable>()
     
+    var input = Input()
     @Published var output = Output()
+    
+    struct Input {
+        let ocid = PassthroughSubject<String, Never>()
+    }
     
     struct Output {
         var symbols: [Symbol] = []
@@ -28,7 +36,11 @@ final class SymbolViewModel: ObservableObject {
     }
     
     init() {
-        BuildTestManager.shared.isNetworking ? loadSymbolData() : loadSymbolMockData()
+        input.ocid.sink { [weak self] ocid in
+            guard let self else { return }
+            BuildTestManager.shared.isNetworking ? loadSymbolData(ocid) : loadSymbolMockData()
+        }
+        .store(in: &cancellables)
     }
 }
 
@@ -45,9 +57,9 @@ extension SymbolViewModel {
         }
     }
     
-    private func loadSymbolData() {
+    private func loadSymbolData(_ ocid: String) {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterSymbol, type: SymbolResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterSymbol(ocid: ocid), type: SymbolResponseModel.self)
             print("Symbol APIData Load")
             DispatchQueue.main.async { [weak self] in
                 self?.output.symbols = result.symbol

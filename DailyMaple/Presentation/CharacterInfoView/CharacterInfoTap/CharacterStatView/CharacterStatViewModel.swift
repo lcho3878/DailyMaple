@@ -6,16 +6,29 @@
 //
 
 import Foundation
+import Combine
 
 final class CharacterStatViewModel: ObservableObject {
+    private var cancellables = Set<AnyCancellable>()
+    
+    var input = Input()
     @Published var output = Output()
+    
+    struct Input {
+        let ocid = PassthroughSubject<String, Never>()
+    }
     
     struct Output {
         var stats: CharacterStatResponseModel?
     }
     
     init() {
-        BuildTestManager.shared.isNetworking ? loadStatData() : loadStatMockData()
+        input.ocid
+            .sink { [weak self] ocid in
+                guard let self else { return }
+                BuildTestManager.shared.isNetworking ? loadStatData(ocid) : loadStatMockData()
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -32,9 +45,9 @@ extension CharacterStatViewModel {
         }
     }
     
-    private func loadStatData() {
+    private func loadStatData(_ ocid: String) {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterStat, type: CharacterStatResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterStat(ocid: ocid), type: CharacterStatResponseModel.self)
             print("Stat APIData Load")
             DispatchQueue.main.async { [weak self] in
                 self?.output.stats = result

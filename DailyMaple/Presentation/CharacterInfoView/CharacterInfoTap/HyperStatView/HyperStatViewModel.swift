@@ -18,6 +18,7 @@ final class HyperStatViewModel: ObservableObject {
     @Published var output = Output()
     
     struct Input {
+        let ocid = PassthroughSubject<String, Never>()
         var hyperPickerInput = PassthroughSubject<Int, Never>()
         var abilityPickerInput = PassthroughSubject<Int, Never>()
     }
@@ -32,8 +33,12 @@ final class HyperStatViewModel: ObservableObject {
     }
     
     init() {
-        BuildTestManager.shared.isNetworking ? loadAbilityData() : loadAbilityMockData()
-        BuildTestManager.shared.isNetworking ? loadHyperStatData() : loadHyperStatMockData()
+        input.ocid.sink { [weak self] ocid in
+            guard let self else { return }
+            BuildTestManager.shared.isNetworking ? loadAbilityData(ocid) : loadAbilityMockData()
+            BuildTestManager.shared.isNetworking ? loadHyperStatData(ocid) : loadHyperStatMockData()
+        }
+        .store(in: &cancellables)
         
         input.abilityPickerInput
             .sink { [weak self] picker in
@@ -78,9 +83,9 @@ extension HyperStatViewModel {
         }
     }
     
-    private func loadAbilityData() {
+    private func loadAbilityData(_ ocid: String) {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterAbility, type: AbilityResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterAbility(ocid: ocid), type: AbilityResponseModel.self)
             print("Ability APIData Load")
             DispatchQueue.main.async { [weak self] in
                 self?.output.abilityResult = result
@@ -89,9 +94,9 @@ extension HyperStatViewModel {
         }
     }
     
-    private func loadHyperStatData() {
+    private func loadHyperStatData(_ ocid: String) {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterHyperStat, type: HyperStatResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterHyperStat(ocid: ocid), type: HyperStatResponseModel.self)
             print("HyperStat APIData Load")
             DispatchQueue.main.async { [weak self] in
                 self?.output.hyperStatResult = result

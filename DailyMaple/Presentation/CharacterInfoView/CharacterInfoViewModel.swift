@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-//import SwiftUI
 
 final class CharacterInfoViewModel: ObservableObject {
     
@@ -16,7 +15,7 @@ final class CharacterInfoViewModel: ObservableObject {
     @Published var output = Output()
     
     struct Input {
-        
+        let ocid = PassthroughSubject<String, Never>()
     }
     
     struct Output {
@@ -28,10 +27,16 @@ final class CharacterInfoViewModel: ObservableObject {
     }
     
     init() {
-        BuildTestManager.shared.isNetworking ? loadCharacterData() : loadCharacterMockData()
-        BuildTestManager.shared.isNetworking ? loadCharacterPopData() : loadCharacterPopMockData()
-        BuildTestManager.shared.isNetworking ? loadCharacterDojangData() : loadCharacterDojangMockData()
-        BuildTestManager.shared.isNetworking ? loadUnionData() : loadUnionMockData()
+        input.ocid.sink { [weak self] ocid in
+            guard let self else { return }
+            print("ocid: \(ocid)")
+            BuildTestManager.shared.isNetworking ? loadCharacterData(ocid) : loadCharacterMockData()
+            BuildTestManager.shared.isNetworking ? loadCharacterPopData(ocid) : loadCharacterPopMockData()
+            BuildTestManager.shared.isNetworking ? loadCharacterDojangData(ocid) : loadCharacterDojangMockData()
+            BuildTestManager.shared.isNetworking ? loadUnionData(ocid) : loadUnionMockData()
+        }
+        .store(in: &cancellables)
+        
     }
 }
 
@@ -49,9 +54,9 @@ extension CharacterInfoViewModel {
         }
     }
     
-    private func loadCharacterData() {
+    private func loadCharacterData(_ ocid: String) {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterBasic, type: CharacterResponse.self)
+            let result = try await APIManager.shared.callRequest(api: .characterBasic(ocid: ocid), type: CharacterResponse.self)
             print("Character APIData Request")
             DispatchQueue.main.async { [weak self] in
                 self?.output.character = result
@@ -72,9 +77,9 @@ extension CharacterInfoViewModel {
         }
     }
     
-    private func loadCharacterPopData() {
+    private func loadCharacterPopData(_ ocid: String) {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterPopularity, type: PopularityResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterPopularity(ocid: ocid), type: PopularityResponseModel.self)
             print("Popularity APIData Request")
             DispatchQueue.main.async { [weak self] in
                 self?.output.popularity = result.popularity
@@ -94,9 +99,9 @@ extension CharacterInfoViewModel {
         }
     }
     
-    private func loadCharacterDojangData() {
+    private func loadCharacterDojangData(_ ocid: String) {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .characterDojang, type: DojangResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .characterDojang(ocid: ocid), type: DojangResponseModel.self)
             print("Dojang APIData Request")
             DispatchQueue.main.async { [weak self] in
                 self?.output.dojang = result.dojang_best_floor
@@ -117,9 +122,9 @@ extension CharacterInfoViewModel {
         }
     }
     
-    private func loadUnionData() {
+    private func loadUnionData(_ ocid: String) {
         Task {
-            let result = try await APIManager.shared.callRequest(api: .union, type: UnionResponseModel.self)
+            let result = try await APIManager.shared.callRequest(api: .union(ocid: ocid), type: UnionResponseModel.self)
             print("Union APIData Request")
             DispatchQueue.main.async { [weak self] in
                 self?.output.unionLevel = result.union_level
