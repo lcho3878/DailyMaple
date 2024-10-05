@@ -10,4 +10,6 @@ import Foundation
 struct UserDefaultManager {
     @UserDefault(key: "ocid", defaultValue: nil, storage: .standard)
     static var ocid: String?
+    @UserDefault(key: "searchOcid", defaultValue: nil, storage: .standard)
+    static var searchOcid: String?
 }
