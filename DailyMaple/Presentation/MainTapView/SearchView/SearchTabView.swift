@@ -30,7 +30,7 @@ struct SearchTabView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
                 NavigationLink(
-                    destination: CharacterInfoView(),
+                    destination: CharacterInfoView(viewType: .search),
                     isActive: $viewModel.output.isActive,
                     label: {
                         EmptyView()

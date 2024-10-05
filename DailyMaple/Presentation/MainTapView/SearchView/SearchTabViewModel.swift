@@ -34,7 +34,7 @@ final class SearchTabViewModel: ObservableObject {
                     do {
                         let result = try await APIManager.shared.callRequest(api: .ocid(query: self.input.nickname), type: OcidResponseModel.self)
                         DispatchQueue.main.async {
-                            self.output.ocid = result.ocid
+                            UserDefaultManager.searchOcid = result.ocid
                             self.output.isActive = true
                         }
                     } catch {
