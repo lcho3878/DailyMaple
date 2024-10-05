@@ -10,7 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
-            CharacterInfoView()
+            CharacterInfoView(viewType: .main)
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("캐릭터 정보")
