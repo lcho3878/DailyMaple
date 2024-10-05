@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CharacterInfoView: View {
+    var viewType: ViewType?
+    
     @ObservedObject private var viewModel = CharacterInfoViewModel()
     @StateObject private var statViewModel = CharacterStatViewModel()
     @StateObject private var equipViewModel = EquipmentViewModel()
@@ -48,7 +50,25 @@ struct CharacterInfoView: View {
                     hyperStatViewModel: hyperStatViewModel
                 )
             }
-            
+        }
+        .task {
+            guard let viewType,
+                  let userOcid = UserDefaultManager.ocid,
+                  let serachOcid = UserDefaultManager.searchOcid else { return }
+            switch viewType {
+            case .main:
+                viewModel.input.ocid.send(userOcid)
+                statViewModel.input.ocid.send(userOcid)
+                equipViewModel.input.ocid.send(userOcid)
+                symbolViewModel.input.ocid.send(userOcid)
+                hyperStatViewModel.input.ocid.send(userOcid)
+            case .search:
+                viewModel.input.ocid.send(serachOcid)
+                statViewModel.input.ocid.send(serachOcid)
+                equipViewModel.input.ocid.send(serachOcid)
+                symbolViewModel.input.ocid.send(serachOcid)
+                hyperStatViewModel.input.ocid.send(serachOcid)
+            }
         }
     }
     
@@ -171,6 +191,13 @@ struct CharacterInfoView: View {
                 .foregroundColor(.statTitle)
             }
         }
+    }
+}
+
+extension CharacterInfoView {
+    enum ViewType {
+        case main
+        case search
     }
 }
 
