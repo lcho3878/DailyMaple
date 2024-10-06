@@ -52,17 +52,17 @@ struct CharacterInfoView: View {
             }
         }
         .task {
-            guard let viewType,
-                  let userOcid = UserDefaultManager.ocid,
-                  let serachOcid = UserDefaultManager.searchOcid else { return }
+            guard let viewType else { return }
             switch viewType {
             case .main:
+                guard let userOcid = UserDefaultManager.ocid else { return }
                 viewModel.input.ocid.send(userOcid)
                 statViewModel.input.ocid.send(userOcid)
                 equipViewModel.input.ocid.send(userOcid)
                 symbolViewModel.input.ocid.send(userOcid)
                 hyperStatViewModel.input.ocid.send(userOcid)
             case .search:
+                guard let serachOcid = UserDefaultManager.searchOcid else { return }
                 viewModel.input.ocid.send(serachOcid)
                 statViewModel.input.ocid.send(serachOcid)
                 equipViewModel.input.ocid.send(serachOcid)
