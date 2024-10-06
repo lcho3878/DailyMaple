@@ -36,6 +36,8 @@ struct SearchTabView: View {
                         EmptyView()
                     })
             }
+            .frame(maxHeight: .infinity)
+            .background(Color.infoBackground, ignoresSafeAreaEdges: .top)
         }
         .font(.mapleBold(16))
         .alert(item: $viewModel.output.apiError) { item in
@@ -45,5 +47,6 @@ struct SearchTabView: View {
 }
 
 #Preview {
-    SearchTabView()
+//    SearchTabView()
+    ContentView()
 }
