@@ -38,3 +38,28 @@ Realm: DB
 제목을 클릭하여 상세 페이지를 모바일 버전으로 확인할 수 있습니다.
 
 트러블슈팅
+
+완료된 퀘스트를 매일 자정 및 매주 월요일에 초기화 시켜주는 문제
+
+퀘스트를 등록하는 시점에서 다음날 자정 혹은 다음주 월요일 자정을 구하는 메서드를 구현하여 endDate라는 프로퍼티로 저장하였고,
+View의 task를 통해 endDate와 현재시간을 비교, 완료된 퀘스트들 중 endDate가 현재 시간보다 과거일 경우 endDate를 업데이트 하도록 로직을 구현하였다.
+extension Date {
+  ...
+    public func nextDay() -> Date {
+        let calender = Calendar.current
+        let now = Date()
+        guard let tomorrow = calender.date(byAdding: .day, value: 1, to: now) else { return now }
+        let components = calender.dateComponents([.year, .month, .day], from: tomorrow)
+        guard let nextMidnight = calender.date(from: components) else { return now }
+        return nextMidnight
+    }
+    public func nextMonday() -> Date {
+        let calender = Calendar.current
+        let now = Date()
+        let nextMonday = calender.nextDate(after: now, matching: DateComponents(weekday: 2), matchingPolicy: .nextTime)
+        return nextMonday ?? Date()
+    }
+    ...
+}
+
+    
