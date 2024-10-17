@@ -42,24 +42,19 @@ Realm: DB
 완료된 퀘스트를 매일 자정 및 매주 월요일에 초기화 시켜주는 문제
 
 퀘스트를 등록하는 시점에서 다음날 자정 혹은 다음주 월요일 자정을 구하는 메서드를 구현하여 endDate라는 프로퍼티로 저장하였고,
+
 View의 task를 통해 endDate와 현재시간을 비교, 완료된 퀘스트들 중 endDate가 현재 시간보다 과거일 경우 endDate를 업데이트 하도록 로직을 구현하였다.
-extension Date {
-  ...
-    public func nextDay() -> Date {
-        let calender = Calendar.current
-        let now = Date()
-        guard let tomorrow = calender.date(byAdding: .day, value: 1, to: now) else { return now }
-        let components = calender.dateComponents([.year, .month, .day], from: tomorrow)
-        guard let nextMidnight = calender.date(from: components) else { return now }
-        return nextMidnight
-    }
-    public func nextMonday() -> Date {
-        let calender = Calendar.current
-        let now = Date()
-        let nextMonday = calender.nextDate(after: now, matching: DateComponents(weekday: 2), matchingPolicy: .nextTime)
-        return nextMonday ?? Date()
-    }
-    ...
-}
+
+
+[코드]
+
+TabView로 구성된 화면에서 TabItem을 이동할때마다 계속 ViewModel이 생성되어 불필요한 API요청이 반복적으로 들어가는 현상
+
+SwiftUI의 View는 Struct로 관리되기 때문에 TabItem을 이동할 때 마다 View를 새로 렌더링 하며 View와 연결된 프로퍼티들을 새로 만들어서 생기는 현상이었다.
+
+상위 View에서 먼저 각 View의 ViewModel 객체를 생성한 뒤, 생성되는 View에 각 ViewModel을 주입하는 방식으로 구조를 변경하였다.
+
+ViewModel을 View가 관리하지 않고 외부에서 관리하게 만들어줌으로써 문제를 해결
+
 
     
