@@ -1,9 +1,8 @@
 # 매일메일(DailyMaple)
 매일 해야하는 메이플할일들을 정리해주고 메이플 관련 유용한 기능을 제공하는 어플리케이션
 <br><br>
-<img src="https://github.com/user-attachments/assets/fec00c75-3918-4be6-80f8-d7ae92f32c77" width="200" height="200"/>
+<a href="https://apps.apple.com/kr/app/%EB%A7%A4%EC%9D%BC%EB%A9%94%EC%9D%BC/id6720724199"><img src="https://github.com/user-attachments/assets/fec00c75-3918-4be6-80f8-d7ae92f32c77" width="200" height="200"/></a>
 <br><br>
-AppStore에서 확인하기  :  <a href="https://apps.apple.com/kr/app/%EB%A7%A4%EC%9D%BC%EB%A9%94%EC%9D%BC/id6720724199">이동</a>
 
 ## 🗓️ 개발기간
 
